@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css'
+import {AboutMe, Background, Navigation} from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App: React.FC = () => {
+
+    const messages = [
+        {id:1,message:'I\'m 20 years old'},
+        {id:2,message:'I\'m 20 years old'},
+        {id:3,message:'Hi my name is Alexander'},
+        {id:0,message:' I am a beginner frontend dev'},
+    ]
+
+
+    return (
+        <div className="wrapper">
+            <Background/>
+            <Navigation/>
+            <AboutMe/>
+        </div>
+    );
 }
 
-export default App;
+export {App};

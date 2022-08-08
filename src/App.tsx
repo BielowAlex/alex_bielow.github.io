@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/style.css'
-import {AboutMe, Background, Navigation} from "./components";
+import {BlackHole, Background, Navigation} from "./components";
 
 
 const App: React.FC = () => {
@@ -17,7 +17,8 @@ const App: React.FC = () => {
         <div className="wrapper">
             <Background/>
             <Navigation/>
-            <AboutMe/>
+            <BlackHole/>
+
         </div>
     );
 }

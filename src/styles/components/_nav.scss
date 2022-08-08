@@ -88,9 +88,9 @@ nav {
 }
 
 @keyframes lighting {
-  0%{box-shadow: 1px 1px 10px red;}
-  50%{box-shadow: 1px 1px 15px red;}
-  100%{box-shadow: 1px 1px 10px red;}
+  0%{box-shadow: 1px 1px 10px red,1px 1px 15px red;}
+  50%{box-shadow: 1px 1px 10px red,1px 1px 20px red;}
+  100%{box-shadow: 1px 1px 10px red,1px 1px 15px red;}
 }
 
 ._first_item{
@@ -99,7 +99,7 @@ nav {
       position: relative;
       right: 14px;
       top: 8px;
-      //transform: rotate(-50deg);
+      transform: rotate(-50deg);
     }
   }
 }
@@ -109,7 +109,7 @@ nav {
       position: relative;
       right: 15px;
       top: -7px;
-      //transform: rotate(50deg);
+      transform: rotate(50deg);
     }
   }
 }

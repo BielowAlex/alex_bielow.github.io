@@ -1,3 +1,3 @@
 export * from './Background';
 export * from './Navigation';
-export * from './AboutMe';
+export * from './BlackHole';

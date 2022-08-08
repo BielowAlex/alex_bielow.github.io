@@ -17,8 +17,8 @@ const BlackHole: React.FC = () => {
     }, [activeItem])
 
     return (
-        <div className='about_me'>
-            <div className="oval">
+        <div className="black_hole">
+            <div className="oval _anim_item">
                 <div className="list">
                     {messages.map(msg => <span
                         key={msg.id}

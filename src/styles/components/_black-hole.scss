@@ -1,19 +1,14 @@
 $shadow: rgba(255, 0, 98, 0.45);
 $msg_color: rgb(255, 0, 98);
 
-.about_me {
+.black_hole {
   width: 70%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 100px;
-
-
 }
-
-
-
 
 .oval {
   height: 350px;
@@ -25,12 +20,17 @@ $msg_color: rgb(255, 0, 98);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: skewY(30deg);
-  transition: all 3s linear ;
+  transform: skewY(30deg) scale(0.5) translateY(-500px);
+  transition: all 2s ease ;
   box-shadow: 1px 1px 3px $shadow, 1px 1px 4px $shadow, inset 1px 1px 20px $shadow;
   animation: lighting_on 3s ease-in infinite;
   background-image: url("../../public/images/Musn.gif") ;
   background-size: 100% ;
+
+  &._active{
+    transform: skewY(30deg) scale(1);
+
+  }
 
   .list {
     display: flex;

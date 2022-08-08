@@ -1,24 +1,22 @@
 import React from 'react';
 import './styles/style.css'
-import {BlackHole, Background, Navigation} from "./components";
+import {BlackHole, Background, Navigation, AboutMe} from "./components";
+import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 
 
 const App: React.FC = () => {
 
-    const messages = [
-        {id:1,message:'I\'m 20 years old'},
-        {id:2,message:'I\'m 20 years old'},
-        {id:3,message:'Hi my name is Alexander'},
-        {id:0,message:' I am a beginner frontend dev'},
-    ]
-
+    React.useEffect(() => {
+        startAnimatedScroll();
+    });
 
     return (
         <div className="wrapper">
             <Background/>
             <Navigation/>
             <BlackHole/>
-
+            <AboutMe/>
+            <AboutMe/>
         </div>
     );
 }

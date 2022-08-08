@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: -100px -100px 260px red;
   }
 }
-.about_me {
+.black_hole {
   width: 70%;
   min-height: 100%;
   display: flex;
@@ -143,12 +143,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: skewY(30deg);
-  transition: all 3s linear;
+  transform: skewY(30deg) scale(0.5) translateY(-500px);
+  transition: all 2s ease;
   box-shadow: 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 4px rgba(255, 0, 98, 0.45), inset 1px 1px 20px rgba(255, 0, 98, 0.45);
   animation: lighting_on 3s ease-in infinite;
   background-image: url("../../public/images/Musn.gif");
   background-size: 100%;
+}
+.oval._active {
+  transform: skewY(30deg) scale(1);
 }
 .oval .list {
   display: flex;
@@ -307,6 +310,84 @@ nav .nav_title {
   transform: rotate(50deg);
 }
 
+.about_me {
+  display: flex;
+  flex-direction: column;
+  row-gap: 120px;
+  width: 70%;
+  align-items: center;
+  transition: all 3s linear;
+  margin-bottom: 200px;
+}
+.about_me_title {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: rgba(255, 0, 38, 0.55);
+  line-height: 50px;
+  text-align: justify;
+}
+.about_me_title h2 {
+  font-weight: 200;
+  opacity: 0;
+  transition: all 2s linear 0.5s;
+}
+.about_me_title h2._active {
+  opacity: 1;
+}
+.about_me .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+.about_me .content .obj {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 0, 38, 0.55);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  color: rgba(255, 0, 38, 0.55);
+  transition: all 3s ease;
+  transform: translate(-300px, 0) rotate(0);
+}
+.about_me .content .obj._active {
+  transform: translate(0, 0) rotate(360deg);
+}
+.about_me .content h3 {
+  width: 300px;
+  font-weight: 100;
+  font-size: 26px;
+  animation: move_text 15s linear infinite;
+  color: rgba(255, 0, 38, 0.55);
+  opacity: 0;
+  transition: all 3s linear;
+}
+.about_me .content h3._active {
+  opacity: 1;
+}
+
+@keyframes move_text {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 5px);
+  }
+  50% {
+    transform: translate(-10px, 10);
+  }
+  75% {
+    transform: translate(15px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 @font-face {
   font-family: "WhyteInktrap";
   src: url("/public/fonts/WhyteInktrap-ExtraLight.woff2"), url("/public/fonts/WhyteInktrap-ExtraLight.woff");
@@ -359,6 +440,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  row-gap: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */

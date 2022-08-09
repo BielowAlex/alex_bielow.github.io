@@ -2,6 +2,7 @@ import React from 'react';
 
 const Greeting: React.FC = () => {
     const [rotateCount, setRotateCount] = React.useState<number>(0);
+    const [isLightActive,setIsLightActive] = React.useState<boolean>(false);
 
     const rotateOnScroll = () => {
         setRotateCount(Math.floor(window.scrollY / 7))
@@ -12,10 +13,10 @@ const Greeting: React.FC = () => {
     }, [])
 
     return (
-        <div className="greeting _anim_item _anim_no_hide">
-            <div className='obj _anim_item '>
-                <div className="light">
-
+        <div className="greeting _anim_item _anim_no_hide" onClick={()=>setIsLightActive(!isLightActive)}>
+            <div className='obj _anim_item ' >
+                <div className={`light ${isLightActive?'_active':''}`}>
+                    <span>I glad to see you in my website!♥</span>
                 </div>
             </div>
             <svg className="_rotate_item" width="300" height="300" viewBox="0 0 300 300" fill="none"

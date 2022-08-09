@@ -384,6 +384,7 @@ nav .nav_title {
   }
 }
 .greeting {
+  cursor: pointer;
   width: 300px;
   height: 300px;
   position: relative;
@@ -399,15 +400,44 @@ nav .nav_title {
   border: 1px solid rgba(255, 0, 38, 0.55);
   border-radius: 50%;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   color: rgba(255, 0, 38, 0.55);
   transition: all 3s ease;
   transform: translate(-50%, -50%) rotate(0);
-  text-align: center;
-  font-weight: 200;
+}
+.greeting .obj .light {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border-radius: 50%;
+  background: rgba(255, 0, 38, 0.38);
+  transition: all 1s linear;
+  box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red, 1px 1px 640px red;
+  animation: obj_lighting 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+}
+.greeting .obj .light span {
+  position: absolute;
+  color: #05050c;
+  width: 150px;
   text-transform: uppercase;
-  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 1s linear;
+}
+.greeting .obj .light._active {
+  width: 100%;
+  height: 100%;
+}
+.greeting .obj .light._active span {
+  opacity: 1;
 }
 .greeting svg {
   position: absolute;
@@ -421,6 +451,17 @@ nav .nav_title {
   transform: translate(0, 0) rotate(360deg);
 }
 
+@keyframes obj_lighting {
+  0% {
+    box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red, 1px 1px 640px red;
+  }
+  50% {
+    box-shadow: 1px 1px 5px red, 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red;
+  }
+  100% {
+    box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red, 1px 1px 640px red;
+  }
+}
 @font-face {
   font-family: "WhyteInktrap";
   src: url("/public/fonts/WhyteInktrap-ExtraLight.woff2"), url("/public/fonts/WhyteInktrap-ExtraLight.woff");

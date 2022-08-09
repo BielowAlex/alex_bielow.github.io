@@ -1,3 +1,5 @@
+
+
 const startAnimatedScroll = () => {
     const animItemList = document.querySelectorAll('._anim_item');
     const animScroll = () => {
@@ -7,7 +9,7 @@ const startAnimatedScroll = () => {
                 // @ts-ignore
                 const animItemHeight = animItem.offsetHeight;
                 const animItemOffset = offSet(animItem).top;
-                const animStart = 5;
+                const animStart = 10;
 
                 let animItemPointStart = window.innerHeight - animItemHeight / animStart;
                 if (animItemHeight > window.innerHeight) {
@@ -23,6 +25,7 @@ const startAnimatedScroll = () => {
             }
         }
     };
+
 
     animScroll();
     window.addEventListener('scroll', animScroll)

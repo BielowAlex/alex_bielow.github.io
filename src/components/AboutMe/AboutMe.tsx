@@ -1,11 +1,12 @@
 import React from 'react';
+import {Greeting} from "../Greeting";
 
 const AboutMe: React.FC = () => {
 
 
     return (
-        <div className="about_me">
-            <div className="about_me_title">
+        <div className="about_me ">
+            <div className="about_me_title _anim_item">
                 <h2 className="_anim_item">I love programing!</h2>
                 <h2 className="_anim_item">I like building websites, and solve</h2>
                 <h2 className="_anim_item">business problem. Now I studying at</h2>
@@ -14,9 +15,8 @@ const AboutMe: React.FC = () => {
                 <h2 className="_anim_item"> for 2 years.</h2>
             </div>
             <div className="content">
-                <div className='obj _anim_item'>
-                    Alex
-                </div>
+
+               <Greeting/>
 
                 <h3 className="_anim_item">
                     Additionally studying at the "Okten web school" courses.

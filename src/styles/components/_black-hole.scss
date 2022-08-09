@@ -20,7 +20,7 @@ $msg_color: rgb(255, 0, 98);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: skewY(30deg) scale(0.5) translateY(-500px);
+  transform: skewY(10deg) scale(0.5) translateY(-500px);
   transition: all 2s ease ;
   box-shadow: 1px 1px 3px $shadow, 1px 1px 4px $shadow, inset 1px 1px 20px $shadow;
   animation: lighting_on 3s ease-in infinite;
@@ -28,7 +28,7 @@ $msg_color: rgb(255, 0, 98);
   background-size: 100% ;
 
   &._active{
-    transform: skewY(30deg) scale(1);
+    transform: skewY(10deg) scale(1);
 
   }
 
@@ -42,7 +42,7 @@ $msg_color: rgb(255, 0, 98);
     top: 0;
     overflow: hidden;
     position: relative;
-    transform:  skewY(-30deg) ;
+    transform:  skewY(-10deg) ;
     animation: rotate_list 4s ease infinite 2.5s;
   }
 
@@ -85,7 +85,7 @@ $msg_color: rgb(255, 0, 98);
 @keyframes lighting_on {
   0% {
     box-shadow: 1px 1px 3px $shadow, 1px 1px 10px $shadow,1px 1px 3px $shadow, 1px 1px 20px $shadow,;
-    transform:skewY(30deg) scale(1);
+    transform:skewY(10deg) scale(1);
     background-size: 100%;
 
   }
@@ -99,7 +99,7 @@ $msg_color: rgb(255, 0, 98);
   }
   100% {
     box-shadow: 1px 1px 3px $shadow, 1px 1px 10px $shadow,1px 1px 3px $shadow, 1px 1px 20px $shadow;
-    transform:skewY(30deg) scale(1);
+    transform:skewY(10deg) scale(1);
     background-size: 100%;
 
   }
@@ -107,10 +107,10 @@ $msg_color: rgb(255, 0, 98);
 
 @keyframes rotate_list {
   0%{
-    transform:  skewY(-30deg) rotate(0) ;
+    transform:  skewY(-10deg) rotate(0) ;
 
   }
   100%{
-    transform:  skewY(-30deg) rotate(0deg)  ;
+    transform:  skewY(-10deg) rotate(0deg)  ;
   }
 }

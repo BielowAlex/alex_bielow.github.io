@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: skewY(30deg) scale(0.5) translateY(-500px);
+  transform: skewY(10deg) scale(0.5) translateY(-500px);
   transition: all 2s ease;
   box-shadow: 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 4px rgba(255, 0, 98, 0.45), inset 1px 1px 20px rgba(255, 0, 98, 0.45);
   animation: lighting_on 3s ease-in infinite;
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 100%;
 }
 .oval._active {
-  transform: skewY(30deg) scale(1);
+  transform: skewY(10deg) scale(1);
 }
 .oval .list {
   display: flex;
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   overflow: hidden;
   position: relative;
-  transform: skewY(-30deg);
+  transform: skewY(-10deg);
   animation: rotate_list 4s ease infinite 2.5s;
 }
 .oval span {
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes lighting_on {
   0% {
     box-shadow: 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 10px rgba(255, 0, 98, 0.45), 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 20px rgba(255, 0, 98, 0.45);
-    transform: skewY(30deg) scale(1);
+    transform: skewY(10deg) scale(1);
     background-size: 100%;
   }
   50% {
@@ -209,16 +209,16 @@ h1, h2, h3, h4, h5, h6 {
   }
   100% {
     box-shadow: 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 10px rgba(255, 0, 98, 0.45), 1px 1px 3px rgba(255, 0, 98, 0.45), 1px 1px 20px rgba(255, 0, 98, 0.45);
-    transform: skewY(30deg) scale(1);
+    transform: skewY(10deg) scale(1);
     background-size: 100%;
   }
 }
 @keyframes rotate_list {
   0% {
-    transform: skewY(-30deg) rotate(0);
+    transform: skewY(-10deg) rotate(0);
   }
   100% {
-    transform: skewY(-30deg) rotate(0deg);
+    transform: skewY(-10deg) rotate(0deg);
   }
 }
 nav {
@@ -336,7 +336,7 @@ nav .nav_title {
 .about_me_title h2 {
   font-weight: 200;
   opacity: 0;
-  transition: all 2s ease 0.5s;
+  transition: all 2s linear 0.5s;
 }
 .about_me_title h2._active {
   opacity: 1;
@@ -370,13 +370,13 @@ nav .nav_title {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(10px, 5px);
+    transform: translate(10px, 5px) scale(0.9);
   }
   50% {
     transform: translate(-10px, 10);
   }
   75% {
-    transform: translate(15px, -15px);
+    transform: translate(15px, -15px) scale(1);
   }
   100% {
     transform: translate(0, 0);
@@ -469,6 +469,7 @@ nav .nav_title {
   row-gap: 70px;
   width: 70%;
   padding: 10px;
+  padding-bottom: 100px;
 }
 .projects_top {
   display: flex;
@@ -530,6 +531,18 @@ nav .nav_title {
     box-shadow: 1px 1px 5px red, 1px 1px 10px red, 1px 1px 20px red;
   }
 }
+.project {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+.project_cart .poster {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 2s linear;
+  box-shadow: 1px 1px 5px red, 1px 1px 15px red;
+}
+
 @font-face {
   font-family: "WhyteInktrap";
   src: url("/public/fonts/WhyteInktrap-ExtraLight.woff2"), url("/public/fonts/WhyteInktrap-ExtraLight.woff");

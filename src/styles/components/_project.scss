@@ -1,0 +1,16 @@
+.project{
+  display: flex;
+  align-items:center;
+  column-gap: 40px;
+
+  &_cart{
+
+    .poster{
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 2s linear;
+      box-shadow: 1px 1px 5px red,
+      1px 1px 15px red;
+    }
+  }
+}

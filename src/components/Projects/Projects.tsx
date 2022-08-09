@@ -14,7 +14,7 @@ const Projects = () => {
             <div className="projects_list">
                 <div className="project">
                     <div className="project_cart">
-                        <div className="project_poster">
+                        <div className="poster">
                             <img width={400} height={250} src="./images/projects/react_sneakers.png" alt="project poster"/>
                         </div>
                         <div className="other"/>

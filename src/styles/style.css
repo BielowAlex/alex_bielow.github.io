@@ -462,6 +462,74 @@ nav .nav_title {
     box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red, 1px 1px 640px red;
   }
 }
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 70px;
+  width: 70%;
+  padding: 10px;
+}
+.projects_top {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.projects_top h2 {
+  text-align: start;
+  font-weight: 200;
+  font-size: 52px;
+  color: rgba(255, 0, 38, 0.55);
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translate(-500px, 0);
+}
+.projects_top h2._active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.projects_top .underline {
+  display: flex;
+  align-items: center;
+  width: 5px;
+  transition: all 1.5s linear;
+}
+.projects_top .underline._active {
+  width: 100%;
+}
+.projects_top .underline._active .line {
+  width: 1500px;
+}
+.projects_top .underline._active .fire {
+  animation: fire 0.4s linear infinite;
+  opacity: 0;
+}
+.projects_top .underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+.projects_top .underline .fire {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 2s linear;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+@keyframes fire {
+  0% {
+    box-shadow: 1px 1px 5px red, 1px 1px 10px red, 1px 1px 20px red;
+  }
+  50% {
+    box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 30px red, 1px 1px 60px red;
+  }
+  100% {
+    box-shadow: 1px 1px 5px red, 1px 1px 10px red, 1px 1px 20px red;
+  }
+}
 @font-face {
   font-family: "WhyteInktrap";
   src: url("/public/fonts/WhyteInktrap-ExtraLight.woff2"), url("/public/fonts/WhyteInktrap-ExtraLight.woff");

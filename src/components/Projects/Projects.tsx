@@ -4,9 +4,9 @@ const Projects = () => {
     return (
         <div className="projects">
             <div className="projects_top">
-                <h2>My works</h2>
+                <h2 className="_anim_item _anim_no_hide">My works</h2>
 
-                <div className="underline">
+                <div className="underline _anim_item _anim_no_hide">
                     <div className="line"/>
                     <div className="fire"/>
                 </div>
@@ -15,7 +15,7 @@ const Projects = () => {
                 <div className="project">
                     <div className="project_cart">
                         <div className="project_poster">
-                            <img src="./images/react_sneakers" alt="project poster"/>
+                            <img width={400} height={250} src="./images/projects/react_sneakers.png" alt="project poster"/>
                         </div>
                         <div className="other"/>
                     </div>

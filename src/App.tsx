@@ -18,7 +18,6 @@ const App: React.FC = () => {
             <Navigation/>
             <BlackHole/>
             <AboutMe/>
-            <AboutMe/>
             <Projects/>
         </div>
     );

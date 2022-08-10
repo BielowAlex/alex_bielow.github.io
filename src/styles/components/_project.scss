@@ -14,13 +14,17 @@
     }
   }
 
-  &._reverse{
+  &:nth-child(2n){
     flex-direction: row-reverse;
     .project_cart{
       .poster{
         animation: move_title 15s ease infinite;
       }
     }
+  }
+
+  &._reverse{
+
   }
 
   &._active{

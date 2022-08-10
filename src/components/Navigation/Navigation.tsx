@@ -8,7 +8,7 @@ const Navigation: React.FC<IProps> = ({projectsNode}) => {
     const [activeCategory,setActiveCategory] = React.useState<number>(1);
 
 
-    const checkActiveCategory:()=>void = ()=>{
+    const checkActiveCategory = ()=>{
         console.log(window.scrollY);
         if(projectsNode.current!==null){
 
@@ -25,7 +25,7 @@ const Navigation: React.FC<IProps> = ({projectsNode}) => {
 
     React.useEffect(()=>{
         window.addEventListener('scroll',checkActiveCategory)
-    },[])
+    });
     
     return (
         <nav>

@@ -41,6 +41,9 @@ const Projects:React.FC<IProps> = ({reference}) => {
                         </div>
                     </div>
                 </div>
+
+
+
                 <div className="project _anim_item _reverse">
                     <div className="project_cart">
                         <div className="poster _anim_item">

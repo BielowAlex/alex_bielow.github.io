@@ -52,12 +52,12 @@ $msg_color: rgb(255, 0, 98);
     position: absolute;
     top: 50%;
     left: 50% ;
-    font-size: 32px;
+    font-size: 36px;
     transition: all 3s ease , opacity 0.5s linear,color 3s linear, scale 1s linear;
 
     width: 383px;
     text-align: center;
-    font-weight: 100;
+    font-weight: 200;
     text-shadow: 2px 2px 1px #05050c;
     opacity: 0;
     transform:  translate(-50%,-50%) scale(0.1);

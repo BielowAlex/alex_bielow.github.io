@@ -16,7 +16,7 @@ const Greeting: React.FC = () => {
         <div className="greeting _anim_item _anim_no_hide" onClick={()=>setIsLightActive(!isLightActive)}>
             <div className='obj _anim_item ' >
                 <div className={`light ${isLightActive?'_active':''}`}>
-                    <span>I glad to see you in my website!♥</span>
+                    <span>Glad to see you at my website!</span>
                 </div>
             </div>
             <svg className="_rotate_item" width="300" height="300" viewBox="0 0 300 300" fill="none"

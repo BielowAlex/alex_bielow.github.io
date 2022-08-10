@@ -25,20 +25,20 @@ const Projects: React.FC<IProps> = ({reference}) => {
                                 Slider, sorting,filters, adaptive."
                          url="https://sneakers-shop-vert.vercel.app"
                          gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
-                <Project projectName="Sneakers Shop"
-                         poster="react_sneakers.png"
-                         desc="The online sneakers-shop is written on the library react/Redux/Axios.
+                <Project projectName="React/Redux pizza shop"
+                         poster="react_pizza.png"
+                         desc="  The online pizzeria is written on the library react/Redux/Axios.
                                 Instead of the database, used json.
-                                Slider, sorting,filters, adaptive."
-                         url="https://sneakers-shop-vert.vercel.app"
-                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
-                <Project projectName="Sneakers Shop"
-                         poster="react_sneakers.png"
-                         desc="The online sneakers-shop is written on the library react/Redux/Axios.
-                                Instead of the database, used json.
-                                Slider, sorting,filters, adaptive."
-                         url="https://sneakers-shop-vert.vercel.app"
-                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
+                                Different categories, sorting of order execution."
+                         url="https://react-pizza-xi.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/react_pizza"/>
+                <Project projectName="React AlexFilms"
+                         poster="alex_films.png"
+                         desc="A multi-page movie search site written in the React/Redux/Axios library.
+                                Used the TMDB API.
+                                Sort by genre, search, trailers, sliders."
+                         url="https://alex-films-react.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/alex_films_react"/>
             </div>
         </div>
     );

@@ -567,8 +567,11 @@ nav .nav_title {
   transition: all 1s ease 0.4s;
   column-gap: 500px;
 }
-.project:hover .project_cart .poster {
+.project:hover .project_cart .poster img {
   box-shadow: 3px 5px 5px red, 3px 5px 15px red;
+}
+.project:hover .project_cart .poster .programing_languages {
+  opacity: 1;
 }
 .project:nth-child(2n) {
   flex-direction: row-reverse;
@@ -583,13 +586,33 @@ nav .nav_title {
   opacity: 1;
 }
 .project_cart .poster {
+  position: relative;
+  width: 400px;
+  height: 250px;
   border-radius: 20px;
-  overflow: hidden;
   transition: all 1.5s linear;
-  animation: move_title 10s ease infinite;
-  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0), 3px 5px 15px rgba(0, 0, 0, 0);
   opacity: 0;
-  backdrop-filter: blur(100);
+}
+.project_cart .poster .programing_languages {
+  position: absolute;
+  bottom: -90px;
+  left: -80px;
+  display: flex;
+  transition: all 0.8s linear;
+  opacity: 0;
+  z-index: 10;
+  animation: move_title 10s ease infinite;
+}
+.project_cart .poster .programing_languages svg {
+  width: 150px;
+  height: 150px;
+}
+.project_cart .poster img {
+  transition: all 0.8s linear;
+  z-index: 5;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0), 3px 5px 15px rgba(0, 0, 0, 0);
+  animation: move_title 10s ease infinite;
+  border-radius: 20px;
 }
 .project_cart .poster._active {
   opacity: 1;

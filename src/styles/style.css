@@ -528,7 +528,7 @@ nav .nav_title {
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  row-gap: 50px;
+  row-gap: 80px;
   overflow: hidden;
   padding-bottom: 200px;
 }
@@ -596,8 +596,8 @@ nav .nav_title {
 }
 .project_cart .poster .programing_languages {
   position: absolute;
-  bottom: -90px;
-  left: -80px;
+  bottom: -70px;
+  left: -20px;
   display: flex;
   transition: all 0.8s linear;
   opacity: 0;
@@ -605,8 +605,8 @@ nav .nav_title {
   animation: move_title 10s ease infinite;
 }
 .project_cart .poster .programing_languages svg {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .project_cart .poster img {
   transition: all 0.8s linear;
@@ -623,7 +623,8 @@ nav .nav_title {
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  min-width: 300px;
+  min-width: 350px;
+  max-width: 350px;
   font-weight: 100;
   transition: all 0.8s linear;
   color: rgba(255, 0, 38, 0.55);

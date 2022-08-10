@@ -1,11 +1,11 @@
 import React from 'react';
-import {NeonButton} from "../CustomButtons";
+import {Project} from "../Project";
 
-interface IProps{
+interface IProps {
     reference: React.RefObject<HTMLDivElement>,
 }
 
-const Projects:React.FC<IProps> = ({reference}) => {
+const Projects: React.FC<IProps> = ({reference}) => {
 
     return (
         <div id="projects" className="projects" ref={reference}>
@@ -18,54 +18,27 @@ const Projects:React.FC<IProps> = ({reference}) => {
                 </div>
             </div>
             <div className="projects_list">
-                <div className="project _anim_item">
-                    <div className="project_cart">
-                        <div className="poster _anim_item">
-                            <img width={400} height={250} src="./images/projects/react_sneakers.png"
-                                 alt="project poster"/>
-                        </div>
-                        <div className="other"/>
-                    </div>
-                    <div className="project_info">
-                        <h3>Sneakers Shop</h3>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Accusantium at autem fuga impedit quod saepe sequi vitae!
-                            Accusantium, corporis cum earum excepturi nemo nesciunt omnis
-                            provident qui quibusdam, quos sunt?
-                        </p>
-                        <div className="buttons">
-                            <NeonButton url="#">View Project</NeonButton>
-                            <NeonButton url="#">View Git repos.</NeonButton>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className="project _anim_item _reverse">
-                    <div className="project_cart">
-                        <div className="poster _anim_item">
-                            <img width={400} height={250} src="./images/projects/react_sneakers.png"
-                                 alt="project poster"/>
-                        </div>
-                        <div className="other"/>
-                    </div>
-                    <div className="project_info ">
-                        <h3>Sneakers Shop</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Accusantium at autem fuga impedit quod saepe sequi vitae!
-                            Accusantium, corporis cum earum excepturi nemo nesciunt omnis
-                            provident qui quibusdam, quos sunt?
-                        </p>
-                        <div className="buttons">
-                            <NeonButton url="#">View Project</NeonButton>
-                            <NeonButton url="#">View Git repos.</NeonButton>
-                        </div>
-                    </div>
-                </div>
+                <Project projectName="Sneakers Shop"
+                         poster="react_sneakers.png"
+                         desc="The online sneakers-shop is written on the library react/Redux/Axios.
+                                Instead of the database, used json.
+                                Slider, sorting,filters, adaptive."
+                         url="https://sneakers-shop-vert.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
+                <Project projectName="Sneakers Shop"
+                         poster="react_sneakers.png"
+                         desc="The online sneakers-shop is written on the library react/Redux/Axios.
+                                Instead of the database, used json.
+                                Slider, sorting,filters, adaptive."
+                         url="https://sneakers-shop-vert.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
+                <Project projectName="Sneakers Shop"
+                         poster="react_sneakers.png"
+                         desc="The online sneakers-shop is written on the library react/Redux/Axios.
+                                Instead of the database, used json.
+                                Slider, sorting,filters, adaptive."
+                         url="https://sneakers-shop-vert.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
             </div>
         </div>
     );

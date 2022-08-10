@@ -7,7 +7,6 @@ interface IProps{
 const Navigation: React.FC<IProps> = ({projectsNode}) => {
     const [activeCategory,setActiveCategory] = React.useState<number>(1);
 
-    console.log(projectsNode);
 
     const checkActiveCategory:()=>void = ()=>{
         console.log(window.scrollY);
@@ -36,12 +35,12 @@ const Navigation: React.FC<IProps> = ({projectsNode}) => {
                     <div className="line"/>
                     <span className="text">About me</span>
                 </a>
-            <span className={`nav_item ${activeCategory===2?'_active':''}`}>
+            <a href={"#projects"} className={`nav_item ${activeCategory===2?'_active':''}`}>
                     <div className="line"/>
                     <div className="circle"/>
                     <div className="line"/>
                     <span className="text">My projects</span>
-                </span>
+                </a>
             <span className={`nav_item ${activeCategory===3?'_active':''}`}>
                     <div className="line"/>
                     <div className="circle"/>

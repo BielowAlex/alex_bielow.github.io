@@ -1,16 +1,89 @@
-.project{
+.project {
   display: flex;
-  align-items:center;
-  column-gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 1s  ease 0.4s;
+  column-gap: 500px;
 
-  &_cart{
+  &:hover{
+    .project_cart{
+      .poster{
+        box-shadow: 3px 5px 5px red,
+        3px 5px 15px red;
+      }
+    }
+  }
 
-    .poster{
+  &._reverse{
+    flex-direction: row-reverse;
+    .project_cart{
+      .poster{
+        animation: move_title 15s ease infinite;
+      }
+    }
+  }
+
+  &._active{
+    column-gap: 50px;
+
+    .project_info{
+      opacity: 1;
+    }
+  }
+  &_cart {
+
+    .poster {
       border-radius: 20px;
       overflow: hidden;
-      transition: all 2s linear;
-      box-shadow: 1px 1px 5px red,
-      1px 1px 15px red;
+      transition: all 1.5s linear;
+      animation: move_title 10s ease infinite;
+      box-shadow: 3px 5px 5px rgba(0, 0, 0, 0),
+      3px 5px 15px rgba(0, 0, 0, 0);
+      opacity: 0;
+
+        backdrop-filter: blur(100);
+      img{
+      }
+
+      &._active{
+        opacity:1;
+      }
+    }
+
+    &:hover{
+
+      .poster{
+
+      }
+    }
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    min-width: 300px;
+    font-weight: 100;
+    transition: all 0.8s linear;
+    color: rgba(255, 0, 38, 0.55);
+    opacity: 0;
+
+    h3{
+      text-align: center;
+      font-size: 24px;
+    }
+
+    p{
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .buttons{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 20px;
     }
   }
 }

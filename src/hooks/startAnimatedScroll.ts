@@ -1,6 +1,6 @@
 
 
-const startAnimatedScroll = () => {
+const startAnimatedScroll:() => void = () => {
     const animItemList = document.querySelectorAll('._anim_item');
     const animScroll = () => {
         if (animItemList.length > 0) {

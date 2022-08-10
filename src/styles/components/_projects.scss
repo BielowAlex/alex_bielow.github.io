@@ -4,6 +4,8 @@
   align-items: center;
   row-gap: 70px;
   width: 70%;
+
+
   padding: 10px;
   padding-bottom: 100px;
 
@@ -19,9 +21,11 @@
       font-weight: 200;
       font-size: 52px;
       color: rgba(255, 0, 38, 0.55);
+      text-transform: uppercase;
       transition: all 1s ease;
       opacity: 0;
       transform: translate(-500px, 0);
+      animation: move_title 15s linear infinite;
 
       &._active {
         opacity: 1;
@@ -37,6 +41,7 @@
 
       &._active {
         width: 100%;
+
         .line {
           width: 1500px;
         }
@@ -65,6 +70,16 @@
       }
     }
   }
+  &_list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    row-gap: 50px;
+    overflow: hidden;
+    padding-bottom: 200px;
+
+  }
 
 }
 
@@ -84,5 +99,24 @@
     box-shadow: 1px 1px 5px red,
     1px 1px 10px red,
     1px 1px 20px red;
+  }
+}
+
+@keyframes move_title {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(3px, 3px) ;
+
+  }
+  50% {
+    transform: translate(-2px, 1px);
+  }
+  75% {
+    transform: translate(5px, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }

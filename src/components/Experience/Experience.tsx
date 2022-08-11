@@ -30,10 +30,35 @@ const Experience: React.FC = () => {
                         Oct 2021-Today
                     </span>
                     <p className="exp_info">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad, animi distinctio dolore eaque earum est molestiae neque nisi
-                        nobis possimus quaerat reiciendis repudiandae sint sunt ut.
-                        Aperiam exercitationem ipsa optio.
+
+                        I entered the Lviv <a href="https://owu.com.ua"
+                                              target='_blank'
+                                              rel="noreferrer"
+                                              className="link">IT school Okten</a> for web programming,
+                        where I received a lot of basic knowledge,
+                        began to study React JS, SCRUM, Git, etc..
+                        I created the front-end part of sites in HTML, SCSS, JS {'=>'} .
+                    </p>
+                </div>
+                <div className="experience_list_item _anim_item">
+                    <span className="date">
+                        Apr 2022-Future
+                    </span>
+                    <p className="exp_info">
+                        Now I'm studying NodeJs and English. I also improve my knowledge of ReactJS,
+                        create various projects(
+                        <a href="https://sneakers-shop-vert.vercel.app"
+                           target='_blank'
+                           rel="noreferrer"
+                           className="link">Sneakers Shop</a>, <a href="https://alex-films-react.vercel.app"
+                           target='_blank'
+                           rel="noreferrer"
+                           className="link">AlexFilms</a>, <a href="https://react-pizza-xi.vercel.app"
+                           target='_blank'
+                           rel="noreferrer"
+                           className="link">React Pizza</a>)
+                        and take courses. I'm looking for a company to join,
+                        if you like what you see and think I'm a good fit, contact me
                     </p>
                 </div>
             </div>

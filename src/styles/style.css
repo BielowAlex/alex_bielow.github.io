@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .back {
@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .black_hole {
@@ -393,7 +393,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .about_me {
@@ -569,7 +569,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .projects {
@@ -663,7 +663,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .project {
@@ -774,7 +774,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .neon_btn {
@@ -870,7 +870,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 .experience {
@@ -970,7 +970,7 @@ nav .nav_title {
   transition: all 0.4s linear;
 }
 .link:hover {
-  color: rgba(255, 0, 38, 0.63);
+  color: rgba(255, 0, 38, 0.82);
 }
 
 @font-face {

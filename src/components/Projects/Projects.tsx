@@ -24,14 +24,14 @@ const Projects: React.FC<IProps> = ({reference}) => {
                                 Slider, sorting,filters, adaptive."
                          url="https://sneakers-shop-vert.vercel.app"
                          gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
-                <Project projectName="React/Redux pizza shop"
+                <Project projectName="Online pizza shop"
                          poster="react_pizza.png"
                          desc="  The online pizzeria is written on the library react/Redux/Axios.
                                 Instead of the database, used json.
                                 Different categories, sorting of order execution."
                          url="https://react-pizza-xi.vercel.app"
                          gitUrl="https://github.com/BielowAlex/react_pizza"/>
-                <Project projectName="React AlexFilms"
+                <Project projectName="AlexFilms"
                          poster="alex_films.png"
                          desc="A multi-page movie search site written in the React/Redux/Axios library.
                                 Used the TMDB API.

@@ -70,6 +70,24 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
 .back {
   position: fixed;
   min-width: 100%;
@@ -124,11 +142,29 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: -100px -100px 260px red;
   }
 }
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
 .black_hole {
-  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70%;
   row-gap: 100px;
 }
 
@@ -156,8 +192,8 @@ h1, h2, h3, h4, h5, h6 {
 .oval .list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 200px;
   min-width: 500px;
   top: 0;
@@ -315,12 +351,30 @@ nav .nav_title {
   transform: rotate(50deg);
 }
 
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
 .about_me {
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 120px;
   width: 70%;
-  align-items: center;
   transition: all 3s linear;
   transform: translateY(50px);
 }
@@ -464,6 +518,24 @@ nav .nav_title {
     box-shadow: 1px 1px 10px red, 1px 1px 20px red, 1px 1px 40px red, 1px 1px 80px red, 1px 1px 160px red, 1px 1px 320px red, 1px 1px 640px red;
   }
 }
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -534,14 +606,14 @@ nav .nav_title {
 .underline {
   display: flex;
   align-items: center;
-  width: 5px;
+  width: 0;
   transition: all 1.5s linear;
 }
 .underline._active {
   width: 100%;
 }
 .underline._active .line {
-  width: 1500px;
+  width: 100%;
 }
 .underline .line {
   width: 100%;
@@ -551,8 +623,8 @@ nav .nav_title {
 
 .project {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   transition: all 1s ease 0.4s;
   column-gap: 500px;
 }
@@ -700,6 +772,115 @@ nav .nav_title {
   box-shadow: #c01723 0 0 10px, #c01723 0 0 20px;
   background: rgba(192, 23, 35, 0.73);
   color: #000;
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+}
+.experience_title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.experience_title h2 {
+  text-align: start;
+  font-weight: 200;
+  font-size: 52px;
+  color: rgba(255, 0, 38, 0.55);
+  text-transform: uppercase;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translate(-500px, 0);
+  animation: move_title 15s linear infinite;
+}
+.experience_title h2._active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.experience_title .underline {
+  width: 100%;
+}
+.experience_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 20px;
+}
+.experience_list_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 0, 38, 0.55);
+  padding: 50px 10px;
+  column-gap: 5%;
+}
+.experience_list_item._active .date {
+  opacity: 1;
+}
+.experience_list_item._active .exp_info {
+  opacity: 1;
+}
+.experience_list_item .date {
+  width: 40%;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+  opacity: 0.1;
+  transition: all 2s linear;
+}
+.experience_list_item .exp_info {
+  width: 50%;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  font-size: 18px;
+  text-align: justify;
+  opacity: 0.1;
+  transition: all 2s linear;
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
 }
 
 @font-face {

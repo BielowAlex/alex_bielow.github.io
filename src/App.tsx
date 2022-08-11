@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/style.css'
-import {BlackHole, Background, Navigation, AboutMe, Projects} from "./components";
+import {BlackHole, Background, Navigation, AboutMe, Projects, Experience} from "./components";
 import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 
 
@@ -18,8 +18,8 @@ const App: React.FC = () => {
             <BlackHole/>
             <AboutMe/>
             <Projects reference={projects}/>
+            <Experience/>
             <AboutMe/>
-
         </div>
     );
 }

@@ -1,19 +1,15 @@
-$shadow: rgba(255, 0, 98, 0.45);
-$msg_color: rgb(255, 0, 98);
+@import "../variables";
 
 .black_hole {
+  @include flex_dir_col;
   width: 70%;
-  //min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   row-gap: 100px;
 }
 
 .oval {
   height: 350px;
   width: 700px;
-  border: 1px solid $shadow;
+  border: 1px solid $black_hole_shadow_color;
   border-radius: 50%;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -22,28 +18,26 @@ $msg_color: rgb(255, 0, 98);
   justify-content: center;
   align-items: center;
   transform: skewY(10deg) scale(0.5) translateY(-500px);
-  transition: all 2s ease ;
-  box-shadow: 1px 1px 3px $shadow, 1px 1px 4px $shadow, inset 1px 1px 20px $shadow;
+  transition: all 2s ease;
+  box-shadow: 1px 1px 3px $black_hole_shadow_color, 1px 1px 4px $black_hole_shadow_color, inset 1px 1px 20px $black_hole_shadow_color;
   animation: lighting_on 3s ease-in infinite;
-  background-image: url("../../public/images/other/Musn.gif") ;
-  background-size: 100% ;
+  background-image: url("../../public/images/other/Musn.gif");
+  background-size: 100%;
 
-  &._active{
+  &._active {
     transform: skewY(10deg) scale(1);
 
   }
 
   .list {
-    display: flex;
-    flex-direction: column;
+    @include flex_dir_col;
     justify-content: space-between;
-    align-items: center;
     height: 200px;
     min-width: 500px;
     top: 0;
     overflow: hidden;
     position: relative;
-    transform:  skewY(-10deg) ;
+    transform: skewY(-10deg);
     animation: rotate_list 4s ease infinite 2.5s;
   }
 
@@ -51,67 +45,66 @@ $msg_color: rgb(255, 0, 98);
     display: block;
     position: absolute;
     top: 50%;
-    left: 50% ;
+    left: 50%;
     font-size: 36px;
-    transition: all 3s ease , opacity 0.5s linear,color 3s linear, scale 1s linear;
+    transition: all 3s ease, opacity 0.5s linear, color 3s linear, scale 1s linear;
 
     width: 383px;
     text-align: center;
     font-weight: 200;
     text-shadow: 2px 2px 1px #05050c;
     opacity: 0;
-    transform:  translate(-50%,-50%) scale(0.1);
+    transform: translate(-50%, -50%) scale(0.1);
     color: #05050c;
 
     &:nth-child(1)._active {
       opacity: 1;
-      transform: scale(0.9) translate(-50%,-50%);
-      color:$msg_color;
+      transform: scale(0.9) translate(-50%, -50%);
+      color: $msg_color;
     }
 
     &:nth-child(2)._active {
       opacity: 1;
-      transform:scale(0.9) translate(-50%,-50%);
+      transform: scale(0.9) translate(-50%, -50%);
       color: $msg_color;
     }
 
     &:nth-child(3)._active {
       opacity: 1;
-      transform: scale(0.9) translate(-50%,-50%);
-      color:$msg_color;
+      transform: scale(0.9) translate(-50%, -50%);
+      color: $msg_color;
     }
   }
 }
 
 @keyframes lighting_on {
   0% {
-    box-shadow: 1px 1px 3px $shadow, 1px 1px 10px $shadow,1px 1px 3px $shadow, 1px 1px 20px $shadow,;
-    transform:skewY(10deg) scale(1);
+    box-shadow: 1px 1px 3px $black_hole_shadow_color, 1px 1px 10px $black_hole_shadow_color, 1px 1px 3px $black_hole_shadow_color, 1px 1px 20px $black_hole_shadow_color,;
+    transform: skewY(10deg) scale(1);
     background-size: 100%;
 
   }
   50% {
-    box-shadow: 1px 1px 3px $shadow, 1px 1px 10px $shadow,
-    1px 1px 3px $shadow, 1px 1px 20px $shadow,
-    1px 1px 3px $shadow, 1px 1px 40px $shadow
-    ;
+    box-shadow: 1px 1px 3px $black_hole_shadow_color, 1px 1px 10px $black_hole_shadow_color,
+    1px 1px 3px $black_hole_shadow_color, 1px 1px 20px $black_hole_shadow_color,
+    1px 1px 3px $black_hole_shadow_color, 1px 1px 40px $black_hole_shadow_color;
     background-size: 105%;
 
   }
   100% {
-    box-shadow: 1px 1px 3px $shadow, 1px 1px 10px $shadow,1px 1px 3px $shadow, 1px 1px 20px $shadow;
-    transform:skewY(10deg) scale(1);
+    box-shadow: 1px 1px 3px $black_hole_shadow_color, 1px 1px 10px $black_hole_shadow_color, 1px 1px 3px $black_hole_shadow_color, 1px 1px 20px $black_hole_shadow_color;
+    transform: skewY(10deg) scale(1);
     background-size: 100%;
 
   }
 }
 
 @keyframes rotate_list {
-  0%{
-    transform:  skewY(-10deg) rotate(0) ;
+  0% {
+    transform: skewY(-10deg) rotate(0);
 
   }
-  100%{
-    transform:  skewY(-10deg) rotate(0deg)  ;
+  100% {
+    transform: skewY(-10deg) rotate(0deg);
   }
 }

@@ -4,3 +4,4 @@ export * from './BlackHole';
 export * from './AboutMe';
 export * from './Greeting';
 export * from './Projects';
+export * from './Experience';

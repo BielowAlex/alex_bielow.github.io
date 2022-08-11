@@ -1,9 +1,9 @@
+@import "../variables";
+
 .about_me {
-  display: flex;
-  flex-direction: column;
+  @include  flex_dir_col;
   row-gap: 120px;
   width: 70%;
-  align-items: center;
   transition: all 3s linear;
   transform:translateY(50px);
 
@@ -32,9 +32,7 @@
   }
 
   .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex_jus-sb_alc;
     width: 100%;
     padding: 20px;
     overflow: hidden;

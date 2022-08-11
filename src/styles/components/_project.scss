@@ -1,7 +1,7 @@
+@import "../variables";
+
 .project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@include flex_jus-sb_alc;
   transition: all 1s ease 0.4s;
   column-gap: 500px;
 
@@ -97,7 +97,7 @@
     max-width: 350px;
     font-weight: 100;
     transition: all 0.8s linear;
-    color: rgba(255, 0, 38, 0.55);
+    color: $text_color;
     opacity: 0;
 
     h3 {

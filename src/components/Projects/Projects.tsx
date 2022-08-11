@@ -14,7 +14,6 @@ const Projects: React.FC<IProps> = ({reference}) => {
 
                 <div className="underline _anim_item ">
                     <div className="line"/>
-                    <div className="fire"/>
                 </div>
             </div>
             <div className="projects_list">

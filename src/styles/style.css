@@ -88,6 +88,15 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 0, 38, 0.55);
 }
 
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
+}
+
 .back {
   position: fixed;
   min-width: 100%;
@@ -158,6 +167,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 1px;
   background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
 }
 
 .black_hole {
@@ -369,6 +387,15 @@ nav .nav_title {
   background: rgba(255, 0, 38, 0.55);
 }
 
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
+}
+
 .about_me {
   display: flex;
   flex-direction: column;
@@ -536,6 +563,15 @@ nav .nav_title {
   background: rgba(255, 0, 38, 0.55);
 }
 
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
+}
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -621,6 +657,15 @@ nav .nav_title {
   background: rgba(255, 0, 38, 0.55);
 }
 
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
+}
+
 .project {
   display: flex;
   justify-content: space-between;
@@ -703,6 +748,33 @@ nav .nav_title {
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
 }
 
 .neon_btn {
@@ -790,6 +862,15 @@ nav .nav_title {
   width: 100%;
   height: 1px;
   background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
 }
 
 .experience {
@@ -881,6 +962,15 @@ nav .nav_title {
   width: 100%;
   height: 1px;
   background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.63);
 }
 
 @font-face {

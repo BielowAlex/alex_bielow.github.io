@@ -1,0 +1,38 @@
+@import "../variables";
+
+.slider {
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+  border-bottom: 1px solid $line_color;
+
+
+  &_list {
+    display: flex;
+    column-gap: 25px;
+    animation: move_slider 30s linear infinite ;
+    scroll-margin-left: 20px;
+    &:hover{
+      animation-play-state: paused;
+
+    }
+
+    &_item {
+      svg {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+@keyframes move_slider {
+  0%{
+    transform: translateX(calc(-100% - 17px));
+  }
+  100%{
+    transform: translateX(0);
+
+  }
+
+}

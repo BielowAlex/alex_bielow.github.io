@@ -25,11 +25,10 @@
       flex-wrap: wrap;
       padding: 50px 10px;
       row-gap: 20px;
-      animation:move_title 15s linear infinite;
       border-bottom: 1px solid $line_color;
 
-      &:nth-child(3){
-        transform: scale(2);
+      &:nth-child(1){
+
       }
       &:nth-child(2){
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Slider} from "../Slider";
 
 const Technologies = () => {
     return (
@@ -9,6 +10,7 @@ const Technologies = () => {
                     <div className="line"/>
                 </div>
             </div>
+            <Slider/>
 
         </div>
     );

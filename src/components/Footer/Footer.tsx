@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer:React.FC = () => {
     return (
-        <footer className="footer">
+        <footer id="contact" className="footer">
             <div className="footer_info">
                 <h3 className="title">Languages</h3>
                 <div className="my_language">

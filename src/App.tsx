@@ -6,6 +6,7 @@ import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 
 const App: React.FC = () => {
     const projects = React.useRef<HTMLDivElement>(null);
+    const exp = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         startAnimatedScroll();
@@ -14,11 +15,11 @@ const App: React.FC = () => {
     return (
         <div className="wrapper">
             <Background/>
-            <Navigation projectsNode={projects}/>
+            <Navigation projectsNode={projects} experienceNode={exp}/>
             <BlackHole/>
             <AboutMe/>
             <Projects reference={projects}/>
-            <Experience/>
+            <Experience reference={exp}/>
             <AboutMe/>
         </div>
     );

@@ -1,8 +1,10 @@
 import React from 'react';
-
-const Experience: React.FC = () => {
+interface IProps {
+    reference: React.RefObject<HTMLDivElement>,
+}
+const Experience: React.FC<IProps> = ({reference}) => {
     return (
-        <div className="experience">
+        <div id="experience" className="experience" ref={reference}>
             <div className="experience_title">
                 <h2 className="_anim_item">Experience</h2>
                 <div className="underline ">

@@ -2,23 +2,27 @@ import React from 'react';
 
 interface IProps{
     projectsNode: React.RefObject<HTMLDivElement>,
+    experienceNode: React.RefObject<HTMLDivElement>,
 }
 
-const Navigation: React.FC<IProps> = ({projectsNode}) => {
+const Navigation: React.FC<IProps> = ({projectsNode,experienceNode}) => {
     const [activeCategory,setActiveCategory] = React.useState<number>(1);
 
 
     const checkActiveCategory = ()=>{
         console.log(window.scrollY);
-        if(projectsNode.current!==null){
+        if(projectsNode.current!==null && experienceNode.current!==null){
 
             if(window.scrollY>=0 && window.scrollY<=projectsNode.current?.offsetHeight){
                 setActiveCategory(1)
             } else if(window.scrollY>=(projectsNode.current?.offsetTop - 660)
                 && window.scrollY<(projectsNode.current.offsetTop+projectsNode.current.offsetHeight - 600)){
                 setActiveCategory(2);
-            }else if(window.scrollY>(projectsNode.current.offsetTop+projectsNode.current.offsetHeight - 600)){
+            }else if(window.scrollY>(projectsNode.current.offsetTop+projectsNode.current.offsetHeight - 600)
+                && window.scrollY<(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 600)){
                 setActiveCategory(3);
+            }else if(window.scrollY>(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 600)){
+                setActiveCategory(4);
             }
         }
     }
@@ -41,18 +45,18 @@ const Navigation: React.FC<IProps> = ({projectsNode}) => {
                     <div className="line"/>
                     <span className="text">My projects</span>
                 </a>
-            <span className={`nav_item ${activeCategory===3?'_active':''}`}>
+            <a href={"#experience"} className={`nav_item ${activeCategory===3?'_active':''}`}>
                     <div className="line"/>
                     <div className="circle"/>
                     <div className="line"/>
-                    <span className="text">about</span>
-                </span>
-            <span className={`nav_item _last_item ${activeCategory===4?'_active':''}`}>
+                    <span className="text">Experience</span>
+                </a>
+            <a href={"#contact"} className={`nav_item _last_item ${activeCategory===4?'_active':''}`}>
                     <div className="line"/>
                     <div className="circle"/>
                     <div className="line"/>
-                    <span className="text">about</span>
-            </span>
+                    <span className="text">Contact</span>
+            </a>
             <div className="nav_title">
                 Navigation
             </div>

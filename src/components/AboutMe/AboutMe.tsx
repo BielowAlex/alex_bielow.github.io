@@ -16,12 +16,15 @@ const AboutMe: React.FC = () => {
             </div>
             <div className="content">
 
-               <Greeting/>
+                <Greeting/>
 
-                <h3 className="_anim_item">
-                    Additionally studying at the "Okten web school" courses.
-                    I get great satisfaction from what I do.
-                </h3>
+                <div className="astronaut">
+                    <img height={300} width={250} src="/images/other/astronaut.png" alt="astronaut"/>
+                </div>
+                {/*<h3 className="_anim_item">*/}
+                {/*    Additionally studying at the "Okten web school" courses.*/}
+                {/*    I get great satisfaction from what I do.*/}
+                {/*</h3>*/}
 
             </div>
         </div>

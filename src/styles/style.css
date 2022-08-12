@@ -441,6 +441,13 @@ nav .nav_title {
   padding: 20px;
   overflow: hidden;
 }
+.about_me .content .astronaut {
+  width: 40%;
+}
+.about_me .content .astronaut img {
+  opacity: 0.5;
+  animation: move_astronaut 15s linear infinite;
+}
 .about_me .content h3 {
   width: 300px;
   font-weight: 100;
@@ -469,6 +476,23 @@ nav .nav_title {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+@keyframes move_astronaut {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(10px, 5px) scale(0.9) rotate(30deg);
+  }
+  50% {
+    transform: translate(-10px, 10) rotate(60deg);
+  }
+  75% {
+    transform: translate(15px, -15px) scale(1) rotate(30deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
   }
 }
 .greeting {

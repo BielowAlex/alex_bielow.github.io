@@ -442,11 +442,17 @@ nav .nav_title {
   overflow: hidden;
 }
 .about_me .content .astronaut {
-  width: 40%;
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }
 .about_me .content .astronaut img {
-  opacity: 0.5;
+  opacity: 0;
+  transition: all 1s linear;
   animation: move_astronaut 15s linear infinite;
+}
+.about_me .content .astronaut._active img {
+  opacity: 0.3;
 }
 .about_me .content h3 {
   width: 300px;

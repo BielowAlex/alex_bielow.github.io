@@ -1,11 +1,11 @@
 @import "../variables";
 
 .about_me {
-  @include  flex_dir_col;
+  @include flex_dir_col;
   row-gap: 120px;
   width: 70%;
   transition: all 3s linear;
-  transform:translateY(50px);
+  transform: translateY(50px);
 
   &_title {
     text-transform: uppercase;
@@ -14,7 +14,7 @@
     line-height: 50px;
     text-align: justify;
     transition: all 1s ease;
-    transform:translateY(100px);
+    transform: translateY(100px);
 
     h2 {
       font-weight: 200;
@@ -26,8 +26,8 @@
       }
     }
 
-    &._active{
-      transform:translateY(0px);
+    &._active {
+      transform: translateY(0px);
     }
   }
 
@@ -37,11 +37,21 @@
     padding: 20px;
     overflow: hidden;
 
-    .astronaut{
-      width: 40%;
-      img{
-        opacity: 0.5;
-        animation: move_astronaut  15s linear infinite;
+    .astronaut {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+
+      img {
+        opacity: 0;
+        transition: all 1s linear;
+        animation: move_astronaut 15s linear infinite;
+      }
+
+      &._active {
+        img {
+          opacity: 0.3;
+        }
       }
     }
 
@@ -53,7 +63,8 @@
       color: rgba(255, 0, 38, 0.55);
       opacity: 0;
       transition: all 3s linear;
-      &._active{
+
+      &._active {
         opacity: 1;
       }
 
@@ -79,6 +90,7 @@
     transform: translate(0, 0);
   }
 }
+
 @keyframes move_astronaut {
   0% {
     transform: translate(0, 0) rotate(0);
@@ -91,7 +103,7 @@
     transform: translate(-10px, 10) rotate(60deg);
   }
   75% {
-    transform: translate(15px, -15px) scale(1) rotate(30deg) ;
+    transform: translate(15px, -15px) scale(1) rotate(30deg);
   }
   100% {
     transform: translate(0, 0) rotate(0);

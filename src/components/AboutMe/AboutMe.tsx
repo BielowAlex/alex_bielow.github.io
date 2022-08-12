@@ -18,8 +18,8 @@ const AboutMe: React.FC = () => {
 
                 <Greeting/>
 
-                <div className="astronaut">
-                    <img height={300} width={250} src="/images/other/astronaut.png" alt="astronaut"/>
+                <div className="astronaut _anim_item">
+                    <img height={350} width={300} src="/images/other/astronaut.png" alt="astronaut"/>
                 </div>
                 {/*<h3 className="_anim_item">*/}
                 {/*    Additionally studying at the "Okten web school" courses.*/}

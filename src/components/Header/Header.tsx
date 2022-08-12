@@ -7,7 +7,7 @@ const Header:React.FC = () => {
         if(letterId!==12){
             const startAnimation = setTimeout(()=>{
                 setLetterId(letterId+1);
-            },1000);
+            },300);
             return ()=> clearTimeout(startAnimation);
         }
     },[letterId])

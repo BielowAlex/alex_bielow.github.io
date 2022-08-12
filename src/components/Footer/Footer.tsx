@@ -13,6 +13,7 @@ const Footer:React.FC = () => {
                     <span className="bold">Ukrainian:Native</span>
                     <span className="bold">Russian:C2 Proficient</span>
                 </div>
+                <h3>EMAIL: drohomyretskyi.oleksandr@ukr.net</h3>
                 <div className="links">
                     <a href="https://www.linkedin.com/in/oleksandr-drohomoretskyi-275600242/" target="_blank" rel="noreferrer">
                         <div className="link">

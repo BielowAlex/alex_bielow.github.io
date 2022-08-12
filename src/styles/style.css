@@ -1154,7 +1154,7 @@ nav .nav_title {
   margin-right: 10px;
 }
 .header_title .anim_letter._active {
-  animation: letter_anim 0.5s ease-in-out;
+  animation: letter_anim 0.3s ease-in-out;
   color: rgba(255, 0, 38, 0.82);
 }
 
@@ -1236,6 +1236,12 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 600;
   cursor: context-menu;
+}
+.footer_info h3 {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: 1.5px;
 }
 .footer_info .my_language {
   display: flex;

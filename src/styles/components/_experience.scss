@@ -15,14 +15,13 @@
   }
 
   &_list {
-    display: flex;
+    @include flex_dir_col;
     width: 100%;
     row-gap: 20px;
 
     &_item {
-      @include flex_dir_col;
+      @include flex_jus-sb_alc;
       width: 100%;
-      flex-wrap: wrap;
       padding: 50px 10px;
       row-gap: 20px;
       border-bottom: 1px solid $line_color;
@@ -46,7 +45,7 @@
 
       .date {
         display: block;
-
+        width: 30%;
         color: $text_color;
         font-weight: 600;
         font-size: 40px;
@@ -57,7 +56,7 @@
 
       .exp_info {
         display: block;
-
+        width: 60%;
         color: $text_color;
         font-weight: 100;
         font-size: 18px;

@@ -3,6 +3,7 @@ import React from 'react';
 import './styles/style.css'
 import {BlackHole, Background, Navigation, AboutMe, Projects, Experience, Technologies, Header} from "./components";
 import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
+import Footer from "./components/Footer/Footer";
 
 
 const App: React.FC = () => {
@@ -23,7 +24,7 @@ const App: React.FC = () => {
             <Projects reference={projects}/>
             <Experience reference={exp}/>
             <Technologies/>
-            <AboutMe/>
+            <Footer/>
         </div>
     );
 }

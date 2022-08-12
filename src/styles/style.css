@@ -1150,6 +1150,10 @@ nav .nav_title {
 .header_title .anim_letter:nth-child(2) {
   margin-right: 10px;
 }
+.header_title .anim_letter._active {
+  animation: letter_anim 0.5s ease-in-out;
+  color: rgba(255, 0, 38, 0.82);
+}
 
 @keyframes letter_anim {
   0% {

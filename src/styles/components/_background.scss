@@ -1,7 +1,6 @@
-
 @import "../variables";
 
-.back{
+.back {
   position: fixed;
   min-width: 100%;
   min-height: 100%;
@@ -33,7 +32,18 @@
     box-shadow: -100px -100px 250px red;
     animation: lighting_bot 5s linear infinite;
   }
+
+  svg {
+    position: absolute;
+    left: 300px;
+    top: 40%;
+
+    transform: scale(1.5);
+    opacity: 0.3;
+    animation: move_title 10s linear infinite;
+  }
 }
+
 
 @keyframes lighting_top {
   0% {
@@ -42,10 +52,11 @@
   50% {
     box-shadow: 100px 100px 120px red;
   }
-  100%{
+  100% {
     box-shadow: 100px 100px 260px red;
   }
 }
+
 @keyframes lighting_bot {
   0% {
     box-shadow: -100px -100px 250px red;
@@ -53,7 +64,7 @@
   50% {
     box-shadow: -100px -100px 120px red;
   }
-  100%{
+  100% {
     box-shadow: -100px -100px 260px red;
   }
 }

@@ -10,10 +10,10 @@ const BlackHole: React.FC = () => {
     ];
 
     React.useEffect(() => {
-        const showMessage = setTimeout(()=>{
-            setActiveItem(activeItem===3?1:activeItem+1)
-        },4000);
-        return ()=>clearTimeout(showMessage);
+        const showMessage = setTimeout(() => {
+            setActiveItem(activeItem === 3 ? 1 : activeItem + 1);
+        }, 3000);
+        return () => clearTimeout(showMessage);
     }, [activeItem])
 
     return (

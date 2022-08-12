@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
                 </div>
                 <div className="experience_list_item _anim_item">
                     <span className="date">
-                        Oct 2021-Today
+                        Feb 2021-Today
                     </span>
                     <p className="exp_info">
 
@@ -37,14 +37,14 @@ const Experience: React.FC = () => {
                                               className="link">IT school Okten</a> for web programming,
                         where I received a lot of basic knowledge,
                         began to study React JS, SCRUM, Git, etc..
-                        I created the front-end part of sites in HTML, SCSS, JS {'=>'} .
+                        I created the front-end part of sites in HTML, SCSS, JS {'=>'}  .
                     </p>
                 </div>
                 <div className="experience_list_item _anim_item">
-                    <span className="date">
+                    <div className="date">
                         Apr 2022-Future
-                    </span>
-                    <p className="exp_info">
+                    </div>
+                    <div className="exp_info">
                         Now I'm studying NodeJs and English. I also improve my knowledge of ReactJS,
                         create various projects(
                         <a href="https://sneakers-shop-vert.vercel.app"
@@ -58,8 +58,8 @@ const Experience: React.FC = () => {
                            rel="noreferrer"
                            className="link">React Pizza</a>)
                         and take courses. I'm looking for a company to join,
-                        if you like what you see and think I'm a good fit, contact me
-                    </p>
+                        if you like my works and think I'm a suitable candidate, contact me.
+                    </div>
                 </div>
             </div>
         </div>

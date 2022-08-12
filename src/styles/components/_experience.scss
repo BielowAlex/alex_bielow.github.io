@@ -1,51 +1,64 @@
 @import "../variables";
 
-.experience{
+.experience {
   @include flex_dir_col;
   width: 70%;
   padding: 10px;
 
 
-  &_title{
+  &_title {
     @include title;
-    .underline{
+
+    .underline {
       width: 100%;
     }
   }
 
-  &_list{
-    @include flex_dir_col;
+  &_list {
+    display: flex;
     width: 100%;
     row-gap: 20px;
 
-    &_item{
-      @include flex_jus-sb_alc;
+    &_item {
+      @include flex_dir_col;
       width: 100%;
-      border-bottom: 1px solid $line_color;
+      flex-wrap: wrap;
       padding: 50px 10px;
-      column-gap: 5%;
+      row-gap: 20px;
+      animation:move_title 15s linear infinite;
+      border-bottom: 1px solid $line_color;
 
-      &._active{
-        .date{
+      &:nth-child(3){
+        transform: scale(2);
+      }
+      &:nth-child(2){
+
+      }
+
+      &._active {
+        .date {
           opacity: 1;
         }
-        .exp_info{
+
+        .exp_info {
           opacity: 1;
         }
       }
 
-      .date{
-        width: 40%;
+      .date {
+        display: block;
+
         color: $text_color;
         font-weight: 600;
-        font-size: 50px;
+        font-size: 40px;
         text-align: center;
         opacity: 0.1;
         transition: all 2s linear;
       }
 
-      .exp_info{
-        width: 50%;
+      .exp_info {
+        display: block;
+
         color: $text_color;
         font-weight: 100;
         font-size: 18px;

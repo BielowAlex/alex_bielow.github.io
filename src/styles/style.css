@@ -128,6 +128,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: -100px -100px 250px red;
   animation: lighting_bot 5s linear infinite;
 }
+.back svg {
+  position: absolute;
+  left: 300px;
+  top: 40%;
+  transform: scale(1.5);
+  opacity: 0.3;
+  animation: move_title 10s linear infinite;
+}
 
 @keyframes lighting_top {
   0% {
@@ -907,19 +915,22 @@ nav .nav_title {
 }
 .experience_list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   row-gap: 20px;
 }
 .experience_list_item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 0, 38, 0.55);
+  flex-wrap: wrap;
   padding: 50px 10px;
-  column-gap: 5%;
+  row-gap: 20px;
+  animation: move_title 15s linear infinite;
+  border-bottom: 1px solid rgba(255, 0, 38, 0.55);
+}
+.experience_list_item:nth-child(3) {
+  transform: scale(2);
 }
 .experience_list_item._active .date {
   opacity: 1;
@@ -928,16 +939,16 @@ nav .nav_title {
   opacity: 1;
 }
 .experience_list_item .date {
-  width: 40%;
+  display: block;
   color: rgba(255, 0, 38, 0.55);
   font-weight: 600;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   opacity: 0.1;
   transition: all 2s linear;
 }
 .experience_list_item .exp_info {
-  width: 50%;
+  display: block;
   color: rgba(255, 0, 38, 0.55);
   font-weight: 100;
   font-size: 18px;

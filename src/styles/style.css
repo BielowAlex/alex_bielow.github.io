@@ -984,6 +984,62 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.82);
 }
 
+.technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+.technologies_title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.technologies_title h2 {
+  text-align: start;
+  font-weight: 200;
+  font-size: 52px;
+  color: rgba(255, 0, 38, 0.55);
+  text-transform: uppercase;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translate(-500px, 0);
+  animation: move_title 15s linear infinite;
+}
+.technologies_title h2._active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.82);
+}
+
 @font-face {
   font-family: "WhyteInktrap";
   src: url("/public/fonts/WhyteInktrap-ExtraLight.woff2"), url("/public/fonts/WhyteInktrap-ExtraLight.woff");

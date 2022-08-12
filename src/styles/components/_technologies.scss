@@ -1,0 +1,10 @@
+@import "../variables";
+
+.technologies{
+  @include flex_dir_col;
+  width: 70%;
+
+  &_title{
+    @include title;
+  }
+}

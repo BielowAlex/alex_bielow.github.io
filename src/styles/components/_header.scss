@@ -1,0 +1,71 @@
+@import "../variables";
+
+.header {
+  @include flex_jus-sb_alc;
+  width: 100%;
+  padding: 10px 30px;
+
+  .logo {
+    animation: move_title 20s linear infinite;
+  }
+
+  &_title {
+    font-weight: 600;
+    display: flex;
+
+    .anim_letter {
+      display: block;
+      font-size: 60px;
+      color: $text_color;
+      text-transform: uppercase;
+      transition: all 0.6s ease-in-out;
+      cursor: context-menu;
+
+      &:hover {
+        animation: letter_anim 1.5s ease-in-out;
+        color: $text_color_hover;
+
+
+      }
+
+      &:nth-child(2) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@keyframes letter_anim {
+  0% {
+    color: $text_color;
+    transform: scaleY(1) scaleX(1);
+  }
+  20% {
+    color: $text_color_hover;
+    transform: scaleY(1.4) scaleX(1);
+  }
+  40% {
+    color: $text_color_hover;
+    transform: scaleY(0.9) scaleX(1);
+  }
+  50% {
+    color: $text_color_hover;
+    transform: scaleY(1) scaleX(1.3);
+  }
+  60%{
+    color: $text_color_hover;
+    transform: scaleY(1) scaleX(0.9);
+  }
+
+  90%{
+    color: $text_color_hover;
+    transform: scaleY(1) scaleX(1.1);
+  }
+  100%{
+    color: $text_color_hover;
+    transform: scaleY(1) scaleX(1);
+  }
+
+
+
+}

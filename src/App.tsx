@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles/style.css'
-import {BlackHole, Background, Navigation, AboutMe, Projects, Experience, Technologies} from "./components";
+import {BlackHole, Background, Navigation, AboutMe, Projects, Experience, Technologies, Header} from "./components";
 import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 
 
@@ -15,6 +15,7 @@ const App: React.FC = () => {
 
     return (
         <div className="wrapper">
+            <Header/>
             <Background/>
             <Navigation projectsNode={projects} experienceNode={exp}/>
             <BlackHole/>

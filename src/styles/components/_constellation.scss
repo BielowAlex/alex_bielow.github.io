@@ -1,0 +1,60 @@
+@import "../variables";
+
+.constellation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  transform: translateY(100px) scale(0.5);
+  &._active{
+    opacity: 1;
+    transform: translateY(0)  scale(1);
+  }
+
+  svg {
+    position: absolute;
+    z-index: 10;
+    opacity: 0.2;
+    transition: all 0.4s linear;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &_ursa {
+    bottom: 0;
+    left: 10%;
+    animation: move_title 20s linear infinite;
+  }
+
+  &_virgo {
+    right: 5%;
+    top: 20%;
+    animation: move_title 15s linear infinite;
+  }
+
+  &_aries {
+    top: 20%;
+    left: 40%;
+    animation: move_title 10s linear infinite;
+
+  }
+
+}
+
+.stars{
+  width: 100%;
+  opacity: 0.3;
+  fill: rgba(255, 0, 0, 0.06);
+  circle{
+    transition: all 0.4s linear;
+
+    &:hover{
+      fill: $line_color;
+    }
+  }
+
+}

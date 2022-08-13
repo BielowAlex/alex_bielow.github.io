@@ -958,7 +958,7 @@ nav .nav_title {
   width: 100%;
   padding: 50px 10px;
   row-gap: 20px;
-  border-bottom: 1px solid rgba(255, 0, 38, 0.55);
+  border-bottom: 1px solid rgba(255, 0, 38, 0.99);
 }
 .experience_list_item._active .date {
   opacity: 1;
@@ -1074,7 +1074,7 @@ nav .nav_title {
   width: 100%;
   padding: 50px 0;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 0, 38, 0.55);
+  border-bottom: 1px solid rgba(255, 0, 38, 0.99);
 }
 .slider_list {
   display: flex;
@@ -1223,7 +1223,7 @@ nav .nav_title {
   align-items: center;
   column-gap: 50px;
   width: 100%;
-  border-top: 1px solid rgba(255, 0, 38, 0.55);
+  border-top: 1px solid rgba(255, 0, 38, 0.99);
   padding: 10px 0 0 0;
   background: #05050c;
 }
@@ -1373,7 +1373,7 @@ nav .nav_title {
 .constellation svg {
   position: absolute;
   z-index: 10;
-  opacity: 0.2;
+  opacity: 0.4;
   transition: all 0.4s linear;
 }
 .constellation svg:hover {
@@ -1397,16 +1397,31 @@ nav .nav_title {
 
 .stars {
   width: 100%;
-  opacity: 0.3;
-  fill: rgba(255, 0, 0, 0.06);
+  opacity: 1;
 }
 .stars circle {
   transition: all 0.4s linear;
+  fill: rgba(255, 0, 0, 0.07);
+}
+.stars circle:nth-child(2n) {
+  animation: stars 1s linear 5s infinite;
 }
 .stars circle:hover {
-  fill: rgba(255, 0, 38, 0.55);
+  animation-play-state: paused;
+  fill: rgba(255, 0, 38, 0.99);
 }
 
+@keyframes stars {
+  0% {
+    fill: rgba(255, 0, 0, 0.07);
+  }
+  50% {
+    fill: rgba(255, 0, 0, 0.22);
+  }
+  100% {
+    fill: rgba(255, 0, 0, 0.07);
+  }
+}
 .underline {
   display: flex;
   align-items: center;

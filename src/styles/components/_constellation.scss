@@ -8,15 +8,16 @@
   opacity: 0;
   transition: all 2s ease-in-out;
   transform: translateY(100px) scale(0.5);
-  &._active{
+
+  &._active {
     opacity: 1;
-    transform: translateY(0)  scale(1);
+    transform: translateY(0) scale(1);
   }
 
   svg {
     position: absolute;
     z-index: 10;
-    opacity: 0.2;
+    opacity: 0.4;
     transition: all 0.4s linear;
 
     &:hover {
@@ -45,16 +46,35 @@
 
 }
 
-.stars{
+.stars {
   width: 100%;
-  opacity: 0.3;
-  fill: rgba(255, 0, 0, 0.06);
-  circle{
-    transition: all 0.4s linear;
+  opacity: 1;
 
-    &:hover{
+  circle {
+    transition: all 0.4s linear;
+    fill: rgba(255, 0, 0, 0.07);
+
+    &:nth-child(2n) {
+      animation: stars 1s linear 5s infinite;
+    }
+
+    &:hover {
+      animation-play-state: paused;
       fill: $line_color;
     }
+  }
+
+}
+
+@keyframes stars {
+  0% {
+    fill: rgba(255, 0, 0, 0.07);
+  }
+  50% {
+    fill: rgba(255, 0, 0, 0.22);
+  }
+  100%{
+    fill: rgba(255, 0, 0, 0.07);
   }
 
 }

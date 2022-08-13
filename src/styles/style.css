@@ -1363,7 +1363,7 @@ nav .nav_title {
   height: 100%;
   z-index: 1;
   opacity: 0;
-  transition: all 2s ease-in-out;
+  transition: all 3s ease-in-out;
   transform: translateY(100px) scale(0.5);
 }
 .constellation._active {
@@ -1380,6 +1380,7 @@ nav .nav_title {
   opacity: 0.5;
 }
 .constellation_ursa {
+  position: fixed;
   bottom: 0;
   left: 10%;
   animation: move_title 20s linear infinite;
@@ -1390,8 +1391,8 @@ nav .nav_title {
   animation: move_title 15s linear infinite;
 }
 .constellation_aries {
-  top: 20%;
-  left: 40%;
+  top: 15%;
+  left: 35%;
   animation: move_title 10s linear infinite;
 }
 
@@ -1404,7 +1405,7 @@ nav .nav_title {
   fill: rgba(255, 0, 0, 0.07);
 }
 .stars circle:nth-child(2n) {
-  animation: stars 1s linear 5s infinite;
+  animation: stars 3s linear infinite;
 }
 .stars circle:hover {
   animation-play-state: paused;

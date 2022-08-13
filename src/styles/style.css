@@ -290,6 +290,7 @@ nav {
   transform: translateY(-50%);
   top: 50%;
   left: 20px;
+  z-index: 2;
 }
 nav .nav_item {
   display: flex;
@@ -1130,6 +1131,7 @@ nav .nav_title {
   align-items: center;
   width: 100%;
   padding: 10px 30px;
+  z-index: 2;
 }
 .header .logo {
   animation: move_title 20s linear infinite;
@@ -1328,6 +1330,83 @@ nav .nav_title {
     transform: translate(0, 0);
   }
 }
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.82);
+}
+
+.constellation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  transform: translateY(100px) scale(0.5);
+}
+.constellation._active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.constellation svg {
+  position: absolute;
+  z-index: 10;
+  opacity: 0.2;
+  transition: all 0.4s linear;
+}
+.constellation svg:hover {
+  opacity: 0.5;
+}
+.constellation_ursa {
+  bottom: 0;
+  left: 10%;
+  animation: move_title 20s linear infinite;
+}
+.constellation_virgo {
+  right: 5%;
+  top: 20%;
+  animation: move_title 15s linear infinite;
+}
+.constellation_aries {
+  top: 20%;
+  left: 40%;
+  animation: move_title 10s linear infinite;
+}
+
+.stars {
+  width: 100%;
+  opacity: 0.3;
+  fill: rgba(255, 0, 0, 0.06);
+}
+.stars circle {
+  transition: all 0.4s linear;
+}
+.stars circle:hover {
+  fill: rgba(255, 0, 38, 0.55);
+}
+
 .underline {
   display: flex;
   align-items: center;

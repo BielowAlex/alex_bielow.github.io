@@ -8,6 +8,7 @@ nav {
   transform: translateY(-50%);
   top: 50%;
   left: 20px;
+  z-index: 2;
 
   .nav_item {
     display: flex;

@@ -1,7 +1,17 @@
 import React from 'react';
 
 import './styles/style.css'
-import {BlackHole, Background, Navigation, AboutMe, Projects, Experience, Technologies, Header} from "./components";
+import {
+    BlackHole,
+    Background,
+    Navigation,
+    AboutMe,
+    Projects,
+    Experience,
+    Technologies,
+    Header,
+    Constellation
+} from "./components";
 import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 import Footer from "./components/Footer/Footer";
 
@@ -18,6 +28,7 @@ const App: React.FC = () => {
         <div className="wrapper">
             <Header/>
             <Background/>
+            <Constellation/>
             <Navigation projectsNode={projects} experienceNode={exp}/>
             <BlackHole/>
             <AboutMe/>

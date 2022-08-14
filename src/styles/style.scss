@@ -9,12 +9,12 @@ body {
   color: rgba(245, 245, 245, 0.87);
 }
 
-#root{
+#root {
   width: 100%;
   height: 100%;
 }
 
-.wrapper{
+.wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,4 +23,23 @@ body {
   row-gap: 100px;
 }
 
+
+::-webkit-scrollbar {
+  width: 1em;
+
+}
+
+::-webkit-scrollbar-track {
+  background: #05050c;
+  border-left: 1px solid $line_color;
+  padding-block: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid #05050c;
+  border-radius: 10px;
+  transition: all 0.5s linear;
+  box-shadow: inset 1px 1px 10px red;
+
+}
 

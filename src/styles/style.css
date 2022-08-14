@@ -2580,4 +2580,21 @@ body {
   row-gap: 100px;
 }
 
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: #05050c;
+  border-left: 1px solid rgba(255, 0, 38, 0.99);
+  padding-block: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid #05050c;
+  border-radius: 10px;
+  transition: all 0.5s linear;
+  box-shadow: inset 1px 1px 10px red;
+}
+
 /*# sourceMappingURL=style.css.map */

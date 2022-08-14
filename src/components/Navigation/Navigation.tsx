@@ -13,15 +13,15 @@ const Navigation: React.FC<IProps> = ({projectsNode,experienceNode}) => {
         console.log(window.scrollY);
         if(projectsNode.current!==null && experienceNode.current!==null){
 
-            if(window.scrollY>=0 && window.scrollY<=projectsNode.current?.offsetHeight){
+            if(window.scrollY>=0 && window.scrollY<=projectsNode.current?.offsetTop-600){
                 setActiveCategory(1)
             } else if(window.scrollY>=(projectsNode.current?.offsetTop - 660)
                 && window.scrollY<(projectsNode.current.offsetTop+projectsNode.current.offsetHeight - 600)){
                 setActiveCategory(2);
             }else if(window.scrollY>(projectsNode.current.offsetTop+projectsNode.current.offsetHeight - 600)
-                && window.scrollY<(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 300)){
+                && window.scrollY<(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 600)){
                 setActiveCategory(3);
-            }else if(window.scrollY>(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 300)){
+            }else if(window.scrollY>(experienceNode.current.offsetTop+experienceNode.current.offsetHeight - 600)){
                 setActiveCategory(4);
             }
         }

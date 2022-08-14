@@ -1401,11 +1401,8 @@ nav .nav_title {
 .constellation svg {
   position: absolute;
   z-index: 5;
-  opacity: 0.4;
+  opacity: 0.6;
   transition: all 0.4s linear;
-}
-.constellation svg:hover {
-  opacity: 0.5;
 }
 .constellation_ursa {
   position: fixed;
@@ -1445,7 +1442,7 @@ nav .nav_title {
     fill: rgba(255, 0, 0, 0.07);
   }
   50% {
-    fill: rgba(255, 0, 0, 0.22);
+    fill: rgba(255, 0, 0, 0.44);
   }
   100% {
     fill: rgba(255, 0, 0, 0.07);

@@ -441,6 +441,7 @@ nav .nav_title {
   width: 70%;
   transition: all 3s linear;
   transform: translateY(50px);
+  z-index: 10;
 }
 .about_me_title {
   text-transform: uppercase;
@@ -449,7 +450,7 @@ nav .nav_title {
   line-height: 50px;
   text-align: justify;
   transition: all 1s ease;
-  transform: translateY(100px);
+  transform: translateY(50px);
 }
 .about_me_title h2 {
   font-weight: 200;
@@ -477,11 +478,15 @@ nav .nav_title {
 }
 .about_me .content .astronaut img {
   opacity: 0;
-  transition: all 1s linear;
+  transform: scale(1);
   animation: move_astronaut 15s linear infinite;
+  width: 300px;
+  height: 350px;
 }
 .about_me .content .astronaut._active img {
+  transform: scale(1);
   opacity: 0.3;
+  transition: all 1s linear;
 }
 .about_me .content h3 {
   width: 300px;
@@ -1612,6 +1617,11 @@ nav .nav_title {
     margin: 0 auto;
   }
 
+  .about_me .content .astronaut img {
+    height: 250px;
+    width: 200px;
+  }
+
   .about_me .content .astronaut._active img {
     height: 250px;
     width: 200px;
@@ -1806,6 +1816,11 @@ nav .nav_title {
     width: 130px;
     height: 130px;
     margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 200px;
+    width: 150px;
   }
 
   .about_me .content .astronaut._active img {
@@ -2154,16 +2169,16 @@ nav .nav_title {
     right: -120px;
   }
 
-  .stars {
-    transform: scale(0.7);
-  }
-
   .about_me {
     margin-top: 0;
     row-gap: 10px;
+    min-height: 300px;
+    z-index: 10;
+    width: 70%;
+    overflow: hidden;
   }
   .about_me_title {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 20px;
   }
 
@@ -2184,9 +2199,18 @@ nav .nav_title {
     margin: 0 auto;
   }
 
+  .about_me .content .astronaut img {
+    height: 100px;
+    width: 70px;
+  }
+
   .about_me .content .astronaut._active img {
-    height: 150px;
-    width: 100px;
+    height: 100px;
+    width: 70px;
+  }
+
+  .projects_list {
+    padding-bottom: 20px;
   }
 
   .projects_top h2, .experience_title h2, .technologies_title h2 {
@@ -2264,59 +2288,7 @@ nav .nav_title {
   }
 
   nav {
-    left: 15px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-  }
-  nav .nav_item {
-    height: 60px;
-  }
-  nav .nav_item .line {
-    height: 25px;
-    width: 1px;
-  }
-  nav .nav_item .circle {
-    height: 10px;
-    width: 10px;
-  }
-  nav .nav_item .text {
-    position: absolute;
-    display: block;
-    width: 60px;
-    text-align: left;
-    font-size: 9px;
-    right: -50px;
-  }
-  nav .nav_item:hover .text {
-    width: 70px;
-    opacity: 1;
-    right: -70px;
-    z-index: 30;
-  }
-  nav .nav_item:hover .circle {
-    box-shadow: 1px 1px 10px red;
-    transform: scale(1.2);
-  }
-  nav .nav_item._active .text {
-    opacity: 1;
-    right: -70px;
-    z-index: 30;
-    width: 70px;
-  }
-  nav .nav_item._active .circle {
-    box-shadow: 1px 1px 10px red;
-    transform: scale(1.2);
-    background: rgba(255, 38, 0, 0.45);
-  }
-  nav .nav_title {
-    position: absolute;
-    top: 50%;
-    left: -45px;
-    transform: rotate(90deg) translateY(-50%);
-    font-weight: 600;
-    color: rgba(255, 38, 0, 0.45);
-    font-size: 12px;
+    display: none;
   }
 
   .links {
@@ -2390,6 +2362,11 @@ nav .nav_title {
     width: 80px;
     height: 80px;
     margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 100px;
+    width: 70px;
   }
 
   .about_me .content .astronaut._active img {
@@ -2500,7 +2477,7 @@ nav .nav_title {
   nav .nav_item:hover .text {
     width: 70px;
     opacity: 1;
-    right: -70px;
+    right: -80px;
     z-index: 30;
   }
   nav .nav_item:hover .circle {
@@ -2509,7 +2486,7 @@ nav .nav_title {
   }
   nav .nav_item._active .text {
     opacity: 1;
-    right: -70px;
+    right: -80px;
     z-index: 30;
     width: 70px;
   }

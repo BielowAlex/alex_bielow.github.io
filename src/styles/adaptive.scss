@@ -132,6 +132,10 @@
     }
 
   }
+  .about_me .content .astronaut img{
+    height: 250px;
+    width: 200px;
+  }
 
   .about_me .content .astronaut._active img {
     height: 250px;
@@ -369,6 +373,10 @@
       margin: 0 auto;
     }
 
+  }
+  .about_me .content .astronaut img{
+    height: 200px;
+    width: 150px;
   }
 
   .about_me .content .astronaut._active img {
@@ -754,6 +762,7 @@
 @media screen and (max-width: 490px) {
   .constellation {
     height: 650px;
+
     &_aries, &_virgo, &_ursa {
       width: 100px;
     }
@@ -795,15 +804,18 @@
   }
 
   .stars {
-    transform: scale(0.7);
   }
 
   .about_me {
     margin-top: 0;
     row-gap: 10px;
+    min-height: 300px;
+    z-index: 10;
+    width: 70%;
+    overflow: hidden;
 
     &_title {
-      font-size: 15px;
+      font-size: 13px;
       line-height: 20px;
     }
   }
@@ -828,12 +840,18 @@
     }
 
   }
-
+  .about_me .content .astronaut img{
+    height: 100px;
+    width: 70px;
+  }
   .about_me .content .astronaut._active img {
-    height: 150px;
-    width: 100px;
+    height: 100px;
+    width: 70px;
   }
 
+  .projects_list{
+    padding-bottom: 20px;
+  }
 
   .projects_top h2, .experience_title h2, .technologies_title h2 {
     font-size: 20px;
@@ -919,76 +937,9 @@
   }
 
   nav {
-    left: 15px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-
-    .nav_item {
-      height: 60px;
-
-      .line {
-        height: 25px;
-        width: 1px;
-      }
-
-      .circle {
-        height: 10px;
-        width: 10px;
-      }
-
-      .text {
-        position: absolute;
-        display: block;
-        width: 60px;
-        text-align: left;
-        font-size: 9px;
-        right: -50px;
-      }
-
-      &:hover {
-        .text {
-          width: 70px;
-          opacity: 1;
-          right: -70px;
-          z-index: 30;
-        }
-
-        .circle {
-          box-shadow: 1px 1px 10px red;
-          transform: scale(1.2);
-
-        }
-      }
-
-      &._active {
-        .text {
-          opacity: 1;
-          right: -70px;
-          z-index: 30;
-          width: 70px;
-
-        }
-
-        .circle {
-          box-shadow: 1px 1px 10px red;
-          transform: scale(1.2);
-          background: $nav_color;
-
-        }
-      }
-    }
-
-    .nav_title {
-      position: absolute;
-      top: 50%;
-      left: -45px;
-      transform: rotate(90deg) translateY(-50%);
-      font-weight: 600;
-      color: $nav_color;
-      font-size: 12px;
-    }
+    display: none;
   }
+
 
   .links {
     margin: 10px;
@@ -1076,7 +1027,10 @@
     }
 
   }
-
+  .about_me .content .astronaut img{
+    height: 100px;
+    width: 70px;
+  }
   .about_me .content .astronaut._active img {
     height: 100px;
     width: 70px;
@@ -1199,7 +1153,7 @@
         .text {
           width: 70px;
           opacity: 1;
-          right: -70px;
+          right: -80px;
           z-index: 30;
         }
 
@@ -1213,7 +1167,7 @@
       &._active {
         .text {
           opacity: 1;
-          right: -70px;
+          right: -80px;
           z-index: 30;
           width: 70px;
 
@@ -1254,6 +1208,7 @@
 
   .footer {
     column-gap: 20px;
+
     .my_language {
       .bold {
         font-size: 7px;

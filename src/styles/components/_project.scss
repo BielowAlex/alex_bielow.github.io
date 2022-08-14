@@ -2,8 +2,8 @@
 
 .project {
 @include flex_jus-sb_alc;
+  display: flex;
   transition: all 1s ease 0.4s;
-  column-gap: 500px;
 
   &:hover {
     .project_cart {

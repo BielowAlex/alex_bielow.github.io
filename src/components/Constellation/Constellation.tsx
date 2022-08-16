@@ -1,8 +1,25 @@
 import React from 'react';
 
 const Constellation: React.FC = () => {
+    const [translateCount, setTranslateCount] = React.useState<number>(0);
+    const mainDiv = React.useRef<HTMLDivElement>(null)
+    const moveOnScroll = () => {
+        if (mainDiv.current !== null) {
+            if(window.scrollY>0 && window.scrollY<mainDiv.current.offsetHeight){
+                setTranslateCount(Math.floor(window.scrollY/10));
+            }
+        }
+    }
+
+
+    React.useEffect(() => {
+        window.addEventListener('scroll', moveOnScroll);
+    }, []);
+
     return (
-        <div className="constellation _anim_item">
+        <div className="constellation _anim_item"
+             style={{transform: `translateY(-${translateCount}px)`}}
+             ref={mainDiv}>
             <svg className="constellation_ursa" width="233" height="297" viewBox="0 0 233 297" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_2_14)">

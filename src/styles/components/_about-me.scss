@@ -35,27 +35,62 @@
     @include flex_jus-sb_alc;
     width: 100%;
     padding: 20px;
-    overflow: hidden;
 
     .astronaut {
       display: flex;
       justify-content: center;
+      position: relative;
       width: 50%;
+      transform: scale(1) rotate(0);
+      transition: all 5s ease-in-out;
+      animation: move_astronaut 15s linear infinite;
+
+
+      svg {
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        top: -40px;
+        left: 30px;
+        transition: all 1s linear;
+      }
 
       img {
         opacity: 0;
-        transform: scale(1);
-        animation: move_astronaut 15s linear infinite;
         width: 300px;
         height: 350px;
+        cursor: pointer;
       }
 
       &._active {
+
         img {
-          transform: scale(1);
           opacity: 0.3;
           transition: all 1s linear;
 
+        }
+
+        &:hover {
+          svg {
+            opacity: 1;
+          }
+
+          img {
+            opacity: 1;
+          }
+        }
+
+      }
+
+      &._kill{
+        opacity: 0;
+        img{
+          opacity: 0;
+          transform: scale(0.1) rotate(360deg);
+          transition: all 5s linear;
+        }
+        svg{
+          display: none;
         }
       }
     }

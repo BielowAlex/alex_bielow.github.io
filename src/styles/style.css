@@ -467,24 +467,50 @@ nav .nav_title {
   align-items: center;
   width: 100%;
   padding: 20px;
-  overflow: hidden;
 }
 .about_me .content .astronaut {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 50%;
+  transform: scale(1) rotate(0);
+  transition: all 5s ease-in-out;
+  animation: move_astronaut 15s linear infinite;
+}
+.about_me .content .astronaut svg {
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+  top: -40px;
+  left: 30px;
+  transition: all 1s linear;
 }
 .about_me .content .astronaut img {
   opacity: 0;
-  transform: scale(1);
-  animation: move_astronaut 15s linear infinite;
   width: 300px;
   height: 350px;
+  cursor: pointer;
 }
 .about_me .content .astronaut._active img {
-  transform: scale(1);
   opacity: 0.3;
   transition: all 1s linear;
+}
+.about_me .content .astronaut._active:hover svg {
+  opacity: 1;
+}
+.about_me .content .astronaut._active:hover img {
+  opacity: 1;
+}
+.about_me .content .astronaut._kill {
+  opacity: 0;
+}
+.about_me .content .astronaut._kill img {
+  opacity: 0;
+  transform: scale(0.1) rotate(360deg);
+  transition: all 5s linear;
+}
+.about_me .content .astronaut._kill svg {
+  display: none;
 }
 .about_me .content h3 {
   width: 300px;

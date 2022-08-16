@@ -4,7 +4,7 @@ interface IProps {
 }
 const Experience: React.FC<IProps> = ({reference}) => {
     return (
-        <div id="experience" className="experience" ref={reference}>
+        <div id="experience" className="experience section" ref={reference}>
             <div className="experience_title">
                 <h2 className="_anim_item">Experience</h2>
                 <div className="underline ">

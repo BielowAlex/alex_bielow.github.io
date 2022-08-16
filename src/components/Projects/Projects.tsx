@@ -8,7 +8,7 @@ interface IProps {
 const Projects: React.FC<IProps> = ({reference}) => {
 
     return (
-        <div id="projects" className="projects" ref={reference}>
+        <div id="projects" className="projects section" ref={reference}>
             <div className="projects_top">
                 <h2 className="_anim_item _anim_no_hide">My works</h2>
 

@@ -3,7 +3,6 @@
 .about_me {
   @include flex_dir_col;
   row-gap: 120px;
-  width: 70%;
   transition: all 3s linear;
   transform: translateY(50px);
   z-index: 10;

@@ -3,12 +3,10 @@
 .projects {
   @include flex_dir_col;
   row-gap: 70px;
-  width: 70%;
   padding: 10px;
 
   &_top {
     @include title;
-
   }
 
   &_list {

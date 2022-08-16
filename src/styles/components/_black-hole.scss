@@ -2,7 +2,6 @@
 
 .black_hole {
   @include flex_dir_col;
-  width: 70%;
   row-gap: 100px;
   z-index: 10;
 }

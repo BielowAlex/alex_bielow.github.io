@@ -190,7 +190,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
   row-gap: 100px;
   z-index: 10;
 }
@@ -438,7 +437,6 @@ nav .nav_title {
   flex-direction: column;
   align-items: center;
   row-gap: 120px;
-  width: 70%;
   transition: all 3s linear;
   transform: translateY(50px);
   z-index: 10;
@@ -649,7 +647,6 @@ nav .nav_title {
   flex-direction: column;
   align-items: center;
   row-gap: 70px;
-  width: 70%;
   padding: 10px;
 }
 .projects_top {
@@ -949,7 +946,6 @@ nav .nav_title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
   padding: 10px;
 }
 .experience_title {
@@ -1051,7 +1047,7 @@ nav .nav_title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  padding: 10px;
 }
 .technologies_title {
   display: flex;
@@ -1453,6 +1449,30 @@ nav .nav_title {
     fill: rgba(255, 0, 0, 0.07);
   }
 }
+body {
+  font-family: "WhyteInktrap", sans-serif;
+  font-weight: 400;
+  color: rgba(245, 245, 245, 0.87);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 100px;
+}
+
+.section {
+  width: 70%;
+}
+
 .underline {
   display: flex;
   align-items: center;
@@ -2132,8 +2152,16 @@ nav .nav_title {
   }
 }
 @media screen and (max-width: 490px) {
+  .wrapper {
+    row-gap: 30px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
   .constellation {
-    height: 650px;
+    height: 520px;
   }
   .constellation_aries, .constellation_virgo, .constellation_ursa {
     width: 100px;
@@ -2169,16 +2197,20 @@ nav .nav_title {
     right: -120px;
   }
 
+  .stars {
+    height: 600px;
+  }
+
   .about_me {
     margin-top: 0;
     row-gap: 10px;
     min-height: 300px;
     z-index: 10;
-    width: 70%;
     overflow: hidden;
   }
   .about_me_title {
-    font-size: 13px;
+    transform: translateY(0);
+    font-size: 18px;
     line-height: 20px;
   }
 
@@ -2211,10 +2243,15 @@ nav .nav_title {
 
   .projects_list {
     padding-bottom: 20px;
+    row-gap: 10px;
   }
 
   .projects_top h2, .experience_title h2, .technologies_title h2 {
     font-size: 20px;
+  }
+
+  .projects {
+    row-gap: 10px;
   }
 
   .project {
@@ -2251,7 +2288,7 @@ nav .nav_title {
     font-size: 18px;
   }
   .project_info p {
-    font-size: 9px;
+    font-size: 14px;
   }
 
   .neon_btn {
@@ -2268,7 +2305,7 @@ nav .nav_title {
   }
 
   .experience_list_item .exp_info {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .slider {
@@ -2298,6 +2335,7 @@ nav .nav_title {
 
   .bold {
     font-size: 9px;
+    line-height: 12px;
   }
 
   .footer_info h3 {
@@ -2372,47 +2410,6 @@ nav .nav_title {
   .about_me .content .astronaut._active img {
     height: 100px;
     width: 70px;
-  }
-
-  .projects_top h2, .experience_title h2, .technologies_title h2 {
-    font-size: 20px;
-  }
-
-  .project {
-    row-gap: 50px;
-  }
-  .project_cart {
-    width: 200px;
-    height: 150px;
-  }
-  .project_cart .poster {
-    width: 200px;
-    height: 150px;
-  }
-  .project_cart .poster img {
-    width: 100%;
-    height: 100%;
-  }
-  .project_cart .poster .programing_languages {
-    bottom: -30px;
-    left: 20px;
-  }
-  .project_cart .poster .programing_languages svg {
-    height: 50px;
-    width: 50px;
-  }
-  .project_info {
-    row-gap: 15px;
-    justify-content: center;
-    min-width: 100%;
-    max-width: 250px;
-    height: 140px;
-  }
-  .project_info h3 {
-    font-size: 18px;
-  }
-  .project_info p {
-    font-size: 9px;
   }
 
   .neon_btn {
@@ -2516,6 +2513,7 @@ nav .nav_title {
   }
 
   .footer {
+    margin-top: 50px;
     column-gap: 20px;
   }
   .footer .my_language .bold {
@@ -2560,26 +2558,6 @@ nav .nav_title {
   font-display: swap;
   font-style: normal;
 }
-body {
-  font-family: "WhyteInktrap", sans-serif;
-  font-weight: 400;
-  color: rgba(245, 245, 245, 0.87);
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-}
-
-.wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 100px;
-}
-
 ::-webkit-scrollbar {
   width: 1em;
 }

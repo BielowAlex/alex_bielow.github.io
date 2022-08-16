@@ -3,25 +3,6 @@
 @import "fonts";
 
 
-body {
-  font-family: 'WhyteInktrap', sans-serif;
-  font-weight: 400;
-  color: rgba(245, 245, 245, 0.87);
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-}
-
-.wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 100px;
-}
 
 
 ::-webkit-scrollbar {

@@ -5,5 +5,8 @@
   padding: 10px;
   &_title{
     @include title;
+    .underline{
+      width: 100%;
+    }
   }
 }

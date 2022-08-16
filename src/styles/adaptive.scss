@@ -132,7 +132,7 @@
     }
 
   }
-  .about_me .content .astronaut img{
+  .about_me .content .astronaut img {
     height: 250px;
     width: 200px;
   }
@@ -374,7 +374,7 @@
     }
 
   }
-  .about_me .content .astronaut img{
+  .about_me .content .astronaut img {
     height: 200px;
     width: 150px;
   }
@@ -497,7 +497,12 @@
   .about_me {
     margin-top: 0;
   }
-
+  .greeting .obj .light span {
+    width: 50px;
+    font-weight: 600;
+    line-height: 10px;
+    font-size: 9px;
+  }
   .project {
     display: flex;
     flex-direction: column;
@@ -761,16 +766,16 @@
 
 @media screen and (max-width: 490px) {
 
-  .wrapper{
+  .wrapper {
     row-gap: 30px;
   }
 
-  .section{
+  .section {
     width: 100%;
   }
 
   .constellation {
-    height: 520px;
+    height: 420px;
 
     &_aries, &_virgo, &_ursa {
       width: 100px;
@@ -813,7 +818,8 @@
   }
 
   .stars {
-    height: 600px;
+    height: 450px;
+    opacity: 1;
   }
 
   .about_me {
@@ -841,6 +847,15 @@
     .obj {
       height: 50px;
       width: 50px;
+
+      .light {
+        span {
+          width: 25px;
+          font-weight: 600;
+          line-height: 7px;
+          font-size: 6px;
+        }
+      }
     }
 
 
@@ -851,7 +866,7 @@
     }
 
   }
-  .about_me .content .astronaut img{
+  .about_me .content .astronaut img {
     height: 100px;
     width: 70px;
   }
@@ -860,7 +875,7 @@
     width: 70px;
   }
 
-  .projects_list{
+  .projects_list {
     padding-bottom: 20px;
     row-gap: 10px;
   }
@@ -964,7 +979,7 @@
 
   .bold {
     font-size: 9px;
-    line-height: 12px;
+    line-height: 15px;
   }
   .footer_info {
     h3 {
@@ -1044,7 +1059,7 @@
     }
 
   }
-  .about_me .content .astronaut img{
+  .about_me .content .astronaut img {
     height: 100px;
     width: 70px;
   }
@@ -1190,6 +1205,9 @@
     }
   }
 
+  nav {
+    display: none;
+  }
 
 
 }

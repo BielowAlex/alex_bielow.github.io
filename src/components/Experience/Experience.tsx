@@ -1,7 +1,9 @@
 import React from 'react';
+
 interface IProps {
     reference: React.RefObject<HTMLDivElement>,
 }
+
 const Experience: React.FC<IProps> = ({reference}) => {
     return (
         <div id="experience" className="experience section" ref={reference}>
@@ -39,7 +41,15 @@ const Experience: React.FC<IProps> = ({reference}) => {
                                               className="link">IT school Okten</a> for web programming,
                         where I received a lot of basic knowledge,
                         began to study React JS, SCRUM, Git, etc..
-                        I created the front-end part of sites in HTML, SCSS, JS {'=>'}  .
+                        I created the front-end part of sites in HTML, SCSS, JS {'=>'} <a
+                        href="https://bielowalex.github.io/nft_marketplace/"
+                        target='_blank'
+                        rel="noreferrer"
+                        className="link">NFT-marketplace</a>,
+                        <a href="https://bielowalex.github.io/portfolio/denis_novak.html"
+                           target='_blank'
+                           rel="noreferrer"
+                           className="link">Portfolio Denis Novak</a>.
                     </p>
                 </div>
                 <div className="experience_list_item _anim_item">
@@ -53,12 +63,13 @@ const Experience: React.FC<IProps> = ({reference}) => {
                            target='_blank'
                            rel="noreferrer"
                            className="link">Sneakers Shop</a>, <a href="https://alex-films-react.vercel.app"
-                           target='_blank'
-                           rel="noreferrer"
-                           className="link">AlexFilms</a>, <a href="https://react-pizza-xi.vercel.app"
-                           target='_blank'
-                           rel="noreferrer"
-                           className="link">React Pizza</a>)
+                                                                  target='_blank'
+                                                                  rel="noreferrer"
+                                                                  className="link">AlexFilms</a>, <a
+                        href="https://react-pizza-xi.vercel.app"
+                        target='_blank'
+                        rel="noreferrer"
+                        className="link">React Pizza</a>)
                         and take courses. I'm looking for a company to join,
                         if you like my works and think I'm a suitable candidate, contact me.
                     </div>

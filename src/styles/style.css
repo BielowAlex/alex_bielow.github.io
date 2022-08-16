@@ -1161,6 +1161,8 @@ nav .nav_title {
   width: 100%;
   padding: 10px 30px;
   z-index: 2;
+  border-bottom: 1px solid rgba(255, 0, 38, 0.99);
+  background: rgba(5, 5, 12, 0.84);
 }
 .header .logo {
   animation: move_title 20s linear infinite;

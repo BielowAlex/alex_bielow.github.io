@@ -61,6 +61,7 @@
   color: $text_color;
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"),auto;
 
   &:hover{
     color: $text_color_hover;

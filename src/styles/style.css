@@ -92,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -181,6 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -305,6 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -326,6 +329,7 @@ nav .nav_item {
   flex-direction: column;
   height: 95px;
   position: relative;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 nav .nav_item .line {
   height: 40px;
@@ -333,13 +337,14 @@ nav .nav_item .line {
   background: rgba(255, 38, 0, 0.45);
   box-shadow: 1px 1px 10px red;
   animation: lighting 2s linear infinite;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 nav .nav_item .circle {
   height: 15px;
   width: 15px;
   border: 1px solid rgba(255, 38, 0, 0.45);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
   transition: all 0.5s linear;
 }
 nav .nav_item .text {
@@ -350,7 +355,7 @@ nav .nav_item .text {
   right: -50px;
   opacity: 0;
   transition: all 0.3s linear;
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 nav .nav_item:hover .text {
   opacity: 1;
@@ -427,6 +432,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -489,7 +495,7 @@ nav .nav_title {
   opacity: 0;
   width: 300px;
   height: 350px;
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .about_me .content .astronaut._active img {
   opacity: 0.3;
@@ -560,7 +566,7 @@ nav .nav_title {
   }
 }
 .greeting {
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
   width: 300px;
   height: 300px;
   position: relative;
@@ -663,6 +669,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -755,6 +762,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -866,6 +874,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -883,6 +892,7 @@ nav .nav_title {
   border: 1px solid #6c0e1c;
   overflow: hidden;
   transition: all 1s ease 0s;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .neon_btn .neon_line {
   position: absolute;
@@ -962,6 +972,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1062,6 +1073,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1120,6 +1132,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1175,6 +1188,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1203,7 +1217,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   text-transform: uppercase;
   transition: all 0.6s ease-in-out;
-  cursor: context-menu;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .header_title .anim_letter:hover {
   animation: letter_anim 1.5s ease-in-out;
@@ -1269,6 +1283,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1294,7 +1309,7 @@ nav .nav_title {
   text-transform: uppercase;
   color: rgba(255, 0, 38, 0.55);
   font-weight: 600;
-  cursor: context-menu;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .footer_info h3 {
   color: rgba(255, 0, 38, 0.55);
@@ -1311,7 +1326,7 @@ nav .nav_title {
   font-weight: 100;
   font-size: 16px;
   letter-spacing: 1.5px;
-  cursor: context-menu;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .footer_info .my_language .bold:nth-child(4) {
   text-decoration: line-through;
@@ -1324,7 +1339,7 @@ nav .nav_title {
 .footer_img img {
   opacity: 0.5;
   transition: all 0.5s linear;
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .footer_img .astronaut_msg {
   position: absolute;
@@ -1336,7 +1351,7 @@ nav .nav_title {
   color: black;
   text-transform: uppercase;
   font-weight: 100;
-  cursor: pointer;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .footer_img:hover img {
   opacity: 1;
@@ -1409,6 +1424,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1481,6 +1497,7 @@ body {
   font-family: "WhyteInktrap", sans-serif;
   font-weight: 400;
   color: rgba(245, 245, 245, 0.87);
+  cursor: url("/public/images/other/cursor.png"), auto;
 }
 
 #root {
@@ -1523,6 +1540,7 @@ body {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);
@@ -1550,6 +1568,7 @@ body {
   color: rgba(255, 0, 38, 0.55);
   font-weight: 200;
   transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .link:hover {
   color: rgba(255, 0, 38, 0.82);

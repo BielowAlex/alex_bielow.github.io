@@ -18,7 +18,8 @@
       text-transform: uppercase;
       color: $text_color;
       font-weight: 600;
-      cursor: context-menu;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
 
     }
 
@@ -36,7 +37,8 @@
       font-weight: 100;
       font-size: 16px;
       letter-spacing: 1.5px;
-      cursor: context-menu;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
 
       .bold {
         &:nth-child(4){
@@ -54,7 +56,8 @@
     img{
       opacity: 0.5;
       transition: all 0.5s linear;
-      cursor: pointer;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
     }
 
     .astronaut_msg{
@@ -67,7 +70,8 @@
       color: black;
       text-transform: uppercase;
       font-weight: 100;
-      cursor: pointer;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
 
     }
 

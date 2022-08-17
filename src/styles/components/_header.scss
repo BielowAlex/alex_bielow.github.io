@@ -22,7 +22,7 @@
       color: $text_color;
       text-transform: uppercase;
       transition: all 0.6s ease-in-out;
-      cursor: context-menu;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
 
 
       &:hover {

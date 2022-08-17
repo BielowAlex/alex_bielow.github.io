@@ -14,6 +14,8 @@
   border: 1px solid $neon_btn_border_color;
   overflow: hidden;
   transition: all 1s ease 0s;
+  cursor: url("/public/images/other/cursor-click.png"),auto;
+
 
   .neon_line {
     position: absolute;

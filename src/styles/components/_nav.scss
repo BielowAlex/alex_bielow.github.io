@@ -17,6 +17,8 @@ nav {
     flex-direction: column;
     height: 95px;
     position: relative;
+    cursor: url("/public/images/other/cursor-click.png"),auto;
+
 
     .line {
       height: 40px;
@@ -24,6 +26,7 @@ nav {
       background: $nav_color;
       box-shadow: 1px 1px 10px red;
       animation: lighting 2s linear infinite;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
 
     }
 
@@ -32,7 +35,8 @@ nav {
       width: 15px;
       border: 1px solid $nav_color;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
       transition: all 0.5s linear;
 
     }
@@ -45,7 +49,8 @@ nav {
       right: -50px;
       opacity: 0;
       transition: all 0.3s linear;
-      cursor: pointer;
+      cursor: url("/public/images/other/cursor-click.png"),auto;
+
     }
 
     &:hover {

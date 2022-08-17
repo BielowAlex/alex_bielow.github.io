@@ -845,8 +845,8 @@
     align-items: center;
 
     .obj {
-      height: 50px;
-      width: 50px;
+      height: 60px;
+      width: 60px;
 
       .light {
         span {
@@ -871,8 +871,20 @@
     width: 70px;
   }
   .about_me .content .astronaut._active img {
-    height: 100px;
-    width: 70px;
+    height: 120px;
+    width: 90px;
+    opacity: 1;
+  }
+  .about_me .content .astronaut._active svg {
+    opacity: 1;
+    top: -60px;
+    left: 0;
+    transform: scale(0.4);
+  }
+  .about_me .content .astronaut svg {
+    top: -60px;
+    left: 0px;
+    transform: scale(0.3);
   }
 
   .projects_list {

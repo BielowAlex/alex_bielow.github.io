@@ -2655,7 +2655,6 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #05050c;
-  border-left: 1px solid rgba(255, 0, 38, 0.99);
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 

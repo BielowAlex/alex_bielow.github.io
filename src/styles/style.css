@@ -1460,17 +1460,14 @@ nav .nav_title {
   position: fixed;
   bottom: 5%;
   left: 10%;
-  animation: move_title 20s linear infinite;
 }
 .constellation_virgo {
   right: 4%;
   top: 20%;
-  animation: move_title 15s linear infinite;
 }
 .constellation_aries {
   top: 12%;
   left: 35%;
-  animation: move_title 10s linear infinite;
 }
 
 .stars {
@@ -1480,8 +1477,6 @@ nav .nav_title {
 .stars circle {
   transition: all 0.4s linear;
   fill: rgba(255, 0, 0, 0.07);
-}
-.stars circle:nth-child(2n) {
   animation: stars 3s linear infinite;
 }
 .stars circle:hover {
@@ -1586,6 +1581,10 @@ body {
     width: 250px;
   }
 
+  nav {
+    top: 40%;
+  }
+
   .stars {
     position: absolute;
     width: 100%;
@@ -1625,7 +1624,7 @@ body {
     margin-top: 100px;
   }
 }
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1120px) {
   .constellation_aries, .constellation_virgo, .constellation_ursa {
     width: 200px;
   }
@@ -1671,7 +1670,7 @@ body {
     row-gap: 50px;
   }
   .about_me_title {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   .greeting {
@@ -1724,6 +1723,11 @@ body {
     100% {
       transform: translateX(0);
     }
+  }
+}
+@media screen and (max-width: 1030px) {
+  .about_me_title {
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 920px) {
@@ -1780,7 +1784,7 @@ body {
     row-gap: 50px;
   }
   .about_me_title {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .header_title .anim_letter {

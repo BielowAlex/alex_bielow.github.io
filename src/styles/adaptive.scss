@@ -7,6 +7,10 @@
     }
   }
 
+  nav{
+    top: 40%;
+  }
+
   .stars {
     position: absolute;
     width: 100%;
@@ -54,12 +58,15 @@
   }
 }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1120px) {
   .constellation {
     &_aries, &_virgo, &_ursa {
       width: 200px;
     }
   }
+
+
+
 
   .project {
     &_cart {
@@ -108,7 +115,7 @@
     row-gap: 50px;
 
     &_title {
-      font-size: 30px;
+      font-size: 35px;
     }
   }
 
@@ -174,6 +181,14 @@
   }
 }
 
+@media screen and (max-width: 1030px) {
+  .about_me {
+    &_title {
+      font-size: 30px;
+    }
+  }
+}
+
 @media screen and (max-width: 920px) {
 
 
@@ -235,7 +250,7 @@
     row-gap: 50px;
 
     &_title {
-      font-size: 30px;
+      font-size: 26px;
     }
   }
 

@@ -1,7 +1,6 @@
 {
   "name": "alex_bielow_portfolio",
   "version": "0.1.0",
-  "homepage": "https://BielowAlex.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -24,7 +23,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

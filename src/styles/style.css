@@ -1207,13 +1207,17 @@ nav .nav_title {
 .header .logo {
   animation: move_title 20s linear infinite;
 }
+.header .logo img {
+  width: 50px;
+  height: 50px;
+}
 .header_title {
   font-weight: 600;
   display: flex;
 }
 .header_title .anim_letter {
   display: block;
-  font-size: 60px;
+  font-size: 50px;
   color: rgba(255, 0, 38, 0.55);
   text-transform: uppercase;
   transition: all 0.6s ease-in-out;
@@ -2638,13 +2642,14 @@ body {
   font-style: normal;
 }
 ::-webkit-scrollbar {
-  width: 1em;
+  width: 15px;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 
 ::-webkit-scrollbar-track {
   background: #05050c;
   border-left: 1px solid rgba(255, 0, 38, 0.99);
-  padding-block: 1em;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -2652,6 +2657,7 @@ body {
   border-radius: 10px;
   transition: all 0.5s linear;
   box-shadow: inset 1px 1px 10px red;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 
 /*# sourceMappingURL=style.css.map */

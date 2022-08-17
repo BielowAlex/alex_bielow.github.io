@@ -6,14 +6,14 @@
 
 
 ::-webkit-scrollbar {
-  width: 1em;
-
+  width: 15px;
+  cursor: url("/public/images/other/cursor-click.png"),auto;
 }
 
 ::-webkit-scrollbar-track {
   background: #05050c;
   border-left: 1px solid $line_color;
-  padding-block: 1em;
+  cursor: url("/public/images/other/cursor-click.png"),auto;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,6 +21,6 @@
   border-radius: 10px;
   transition: all 0.5s linear;
   box-shadow: inset 1px 1px 10px red;
-
+  cursor: url("/public/images/other/cursor-click.png"),auto;
 }
 

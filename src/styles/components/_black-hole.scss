@@ -4,17 +4,20 @@
   @include flex_dir_col;
   row-gap: 100px;
   z-index: 10;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
 }
 
 
 
 .oval {
-  height: 350px;
-  width: 700px;
+  height: 260px;
+  width: 560px;
   border: 1px solid $black_hole_shadow_color;
   border-radius: 50%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
   overflow: hidden;
   display: flex;
   justify-content: center;

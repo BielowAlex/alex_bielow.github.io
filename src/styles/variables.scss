@@ -1,11 +1,15 @@
 @import "colors";
 
+:root{
+  --posX:0;
+  --posY:0;
+}
+
 @mixin title {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   width: 100%;
-  //overflow: hidden;
 
   h2 {
     text-align: start;

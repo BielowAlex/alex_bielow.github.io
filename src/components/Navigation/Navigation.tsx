@@ -10,7 +10,6 @@ const Navigation: React.FC<IProps> = ({projectsNode,experienceNode}) => {
 
 
     const checkActiveCategory = ()=>{
-        console.log(window.scrollY);
         if(projectsNode.current!==null && experienceNode.current!==null){
 
             if(window.scrollY>=0 && window.scrollY<=projectsNode.current?.offsetTop-600){

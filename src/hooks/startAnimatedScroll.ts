@@ -1,12 +1,11 @@
 
 
 const startAnimatedScroll:() => void = () => {
-    const animItemList = document.querySelectorAll('._anim_item');
+    const animItemList = document.querySelectorAll<HTMLDivElement>('._anim_item');
     const animScroll = () => {
         if (animItemList.length > 0) {
             for (let i = 0; i < animItemList.length; i++) {
                 const animItem = animItemList[i];
-                // @ts-ignore
                 const animItemHeight = animItem.offsetHeight;
                 const animItemOffset = offSet(animItem).top;
                 const animStart = 10;

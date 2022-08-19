@@ -227,6 +227,25 @@
         font-size: 20px;
       }
     }
+
+
+    &._active {
+      column-gap: 50px;
+      .project_cart {
+        .poster {
+          img {
+            box-shadow: 3px 5px 5px red,
+            3px 5px 15px red;
+          }
+          .programing_languages{
+            opacity: 1;
+          }
+        }
+      }
+      .project_info {
+        opacity: 1;
+      }
+    }
   }
   .neon_btn {
     letter-spacing: 1px;
@@ -379,6 +398,12 @@
     .obj {
       height: 80px;
       width: 80px;
+      .light{
+        span{
+          line-height: 12px;
+          font-size: 10px;
+        }
+      }
     }
 
 
@@ -518,6 +543,19 @@
     line-height: 10px;
     font-size: 9px;
   }
+
+
+  .about_me .content .astronaut._active img {
+    opacity: 1;
+
+  }
+  .about_me .content .astronaut._active svg {
+    opacity: 1;
+    top: -60px;
+    left: 50px;
+    transform: scale(0.7);
+  }
+
   .project {
     display: flex;
     flex-direction: column;
@@ -624,6 +662,8 @@
       height: 50px;
     }
   }
+
+
 
 }
 
@@ -898,7 +938,7 @@
   }
   .about_me .content .astronaut svg {
     top: -60px;
-    left: 0px;
+    left: 0;
     transform: scale(0.3);
   }
 

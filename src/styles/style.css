@@ -1204,7 +1204,6 @@ nav .nav_title {
   width: 100%;
   padding: 10px 30px;
   z-index: 2;
-  border-bottom: 1px solid rgba(255, 0, 38, 0.99);
   background: rgba(5, 5, 12, 0.84);
 }
 .header .logo {
@@ -1761,6 +1760,18 @@ body {
   .project_info p {
     font-size: 20px;
   }
+  .project._active {
+    column-gap: 50px;
+  }
+  .project._active .project_cart .poster img {
+    box-shadow: 3px 5px 5px red, 3px 5px 15px red;
+  }
+  .project._active .project_cart .poster .programing_languages {
+    opacity: 1;
+  }
+  .project._active .project_info {
+    opacity: 1;
+  }
 
   .neon_btn {
     letter-spacing: 1px;
@@ -1890,6 +1901,10 @@ body {
     height: 80px;
     width: 80px;
   }
+  .greeting .obj .light span {
+    line-height: 12px;
+    font-size: 10px;
+  }
   .greeting svg {
     width: 130px;
     height: 130px;
@@ -2003,6 +2018,17 @@ body {
     font-weight: 600;
     line-height: 10px;
     font-size: 9px;
+  }
+
+  .about_me .content .astronaut._active img {
+    opacity: 1;
+  }
+
+  .about_me .content .astronaut._active svg {
+    opacity: 1;
+    top: -60px;
+    left: 50px;
+    transform: scale(0.7);
   }
 
   .project {
@@ -2323,7 +2349,7 @@ body {
 
   .about_me .content .astronaut svg {
     top: -60px;
-    left: 0px;
+    left: 0;
     transform: scale(0.3);
   }
 

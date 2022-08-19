@@ -3,11 +3,24 @@ import React from 'react';
 const Constellation: React.FC = () => {
     const [translateCount, setTranslateCount] = React.useState<number>(0);
     const mainDiv = React.useRef<HTMLDivElement>(null)
+
+    const root = React.useMemo(() =>document.querySelector(':root') as HTMLDivElement,[]);
+
     const moveOnScroll = () => {
         if (mainDiv.current !== null) {
             if (window.scrollY > 0 && window.scrollY < mainDiv.current.offsetHeight) {
                 setTranslateCount(Math.floor(window.scrollY / 10));
             }
+        }
+    }
+
+    const parallax = (e: React.MouseEvent<HTMLDivElement>) => {
+        const x = (e.clientX - window.innerWidth / 2)/50;
+        const y = (e.clientY - window.innerHeight / 2)/50;
+
+        if(root!==null){
+            root.style.setProperty('--posX',`${x}`);
+            root.style.setProperty('--posY',`${y}`);
         }
     }
 
@@ -19,43 +32,56 @@ const Constellation: React.FC = () => {
     return (
         <div className="constellation _anim_item"
              style={{transform: `translateY(-${translateCount}px)`}}
-             ref={mainDiv}>
-            <svg className="constellation_ursa" width="233" height="297" viewBox="0 0 233 297" fill="none" xmlns="http://www.w3.org/2000/svg">
+             ref={mainDiv}
+             onMouseMove={(e) => parallax(e)}>
+            <svg className="constellation_ursa" width="233" height="297" viewBox="0 0 233 297" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_2_14)">
-                    <path d="M87.7705 37.5372L87.6936 37.303L87.4611 37.2214L9.4838 9.8464L9.15255 10.7899L86.8973 38.0833L105.066 93.4141L123.278 162.954L105.062 231.679L104.975 232.006L105.247 232.208L176.588 285.299L176.969 285.582L177.271 285.217L221.237 232.126L221.581 231.711L221.142 231.399L186.301 206.683L124.233 162.652L106.029 93.146L106.025 93.1313L106.02 93.1167L87.7705 37.5372Z" stroke="#FF0000" strokeOpacity="0.3"/>
+                    <path
+                        d="M87.7705 37.5372L87.6936 37.303L87.4611 37.2214L9.4838 9.8464L9.15255 10.7899L86.8973 38.0833L105.066 93.4141L123.278 162.954L105.062 231.679L104.975 232.006L105.247 232.208L176.588 285.299L176.969 285.582L177.271 285.217L221.237 232.126L221.581 231.711L221.142 231.399L186.301 206.683L124.233 162.652L106.029 93.146L106.025 93.1313L106.02 93.1167L87.7705 37.5372Z"
+                        stroke="#FF0000" strokeOpacity="0.3"/>
                 </g>
                 <g filter="url(#filter1_d_2_14)">
-                    <circle cx="10.3182" cy="10.3182" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="10.3182" cy="10.3182" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="10.3182" cy="10.3182" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter2_d_2_14)">
-                    <circle cx="87.2954" cy="37.5227" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="87.2954" cy="37.5227" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="87.2954" cy="37.5227" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter3_d_2_14)">
-                    <circle cx="105.318" cy="93.3182" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="105.318" cy="93.3182" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="105.318" cy="93.3182" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter4_d_2_14)">
-                    <circle cx="124.795" cy="162.955" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="124.795" cy="162.955" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="124.795" cy="162.955" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter5_d_2_14)">
-                    <circle cx="104.886" cy="232.636" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="104.886" cy="232.636" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="104.886" cy="232.636" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter6_d_2_14)">
-                    <circle cx="177.886" cy="285.727" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="177.886" cy="285.727" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="177.886" cy="285.727" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter7_d_2_14)">
-                    <circle cx="222.682" cy="232.636" r="3.31818" fill="#630707" fillOpacity="0.8" shapeRendering="crispEdges"/>
+                    <circle cx="222.682" cy="232.636" r="3.31818" fill="#630707" fillOpacity="0.8"
+                            shapeRendering="crispEdges"/>
                     <circle cx="222.682" cy="232.636" r="2.81818" stroke="#630707" shapeRendering="crispEdges"/>
                 </g>
                 <defs>
-                    <filter id="filter0_d_2_14" x="7.15256" y="8.84641" width="219.157" height="282.42" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter0_d_2_14" x="7.15256" y="8.84641" width="219.157" height="282.42"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feOffset dx="1" dy="2"/>
                         <feGaussianBlur stdDeviation="1.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
@@ -63,80 +89,101 @@ const Constellation: React.FC = () => {
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter1_d_2_14" x="0" y="0" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter1_d_2_14" x="0" y="0" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter2_d_2_14" x="76.9773" y="27.2045" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter2_d_2_14" x="76.9773" y="27.2045" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter3_d_2_14" x="95" y="83" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter3_d_2_14" x="95" y="83" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter4_d_2_14" x="114.477" y="152.636" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter4_d_2_14" x="114.477" y="152.636" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter5_d_2_14" x="94.5682" y="222.318" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter5_d_2_14" x="94.5682" y="222.318" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter6_d_2_14" x="167.568" y="275.409" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter6_d_2_14" x="167.568" y="275.409" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
-                    <filter id="filter7_d_2_14" x="212.364" y="222.318" width="20.6364" height="20.6364" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter7_d_2_14" x="212.364" y="222.318" width="20.6364" height="20.6364"
+                            filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"/>
                         <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_2_14"/>
                         <feOffset/>
                         <feGaussianBlur stdDeviation="2"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_14" result="shape"/>
                     </filter>
@@ -521,7 +568,8 @@ const Constellation: React.FC = () => {
                 </defs>
             </svg>
 
-            <svg className="stars" width="1222" height="856" viewBox="0 0 1222 856" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="stars" width="1222" height="856" viewBox="0 0 1222 856" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_4_48)">
                     <circle r="2" transform="matrix(1 0 0 -1 1053 414)" fill="#630707" fillOpacity="0.2"
                             shapeRendering="crispEdges"/>
@@ -571,51 +619,67 @@ const Constellation: React.FC = () => {
                             shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter8_d_4_48)">
-                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 623.017 640.108)" fill="#630707"
+                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 623.017 640.108)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 623.017 640.108)" stroke="#630707"
+                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 623.017 640.108)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter9_d_4_48)">
-                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 416.646 583.826)" fill="#630707"
+                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 416.646 583.826)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 416.646 583.826)" stroke="#630707"
+                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 416.646 583.826)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter10_d_4_48)">
-                    <circle r="6.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 465.556 664.487)" fill="#630707"
+                    <circle r="6.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 465.556 664.487)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="6" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 465.556 664.487)" stroke="#630707"
+                    <circle r="6" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 465.556 664.487)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter11_d_4_48)">
-                    <circle r="5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 257.065 608.114)" fill="#630707"
+                    <circle r="5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 257.065 608.114)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="4.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 257.065 608.114)" stroke="#630707"
+                    <circle r="4.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 257.065 608.114)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter12_d_4_48)">
-                    <circle r="4" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 983.882 807.066)" fill="#630707"
+                    <circle r="4" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 983.882 807.066)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="3.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 983.882 807.066)" stroke="#630707"
+                    <circle r="3.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 983.882 807.066)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter13_d_4_48)">
-                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 774.684 750.662)" fill="#630707"
+                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 774.684 750.662)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 774.684 750.662)" stroke="#630707"
+                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 774.684 750.662)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter14_d_4_48)">
-                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 817.236 831.051)" fill="#630707"
+                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 817.236 831.051)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 817.236 831.051)" stroke="#630707"
+                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 817.236 831.051)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter15_d_4_48)">
-                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 610.865 774.768)" fill="#630707"
+                    <circle r="2" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 610.865 774.768)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 610.865 774.768)" stroke="#630707"
+                    <circle r="1.5" transform="matrix(0.736794 -0.676117 -0.676117 -0.736794 610.865 774.768)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter16_d_4_48)">
@@ -625,49 +689,58 @@ const Constellation: React.FC = () => {
                 <g filter="url(#filter17_d_4_48)">
                     <circle cx="515.516" cy="76.1082" r="2" transform="rotate(-137.459 515.516 76.1082)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="515.516" cy="76.1082" r="1.5" transform="rotate(-137.459 515.516 76.1082)" stroke="#630707"
+                    <circle cx="515.516" cy="76.1082" r="1.5" transform="rotate(-137.459 515.516 76.1082)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter18_d_4_48)">
                     <circle cx="721.888" cy="19.8258" r="2" transform="rotate(-137.459 721.888 19.8258)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="721.888" cy="19.8258" r="1.5" transform="rotate(-137.459 721.888 19.8258)" stroke="#630707"
+                    <circle cx="721.888" cy="19.8258" r="1.5" transform="rotate(-137.459 721.888 19.8258)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter19_d_4_48)">
-                    <circle cx="672.978" cy="100.487" r="6.5" transform="rotate(-137.459 672.978 100.487)" fill="#630707"
+                    <circle cx="672.978" cy="100.487" r="6.5" transform="rotate(-137.459 672.978 100.487)"
+                            fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="672.978" cy="100.487" r="6" transform="rotate(-137.459 672.978 100.487)" stroke="#630707"
+                    <circle cx="672.978" cy="100.487" r="6" transform="rotate(-137.459 672.978 100.487)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter20_d_4_48)">
                     <circle cx="881.469" cy="44.114" r="5" transform="rotate(-137.459 881.469 44.114)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="881.469" cy="44.114" r="4.5" transform="rotate(-137.459 881.469 44.114)" stroke="#630707"
+                    <circle cx="881.469" cy="44.114" r="4.5" transform="rotate(-137.459 881.469 44.114)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter21_d_4_48)">
                     <circle cx="154.652" cy="243.066" r="4" transform="rotate(-137.459 154.652 243.066)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="154.652" cy="243.066" r="3.5" transform="rotate(-137.459 154.652 243.066)" stroke="#630707"
+                    <circle cx="154.652" cy="243.066" r="3.5" transform="rotate(-137.459 154.652 243.066)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter22_d_4_48)">
                     <circle cx="363.849" cy="186.662" r="2" transform="rotate(-137.459 363.849 186.662)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="363.849" cy="186.662" r="1.5" transform="rotate(-137.459 363.849 186.662)" stroke="#630707"
+                    <circle cx="363.849" cy="186.662" r="1.5" transform="rotate(-137.459 363.849 186.662)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter23_d_4_48)">
                     <circle cx="321.297" cy="267.051" r="2" transform="rotate(-137.459 321.297 267.051)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="321.297" cy="267.051" r="1.5" transform="rotate(-137.459 321.297 267.051)" stroke="#630707"
+                    <circle cx="321.297" cy="267.051" r="1.5" transform="rotate(-137.459 321.297 267.051)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter24_d_4_48)">
                     <circle cx="527.669" cy="210.768" r="2" transform="rotate(-137.459 527.669 210.768)" fill="#630707"
                             fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="527.669" cy="210.768" r="1.5" transform="rotate(-137.459 527.669 210.768)" stroke="#630707"
+                    <circle cx="527.669" cy="210.768" r="1.5" transform="rotate(-137.459 527.669 210.768)"
+                            stroke="#630707"
                             strokeOpacity="0.2" shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter25_d_4_48)">
@@ -676,7 +749,8 @@ const Constellation: React.FC = () => {
                 </g>
                 <g filter="url(#filter26_d_4_48)">
                     <circle cx="130.5" cy="544.5" r="6.5" fill="#630707" fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <circle cx="130.5" cy="544.5" r="6" stroke="#630707" strokeOpacity="0.2" shapeRendering="crispEdges"/>
+                    <circle cx="130.5" cy="544.5" r="6" stroke="#630707" strokeOpacity="0.2"
+                            shapeRendering="crispEdges"/>
                 </g>
                 <g filter="url(#filter27_d_4_48)">
                     <circle cx="15" cy="727" r="5" fill="#630707" fillOpacity="0.2" shapeRendering="crispEdges"/>
@@ -708,7 +782,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -721,7 +796,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -734,7 +810,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -747,7 +824,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -760,7 +838,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -773,7 +852,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -786,7 +866,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -799,11 +880,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter8_d_4_48" x="599.017" y="616.108" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter8_d_4_48" x="599.017" y="616.108" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -812,11 +895,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter9_d_4_48" x="392.646" y="559.826" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter9_d_4_48" x="392.646" y="559.826" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -825,7 +910,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -838,7 +924,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -851,7 +938,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -864,11 +952,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter13_d_4_48" x="750.684" y="726.662" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter13_d_4_48" x="750.684" y="726.662" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -877,11 +967,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter14_d_4_48" x="793.236" y="807.051" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter14_d_4_48" x="793.236" y="807.051" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -890,11 +982,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter15_d_4_48" x="586.865" y="750.768" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter15_d_4_48" x="586.865" y="750.768" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -903,7 +997,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -916,11 +1011,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter17_d_4_48" x="491.516" y="52.1082" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter17_d_4_48" x="491.516" y="52.1082" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -929,11 +1026,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter18_d_4_48" x="697.888" y="-4.17419" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter18_d_4_48" x="697.888" y="-4.17419" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -942,7 +1041,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -955,7 +1055,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -968,11 +1069,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter21_d_4_48" x="128.652" y="217.066" width="52" height="52" filterUnits="userSpaceOnUse"
+                    <filter id="filter21_d_4_48" x="128.652" y="217.066" width="52" height="52"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -981,11 +1084,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter22_d_4_48" x="339.849" y="162.662" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter22_d_4_48" x="339.849" y="162.662" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -994,11 +1099,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter23_d_4_48" x="297.297" y="243.051" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter23_d_4_48" x="297.297" y="243.051" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -1007,11 +1114,13 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
-                    <filter id="filter24_d_4_48" x="503.669" y="186.768" width="48" height="48" filterUnits="userSpaceOnUse"
+                    <filter id="filter24_d_4_48" x="503.669" y="186.768" width="48" height="48"
+                            filterUnits="userSpaceOnUse"
                             colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -1020,7 +1129,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1033,7 +1143,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1046,7 +1157,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1059,7 +1171,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1072,7 +1185,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1085,7 +1199,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1098,7 +1213,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>
@@ -1111,7 +1227,8 @@ const Constellation: React.FC = () => {
                         <feOffset/>
                         <feGaussianBlur stdDeviation="6.5"/>
                         <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0.388235 0 0 0 0 0.027451 0 0 0 0 0.027451 0 0 0 0.25 0"/>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4_48"/>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4_48" result="shape"/>
                     </filter>

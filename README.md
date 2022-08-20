@@ -1,4 +1,4 @@
-##Hi! My name is Oleksandr.Nickname Alex Bielow and it's my portfolio.
+##Hi! My name is Oleksandr.Nickname Alex Bielow and it's my portfolio.##
 
 You can rate the site, my projects and write feedback using this link: 
 https://alex-bielow-portfolio.vercel.app

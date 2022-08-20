@@ -21,61 +21,12 @@
     display: flex;
 
     .anim_letter {
-      display: block;
-      font-size: 50px;
-      color: $text_color;
-      text-transform: uppercase;
-      transition: all 0.6s ease-in-out;
-      cursor: url("/public/images/other/cursor-click.png"),auto;
-
-
-      &:hover {
-        animation: letter_anim 1.5s ease-in-out;
-        color: $text_color_hover;
-      }
+     @include anim_letter;
 
       &:nth-child(2) {
         margin-right: 10px;
-      }
-
-      &._active {
-        animation: letter_anim 0.3s ease-in-out;
-        color: $text_color_hover;
       }
     }
   }
 }
 
-@keyframes letter_anim {
-  0% {
-    color: $text_color;
-    transform: scaleY(1) scaleX(1);
-  }
-  20% {
-    color: $text_color_hover;
-    transform: scaleY(1.4) scaleX(1);
-  }
-  40% {
-    color: $text_color_hover;
-    transform: scaleY(0.9) scaleX(1);
-  }
-  50% {
-    color: $text_color_hover;
-    transform: scaleY(1) scaleX(1.3);
-  }
-  60% {
-    color: $text_color_hover;
-    transform: scaleY(1) scaleX(0.9);
-  }
-
-  90% {
-    color: $text_color_hover;
-    transform: scaleY(1) scaleX(1.1);
-  }
-  100% {
-    color: $text_color_hover;
-    transform: scaleY(1) scaleX(1);
-  }
-
-
-}

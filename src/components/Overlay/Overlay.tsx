@@ -1,14 +1,29 @@
 import React from 'react';
 
-const Overlay: React.FC<boolean> = (isShow) => {
+interface IProps{
+    isShow:boolean
+    setIsShow: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Overlay: React.FC<IProps> = ({isShow,setIsShow}) => {
 
 
     return (
         <div className={`overlay ${isShow?'_show':''}`}>
-            <div className="overlay_window">
-                <div className="close">X</div>
+                <div className="close" onClick={()=>setIsShow(false)}>X</div>
+            {/*<div className="overlay_window">*/}
                 <div className="form_section">
-                    <h2>Contact me</h2>
+                    <div className="title">
+                        <span className="anim_letter">C</span>
+                        <span className="anim_letter">o</span>
+                        <span className="anim_letter">n</span>
+                        <span className="anim_letter">t</span>
+                        <span className="anim_letter">a</span>
+                        <span className="anim_letter">c</span>
+                        <span className="anim_letter">t</span>
+                        <span className="anim_letter">m</span>
+                        <span className="anim_letter">e</span>
+                    </div>
                     <p>
                         I’m interested in freelance opportunities
                          – especially ambitious or large projects.
@@ -32,7 +47,7 @@ const Overlay: React.FC<boolean> = (isShow) => {
                     </form>
                 </div>
 
-            </div>
+            {/*</div>*/}
         </div>
     );
 };

@@ -2,7 +2,11 @@ import {faFacebook, faGithub, faInstagram, faLinkedin} from '@fortawesome/free-b
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Footer:React.FC = () => {
+interface IProps{
+    setIsShow: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Footer:React.FC<IProps> = ({setIsShow}) => {
     return (
         <footer id="contact" className="footer">
             <div className="footer_info">
@@ -37,7 +41,7 @@ const Footer:React.FC = () => {
                     </a>
                 </div>
             </div>
-            <div className="footer_img">
+            <div className="footer_img" onClick={()=>setIsShow(true)}>
                 <img height={200} width={150} src="/images/other/contact.png" alt="astronaut"/>
                 <h3 className="astronaut_msg">Click to Contact Me</h3>
             </div>

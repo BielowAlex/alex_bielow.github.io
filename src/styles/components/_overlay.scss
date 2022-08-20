@@ -1,0 +1,172 @@
+@import "../variables";
+
+
+@mixin input {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: $text_color;
+  font-weight: 100;
+  letter-spacing: 1px
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  min-width: 100%;
+  min-height: 100%;
+  background: #05050c;
+  transform: translateY(100%);
+  transition: all 1s ease-in-out;
+
+  &._show{
+    transform: translateY(0);
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+    color: $text-color;
+    cursor: url("/public/images/other/cursor-click.png"),auto;
+    transition: all 0.5s linear;
+
+    &:hover {
+      color: $text_color_hover;
+      text-shadow: 1px 1px 10px $text_color;
+    }
+  }
+
+  .form_section {
+    @include flex_dir_col;
+    row-gap: 40px;
+    height: 100%;
+    width: 50%;
+
+    .title {
+      display: flex;
+
+      .anim_letter {
+        @include anim_letter;
+        font-size: 70px;
+
+        &:nth-child(7) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 100;
+      color: #6c0e1c;
+    }
+
+    .form {
+      @include flex_dir_col;
+      width: 100%;
+      row-gap: 10px;
+
+      &_top {
+        display: flex;
+        width: 100%;
+        column-gap: 10px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 15px;
+        background: #070711;
+        font-weight: 100;
+        color: $text-color;
+        font-size: 16px;
+        line-height: 20px;
+        transition: all 0.5s linear;
+        box-shadow:inset 1px 1px 1px rgba(5, 5, 12, 0);
+
+        cursor: url("/public/images/other/cursor-click.png"),auto;
+
+      }
+
+      input:focus, textarea:focus {
+        box-shadow:inset 1px 1px 10px $text_color;
+      }
+
+      textarea {
+        height: 150px;
+        overflow-x: hidden;
+      }
+
+
+      button {
+        @include neon_btn;
+        font-size: 25px;
+      }
+
+      input::-moz-placeholder {
+        @include input;
+
+      }
+
+      input::-webkit-input-placeholder {
+        @include input;
+
+      }
+
+      textarea::-webkit-input-placeholder {
+        @include input;
+      }
+
+      input::-ms-input-placeholder {
+        @include input;
+
+      }
+
+      textarea::-ms-input-placeholder {
+        @include input;
+      }
+
+
+      input:focus::-moz-placeholder {
+        @include input;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s linear;
+
+      }
+
+      input:focus::-webkit-input-placeholder {
+        @include input;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s linear;
+
+      }
+
+      textarea:focus::-webkit-input-placeholder {
+        @include input;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s linear;
+      }
+
+      input:focus::-ms-input-placeholder {
+        @include input;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s linear;
+
+      }
+
+      textarea:focus::-ms-input-placeholder {
+        @include input;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}

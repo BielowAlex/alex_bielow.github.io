@@ -10,13 +10,15 @@ import {
     Experience,
     Technologies,
     Header,
-    Constellation
+    Constellation, Overlay
 } from "./components";
 import {startAnimatedScroll} from "./hooks/startAnimatedScroll";
 import Footer from "./components/Footer/Footer";
 
 
 const App: React.FC = () => {
+    const [isShow,setIsShow] = React.useState<boolean>(false);
+
     const projects = React.useRef<HTMLDivElement>(null);
     const exp = React.useRef<HTMLDivElement>(null);
 
@@ -26,6 +28,7 @@ const App: React.FC = () => {
 
     return (
         <div className="wrapper">
+            <Overlay isShow={isShow} setIsShow={setIsShow}/>
             <Header/>
             <Background/>
             <Constellation/>
@@ -35,7 +38,7 @@ const App: React.FC = () => {
             <Projects reference={projects}/>
             <Experience reference={exp}/>
             <Technologies/>
-            <Footer/>
+            <Footer setIsShow={setIsShow}/>
         </div>
     );
 }

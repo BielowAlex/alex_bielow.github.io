@@ -336,7 +336,7 @@ nav {
   display: flex;
   flex-direction: column;
   transform: translateY(-50%);
-  top: 50%;
+  top: 47%;
   left: 20px;
   z-index: 2;
 }
@@ -345,12 +345,12 @@ nav .nav_item {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 95px;
+  height: 75px;
   position: relative;
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 nav .nav_item .line {
-  height: 40px;
+  height: 30px;
   width: 1px;
   background: rgba(255, 38, 0, 0.45);
   box-shadow: 1px 1px 10px red;
@@ -539,8 +539,7 @@ nav .nav_title {
   transition: all 5s linear;
 }
 .about_me .content .astronaut._kill svg {
-  opacity: 0;
-  transition: opacity 0.2s linear, transform 5s linear;
+  display: none;
 }
 .about_me .content h3 {
   width: 300px;
@@ -1626,6 +1625,1107 @@ body {
   font-weight: 500;
   font-display: swap;
   font-style: normal;
+}
+:root {
+  --posX:0;
+  --posY:0;
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.82);
+}
+
+@media screen and (max-width: 1200px) {
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 250px;
+  }
+
+  nav {
+    top: 40%;
+  }
+
+  .stars {
+    position: absolute;
+    width: 100%;
+  }
+
+  .project_cart {
+    width: 350px;
+    height: 250px;
+  }
+  .project_cart .poster {
+    width: 350px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+  }
+  .project_info {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .project_info h3 {
+    font-size: 20px;
+  }
+  .project_info p {
+    font-size: 14px;
+  }
+
+  .neon_btn {
+    letter-spacing: 1.5px;
+    font-size: 10px;
+  }
+
+  .technologies_title {
+    height: 70px;
+  }
+
+  .about_me {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 200px;
+  }
+
+  .project_cart {
+    width: 300px;
+    height: 200px;
+  }
+  .project_cart .poster {
+    width: 300px;
+    height: 200px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_info {
+    min-width: 250px;
+    max-width: 250px;
+  }
+  .project_info h3 {
+    font-size: 20px;
+  }
+  .project_info p {
+    font-size: 14px;
+  }
+
+  .neon_btn {
+    letter-spacing: 1px;
+    font-size: 8px;
+  }
+
+  .technologies_title {
+    height: 70px;
+  }
+
+  .oval {
+    height: 300px;
+    width: 500px;
+  }
+
+  .about_me {
+    row-gap: 50px;
+  }
+  .about_me_title {
+    font-size: 35px;
+  }
+
+  .greeting {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 120px;
+    width: 120px;
+  }
+  .greeting svg {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 250px;
+    width: 200px;
+  }
+
+  .about_me .content .astronaut._active img {
+    height: 250px;
+    width: 200px;
+  }
+
+  .bold {
+    font-size: 13px;
+  }
+
+  .footer_info h3 {
+    font-size: 13px;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 75px;
+    height: 75px;
+  }
+
+  @keyframes move_slider {
+    0% {
+      transform: translateX(calc(-101% - 17px));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+@media screen and (max-width: 1030px) {
+  .about_me_title {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .project_cart {
+    width: 500px;
+    height: 400px;
+  }
+  .project_cart .poster {
+    width: 500px;
+    height: 300px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_info {
+    min-width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+  .project_info h3 {
+    font-size: 30px;
+  }
+  .project_info p {
+    font-size: 20px;
+  }
+  .project._active {
+    column-gap: 50px;
+  }
+  .project._active .project_cart .poster img {
+    box-shadow: 3px 5px 5px red, 3px 5px 15px red;
+  }
+  .project._active .project_cart .poster .programing_languages {
+    opacity: 1;
+  }
+  .project._active .project_info {
+    opacity: 1;
+  }
+
+  .neon_btn {
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+
+  .experience_list_item .date {
+    font-size: 30px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 14px;
+  }
+
+  .oval {
+    height: 300px;
+    width: 500px;
+  }
+
+  .about_me {
+    row-gap: 50px;
+  }
+  .about_me_title {
+    font-size: 26px;
+  }
+
+  .header_title .anim_letter {
+    font-size: 50px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .greeting {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 120px;
+    width: 120px;
+  }
+  .greeting svg {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .about_me .content .astronaut._active img {
+    height: 250px;
+    width: 200px;
+  }
+
+  .bold {
+    font-size: 13px;
+  }
+
+  .footer_info h3 {
+    font-size: 13px;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 75px;
+    height: 75px;
+  }
+
+  @keyframes move_slider {
+    0% {
+      transform: translateX(calc(-101% - 17px));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+@media screen and (max-width: 820px) {
+  .header_title .anim_letter {
+    font-size: 50px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 200px;
+  }
+
+  .oval {
+    height: 250px;
+    width: 400px;
+  }
+
+  nav {
+    top: 45%;
+  }
+
+  .about_me {
+    height: fit-content;
+    width: 100%;
+    row-gap: 50px;
+  }
+  .about_me_title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .about_me .content {
+    justify-content: center;
+  }
+
+  .greeting {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 80px;
+    width: 80px;
+  }
+  .greeting .obj .light span {
+    line-height: 12px;
+    font-size: 10px;
+  }
+  .greeting svg {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 200px;
+    width: 150px;
+  }
+
+  .about_me .content .astronaut._active img {
+    height: 200px;
+    width: 150px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .project .project_cart .poster img {
+    box-shadow: 3px 5px 5px red, 3px 5px 15px red;
+  }
+  .project .project_cart .poster .programing_languages {
+    opacity: 1;
+  }
+  .project_cart {
+    width: 500px;
+    height: 400px;
+  }
+  .project_cart .poster {
+    width: 500px;
+    height: 300px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_info {
+    min-width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+  .project_info h3 {
+    font-size: 30px;
+  }
+  .project_info p {
+    font-size: 20px;
+  }
+
+  .neon_btn {
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+
+  .projects_top h2, .experience_title h2, .technologies_title h2 {
+    font-size: 40px;
+  }
+
+  .experience_list_item .date {
+    font-size: 30px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 14px;
+  }
+
+  .bold {
+    font-size: 13px;
+  }
+
+  .footer_info h3 {
+    font-size: 13px;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 75px;
+    height: 75px;
+  }
+
+  @keyframes move_slider {
+    0% {
+      transform: translateX(calc(-101% - 17px));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .oval {
+    height: 150px;
+    width: 300px;
+  }
+  .oval span {
+    font-size: 18px;
+  }
+
+  .about_me {
+    margin-top: 0;
+  }
+
+  .greeting .obj .light span {
+    width: 50px;
+    font-weight: 600;
+    line-height: 10px;
+    font-size: 9px;
+  }
+
+  .about_me .content .astronaut._active img {
+    opacity: 1;
+  }
+
+  .about_me .content .astronaut._active svg {
+    opacity: 1;
+    top: -60px;
+    left: 50px;
+    transform: scale(0.7);
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 80px;
+    flex-wrap: wrap;
+  }
+  .project .project_cart .poster img {
+    box-shadow: 3px 5px 5px red, 3px 5px 15px red;
+  }
+  .project .project_cart .poster .programing_languages {
+    opacity: 1;
+  }
+  .project_cart {
+    width: 300px;
+    height: 200px;
+  }
+  .project_cart .poster {
+    width: 300px;
+    height: 200px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_info {
+    min-width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+  .project_info h3 {
+    font-size: 25px;
+  }
+  .project_info p {
+    font-size: 18px;
+  }
+
+  .neon_btn {
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+
+  .experience_list_item .date {
+    font-size: 25px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 12px;
+  }
+
+  .footer_info .bold, .footer_info h3 {
+    font-size: 10px;
+  }
+
+  .links a .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .footer_img {
+    height: 150px;
+    width: 100px;
+  }
+  .footer_img img {
+    height: 150px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 150px;
+  }
+
+  .header_title .anim_letter {
+    font-size: 35px;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 120px;
+  }
+
+  .project_cart {
+    width: 250px;
+    height: 150px;
+  }
+  .project_cart .poster {
+    width: 250px;
+    height: 150px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_info {
+    row-gap: 20px;
+    justify-content: center;
+    min-width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+  .project_info h3 {
+    font-size: 25px;
+  }
+  .project_info p {
+    font-size: 12px;
+  }
+
+  .neon_btn {
+    letter-spacing: 1px;
+    font-size: 11px;
+  }
+
+  .experience_list_item {
+    padding: 10px;
+  }
+
+  .experience_list_item .date {
+    font-size: 20px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 9px;
+  }
+
+  .projects_top h2, .experience_title h2, .technologies_title h2 {
+    font-size: 25px;
+  }
+
+  .slider {
+    padding: 20px 0;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .technologies_title {
+    height: 40px;
+  }
+
+  nav {
+    left: 15px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  nav .nav_item {
+    height: 60px;
+  }
+  nav .nav_item .line {
+    height: 25px;
+    width: 1px;
+  }
+  nav .nav_item .circle {
+    height: 10px;
+    width: 10px;
+  }
+  nav .nav_item .text {
+    position: absolute;
+    display: block;
+    width: 60px;
+    text-align: left;
+    font-size: 9px;
+    right: -50px;
+  }
+  nav .nav_item:hover .text {
+    width: 70px;
+    opacity: 1;
+    right: -70px;
+    z-index: 30;
+  }
+  nav .nav_item:hover .circle {
+    box-shadow: 1px 1px 10px red;
+    transform: scale(1.2);
+  }
+  nav .nav_item._active .text {
+    opacity: 1;
+    right: -70px;
+    z-index: 30;
+    width: 70px;
+  }
+  nav .nav_item._active .circle {
+    box-shadow: 1px 1px 10px red;
+    transform: scale(1.2);
+    background: rgba(255, 38, 0, 0.45);
+  }
+  nav .nav_title {
+    position: absolute;
+    top: 50%;
+    left: -45px;
+    transform: rotate(90deg) translateY(-50%);
+    font-weight: 600;
+    color: rgba(255, 38, 0, 0.45);
+    font-size: 12px;
+  }
+
+  .black_hole {
+    z-index: 20;
+  }
+}
+@media screen and (max-width: 490px) {
+  .wrapper {
+    row-gap: 30px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .constellation {
+    height: 420px;
+  }
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 100px;
+  }
+
+  .oval {
+    height: 120px;
+    width: 240px;
+  }
+  .oval span {
+    font-size: 14px;
+  }
+
+  .header_title .anim_letter {
+    font-size: 25px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .back .light_top, .back .light_bot {
+    width: 80px;
+    height: 80px;
+  }
+  .back .light_top {
+    top: -120px;
+    left: -120px;
+  }
+  .back .light_bot {
+    bottom: -120px;
+    right: -120px;
+  }
+
+  .stars {
+    height: 450px;
+    opacity: 1;
+  }
+
+  .about_me {
+    margin-top: 0;
+    row-gap: 10px;
+    min-height: 300px;
+    z-index: 10;
+    overflow: hidden;
+  }
+  .about_me_title {
+    transform: translateY(0);
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .greeting {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 60px;
+    width: 60px;
+  }
+  .greeting .obj .light span {
+    width: 25px;
+    font-weight: 600;
+    line-height: 7px;
+    font-size: 6px;
+  }
+  .greeting svg {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 100px;
+    width: 70px;
+  }
+
+  .about_me .content .astronaut._active img {
+    height: 120px;
+    width: 90px;
+    opacity: 1;
+  }
+
+  .about_me .content .astronaut._active svg {
+    opacity: 1;
+    top: -60px;
+    left: 0;
+    transform: scale(0.4);
+  }
+
+  .about_me .content .astronaut svg {
+    top: -60px;
+    left: 0;
+    transform: scale(0.3);
+  }
+
+  .projects_list {
+    padding-bottom: 20px;
+    row-gap: 10px;
+  }
+
+  .projects_top h2, .experience_title h2, .technologies_title h2 {
+    font-size: 20px;
+  }
+
+  .projects {
+    row-gap: 10px;
+  }
+
+  .project {
+    row-gap: 50px;
+  }
+  .project_cart {
+    width: 200px;
+    height: 150px;
+  }
+  .project_cart .poster {
+    width: 200px;
+    height: 150px;
+  }
+  .project_cart .poster img {
+    width: 100%;
+    height: 100%;
+  }
+  .project_cart .poster .programing_languages {
+    bottom: -30px;
+    left: 20px;
+  }
+  .project_cart .poster .programing_languages svg {
+    height: 50px;
+    width: 50px;
+  }
+  .project_info {
+    row-gap: 15px;
+    justify-content: center;
+    min-width: 100%;
+    max-width: 250px;
+    height: 140px;
+  }
+  .project_info h3 {
+    font-size: 18px;
+  }
+  .project_info p {
+    font-size: 14px;
+  }
+
+  .neon_btn {
+    letter-spacing: 0.5px;
+    font-size: 8px;
+  }
+
+  .experience_list_item {
+    padding: 10px;
+  }
+
+  .experience_list_item .date {
+    font-size: 16px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 9px;
+  }
+
+  .slider {
+    padding: 20px 0;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .technologies_title {
+    height: 40px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .links {
+    margin: 10px;
+    width: 200px;
+  }
+
+  .bold {
+    font-size: 9px;
+    line-height: 15px;
+  }
+
+  .footer_info h3 {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .wrapper {
+    display: flex;
+    row-gap: 20px;
+  }
+
+  .constellation {
+    height: 400px;
+  }
+  .constellation_aries, .constellation_virgo, .constellation_ursa {
+    width: 70px;
+    height: 100px;
+  }
+
+  .stars {
+    height: 500px;
+  }
+
+  .oval {
+    height: 100px;
+    width: 200px;
+  }
+  .oval span {
+    font-size: 12px;
+  }
+
+  .header_title .anim_letter {
+    font-size: 20px;
+  }
+
+  .stars {
+    transform: scale(1);
+  }
+
+  .about_me {
+    margin-top: 0;
+    row-gap: 10px;
+  }
+  .about_me_title {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .greeting {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 45px;
+    width: 45px;
+  }
+  .greeting svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .about_me .content .astronaut img {
+    height: 100px;
+    width: 70px;
+  }
+
+  .about_me .content .astronaut._active img {
+    height: 100px;
+    width: 70px;
+  }
+
+  .neon_btn {
+    padding: 6px;
+    letter-spacing: 0.5px;
+    font-size: 6px;
+  }
+
+  .experience_list_item {
+    padding: 10px;
+  }
+
+  .experience_list_item .date {
+    font-size: 16px;
+  }
+
+  .experience_list_item .exp_info {
+    font-size: 7px;
+  }
+
+  .slider {
+    padding: 20px 0;
+  }
+
+  .slider_list {
+    animation: move_slider 30s linear infinite;
+  }
+  .slider_list_item svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .technologies_title {
+    height: 40px;
+  }
+
+  nav {
+    left: 15px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  nav .nav_item {
+    height: 60px;
+  }
+  nav .nav_item .line {
+    height: 25px;
+    width: 1px;
+  }
+  nav .nav_item .circle {
+    height: 10px;
+    width: 10px;
+  }
+  nav .nav_item .text {
+    position: absolute;
+    display: block;
+    width: 60px;
+    text-align: left;
+    font-size: 9px;
+    right: -50px;
+  }
+  nav .nav_item:hover .text {
+    width: 70px;
+    opacity: 1;
+    right: -80px;
+    z-index: 30;
+  }
+  nav .nav_item:hover .circle {
+    box-shadow: 1px 1px 10px red;
+    transform: scale(1.2);
+  }
+  nav .nav_item._active .text {
+    opacity: 1;
+    right: -80px;
+    z-index: 30;
+    width: 70px;
+  }
+  nav .nav_item._active .circle {
+    box-shadow: 1px 1px 10px red;
+    transform: scale(1.2);
+    background: rgba(255, 38, 0, 0.45);
+  }
+  nav .nav_title {
+    position: absolute;
+    top: 50%;
+    left: -45px;
+    transform: rotate(90deg) translateY(-50%);
+    font-weight: 600;
+    color: rgba(255, 38, 0, 0.45);
+    font-size: 12px;
+  }
+
+  .links {
+    margin: 10px;
+    width: 150px;
+  }
+  .links a .link {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .footer {
+    margin-top: 50px;
+    column-gap: 20px;
+  }
+  .footer .my_language .bold {
+    font-size: 7px;
+  }
+  .footer_info h3 {
+    font-size: 7px;
+  }
+
+  nav {
+    display: none;
+  }
 }
 ::-webkit-scrollbar {
   width: 15px;

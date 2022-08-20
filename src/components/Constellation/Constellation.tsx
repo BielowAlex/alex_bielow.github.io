@@ -19,8 +19,8 @@ const Constellation: React.FC = () => {
         const y = (e.clientY - window.innerHeight / 2)/50;
 
         if(root!==null){
-            root.style.setProperty('--posX',`${x}`);
-            root.style.setProperty('--posY',`${y}`);
+            root.style.setProperty('--posX',`${-x}`);
+            root.style.setProperty('--posY',`${-y}`);
         }
     }
 

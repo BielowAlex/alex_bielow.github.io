@@ -884,41 +884,7 @@ nav .nav_title {
   align-items: center;
   column-gap: 20px;
 }
-
-:root {
-  --posX:0;
-  --posY:0;
-}
-
-.underline {
-  display: flex;
-  align-items: center;
-  width: 0;
-  transition: all 1.5s linear;
-}
-.underline._active {
-  width: 100%;
-}
-.underline._active .line {
-  width: 100%;
-}
-.underline .line {
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 0, 38, 0.55);
-}
-
-.link {
-  color: rgba(255, 0, 38, 0.55);
-  font-weight: 200;
-  transition: all 0.4s linear;
-  cursor: url("/public/images/other/cursor-click.png"), auto;
-}
-.link:hover {
-  color: rgba(255, 0, 38, 0.82);
-}
-
-.neon_btn {
+.project_info .buttons .neon_btn {
   padding: 10px 10px;
   color: #c01723;
   font-size: 12px;
@@ -926,18 +892,19 @@ nav .nav_title {
   position: relative;
   display: inline-block;
   text-transform: uppercase;
+  background: inherit;
   letter-spacing: 3px;
   border: 1px solid #6c0e1c;
   overflow: hidden;
   transition: all 1s ease 0s;
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
-.neon_btn .neon_line {
+.project_info .buttons .neon_btn .neon_line {
   position: absolute;
   display: block;
   border-radius: 100px;
 }
-.neon_btn .neon_line__top {
+.project_info .buttons .neon_btn .neon_line__top {
   top: 0;
   left: -100%;
   width: 100%;
@@ -945,10 +912,10 @@ nav .nav_title {
   background: rgba(192, 23, 35, 0.73);
   transition: all 1s ease;
 }
-.neon_btn:hover .neon_line__top {
+.project_info .buttons .neon_btn:hover .neon_line__top {
   left: 100%;
 }
-.neon_btn .neon_line__bottom {
+.project_info .buttons .neon_btn .neon_line__bottom {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -956,10 +923,10 @@ nav .nav_title {
   background: rgba(192, 23, 35, 0.73);
   transition: all 1s ease;
 }
-.neon_btn:hover .neon_line__bottom {
+.project_info .buttons .neon_btn:hover .neon_line__bottom {
   right: 100%;
 }
-.neon_btn .neon_line__left {
+.project_info .buttons .neon_btn .neon_line__left {
   left: 0;
   bottom: -100%;
   width: 5px;
@@ -967,10 +934,10 @@ nav .nav_title {
   background: rgba(192, 23, 35, 0.73);
   transition: all 1s ease;
 }
-.neon_btn:hover .neon_line__left {
+.project_info .buttons .neon_btn:hover .neon_line__left {
   bottom: 100%;
 }
-.neon_btn .neon_line__right {
+.project_info .buttons .neon_btn .neon_line__right {
   right: 0;
   top: -100%;
   width: 5px;
@@ -978,10 +945,10 @@ nav .nav_title {
   background: rgba(192, 23, 35, 0.73);
   transition: all 1s ease;
 }
-.neon_btn:hover .neon_line__right {
+.project_info .buttons .neon_btn:hover .neon_line__right {
   top: 100%;
 }
-.neon_btn:hover {
+.project_info .buttons .neon_btn:hover {
   transition: all 0.5s ease 0.2s;
   box-shadow: #c01723 0 0 10px, #c01723 0 0 20px;
   background: rgba(192, 23, 35, 0.73);
@@ -1284,14 +1251,10 @@ nav .nav_title {
   animation: letter_anim 1.5s ease-in-out;
   color: rgba(255, 0, 38, 0.82);
 }
-.header_title .anim_letter:nth-child(2) {
-  margin-right: 10px;
-}
 .header_title .anim_letter._active {
   animation: letter_anim 0.3s ease-in-out;
   color: rgba(255, 0, 38, 0.82);
 }
-
 @keyframes letter_anim {
   0% {
     color: rgba(255, 0, 38, 0.55);
@@ -1322,6 +1285,10 @@ nav .nav_title {
     transform: scaleY(1) scaleX(1);
   }
 }
+.header_title .anim_letter:nth-child(2) {
+  margin-right: 10px;
+}
+
 :root {
   --posX:0;
   --posY:0;
@@ -1589,6 +1556,321 @@ body {
 
 .section {
   width: 70%;
+}
+
+:root {
+  --posX:0;
+  --posY:0;
+}
+
+.underline {
+  display: flex;
+  align-items: center;
+  width: 0;
+  transition: all 1.5s linear;
+}
+.underline._active {
+  width: 100%;
+}
+.underline._active .line {
+  width: 100%;
+}
+.underline .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 0, 38, 0.55);
+}
+
+.link {
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 200;
+  transition: all 0.4s linear;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+}
+.link:hover {
+  color: rgba(255, 0, 38, 0.82);
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  min-width: 100%;
+  min-height: 100%;
+  background: #05050c;
+  transform: translateY(100%);
+  transition: all 1s ease-in-out;
+}
+.overlay._show {
+  transform: translateY(0);
+}
+.overlay .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 50px;
+  color: rgba(255, 0, 38, 0.55);
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+  transition: all 0.5s linear;
+}
+.overlay .close:hover {
+  color: rgba(255, 0, 38, 0.82);
+  text-shadow: 1px 1px 10px rgba(255, 0, 38, 0.55);
+}
+.overlay .form_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+  height: 100%;
+  width: 50%;
+}
+.overlay .form_section .title {
+  display: flex;
+}
+.overlay .form_section .title .anim_letter {
+  display: block;
+  font-size: 50px;
+  color: rgba(255, 0, 38, 0.55);
+  text-transform: uppercase;
+  transition: all 0.6s ease-in-out;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+  font-size: 70px;
+}
+.overlay .form_section .title .anim_letter:hover {
+  animation: letter_anim 1.5s ease-in-out;
+  color: rgba(255, 0, 38, 0.82);
+}
+.overlay .form_section .title .anim_letter._active {
+  animation: letter_anim 0.3s ease-in-out;
+  color: rgba(255, 0, 38, 0.82);
+}
+@keyframes letter_anim {
+  0% {
+    color: rgba(255, 0, 38, 0.55);
+    transform: scaleY(1) scaleX(1);
+  }
+  20% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(1.4) scaleX(1);
+  }
+  40% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(0.9) scaleX(1);
+  }
+  50% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(1) scaleX(1.3);
+  }
+  60% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(1) scaleX(0.9);
+  }
+  90% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(1) scaleX(1.1);
+  }
+  100% {
+    color: rgba(255, 0, 38, 0.82);
+    transform: scaleY(1) scaleX(1);
+  }
+}
+.overlay .form_section .title .anim_letter:nth-child(7) {
+  margin-right: 10px;
+}
+.overlay .form_section p {
+  font-size: 18px;
+  font-weight: 100;
+  color: #6c0e1c;
+}
+.overlay .form_section .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 10px;
+}
+.overlay .form_section .form_top {
+  display: flex;
+  width: 100%;
+  column-gap: 10px;
+}
+.overlay .form_section .form input, .overlay .form_section .form textarea {
+  width: 100%;
+  padding: 15px;
+  background: #070711;
+  font-weight: 100;
+  color: rgba(255, 0, 38, 0.55);
+  font-size: 16px;
+  line-height: 20px;
+  transition: all 0.5s linear;
+  box-shadow: inset 1px 1px 1px rgba(5, 5, 12, 0);
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+}
+.overlay .form_section .form input:focus, .overlay .form_section .form textarea:focus {
+  box-shadow: inset 1px 1px 10px rgba(255, 0, 38, 0.55);
+}
+.overlay .form_section .form textarea {
+  height: 150px;
+  overflow-x: hidden;
+}
+.overlay .form_section .form button {
+  padding: 10px 10px;
+  color: #c01723;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  background: inherit;
+  letter-spacing: 3px;
+  border: 1px solid #6c0e1c;
+  overflow: hidden;
+  transition: all 1s ease 0s;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+  font-size: 25px;
+}
+.overlay .form_section .form button .neon_line {
+  position: absolute;
+  display: block;
+  border-radius: 100px;
+}
+.overlay .form_section .form button .neon_line__top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.overlay .form_section .form button:hover .neon_line__top {
+  left: 100%;
+}
+.overlay .form_section .form button .neon_line__bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 5px;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.overlay .form_section .form button:hover .neon_line__bottom {
+  right: 100%;
+}
+.overlay .form_section .form button .neon_line__left {
+  left: 0;
+  bottom: -100%;
+  width: 5px;
+  height: 100%;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.overlay .form_section .form button:hover .neon_line__left {
+  bottom: 100%;
+}
+.overlay .form_section .form button .neon_line__right {
+  right: 0;
+  top: -100%;
+  width: 5px;
+  height: 100%;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.overlay .form_section .form button:hover .neon_line__right {
+  top: 100%;
+}
+.overlay .form_section .form button:hover {
+  transition: all 0.5s ease 0.2s;
+  box-shadow: #c01723 0 0 10px, #c01723 0 0 20px;
+  background: rgba(192, 23, 35, 0.73);
+  color: #000;
+}
+.overlay .form_section .form input::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.overlay .form_section .form input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.overlay .form_section .form textarea::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.overlay .form_section .form input::-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.overlay .form_section .form textarea::-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.overlay .form_section .form input:focus::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s linear;
+}
+.overlay .form_section .form input:focus::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s linear;
+}
+.overlay .form_section .form textarea:focus::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s linear;
+}
+.overlay .form_section .form input:focus::-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s linear;
+}
+.overlay .form_section .form textarea:focus::-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: rgba(255, 0, 38, 0.55);
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s linear;
 }
 
 @font-face {

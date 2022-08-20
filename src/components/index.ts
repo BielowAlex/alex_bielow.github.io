@@ -9,3 +9,4 @@ export * from './Technologies';
 export * from './Header';
 export * from './Footer';
 export * from './Constellation';
+export * from './Overlay';

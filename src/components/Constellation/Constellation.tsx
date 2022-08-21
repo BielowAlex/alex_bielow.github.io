@@ -2,7 +2,6 @@ import React from 'react';
 import {ReactSVG} from "react-svg";
 
 const Constellation: React.FC = () => {
-    const [translateCount, setTranslateCount] = React.useState<number>(0);
     const mainDiv = React.useRef<HTMLDivElement>(null)
 
     const root = React.useMemo(() => document.querySelector(':root') as HTMLDivElement, []);
@@ -21,7 +20,6 @@ const Constellation: React.FC = () => {
 
     return (
         <div className="constellation _anim_item"
-             style={{transform: `translateY(-${translateCount}px)`}}
              ref={mainDiv}
              onMouseMove={(e) => parallax(e)}>
             <ReactSVG src="./images/constellation/ursa.svg" className="constellation_ursa"/>

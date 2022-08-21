@@ -10,10 +10,7 @@ interface IProps {
 }
 
 const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
-    const svg = React.useRef(null);
-
-    const [isSuccess, setIsSucces] = React.useState<boolean>(false);
-    const [message, setMessage] = React.useState<string>('Success');
+    const [isSuccess, setIsSuccess] = React.useState<boolean>(false);
 
     const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,7 +19,7 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
 
         emailjs.sendForm(`${REACT_APP_SERVICE_ID}`, `${REACT_APP_TEMPLATE_ID}`, e.currentTarget, `${REACT_APP_USER_ID}`)
             .then((result) => {
-                setIsSucces(true);
+                setIsSuccess(true);
                 console.log(result.text)
                 e.currentTarget.reset()
             },(error)=>{
@@ -33,12 +30,12 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
     React.useEffect(() => {
         if (isSuccess) {
             const closeWindow = setTimeout(() => {
-                setIsSucces(false);
+                setIsSuccess(false);
                 setIsShow(false);
             }, 2000);
             return () => clearTimeout(closeWindow)
         }
-    }, [isSuccess])
+    }, [isSuccess, setIsShow])
 
     return (
         <div className={`overlay ${isShow ? '_show' : ''}`}>
@@ -50,7 +47,6 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
                 </div>
                 <span>The email was sent successfully</span>
             </div>
-            {/*<div className="overlay_window">*/}
             <div className="form_section">
                 <div className="title">
                     <span className="anim_letter">C</span>
@@ -87,8 +83,6 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
                     </button>
                 </form>
             </div>
-
-            {/*</div>*/}
         </div>
     );
 };

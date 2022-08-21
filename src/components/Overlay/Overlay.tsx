@@ -23,7 +23,7 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
                 console.log(result.text)
                 e.currentTarget.reset()
             },(error)=>{
-                console.log(error)
+                console.error(error.text);
             })
     }
 

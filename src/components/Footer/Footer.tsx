@@ -49,4 +49,4 @@ const Footer:React.FC<IProps> = ({setIsShow}) => {
     );
 };
 
-export default Footer;
+export {Footer};

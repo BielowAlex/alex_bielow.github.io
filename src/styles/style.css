@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   row-gap: 100px;
-  z-index: 15;
+  z-index: 20;
   justify-content: center;
   align-items: center;
   min-width: 100%;
@@ -468,7 +468,7 @@ nav .nav_title {
   row-gap: 120px;
   transition: all 3s linear;
   transform: translateY(50px);
-  z-index: 10;
+  z-index: 20;
 }
 .about_me_title {
   text-transform: uppercase;
@@ -709,6 +709,7 @@ nav .nav_title {
   align-items: center;
   row-gap: 70px;
   padding: 10px;
+  z-index: 20;
 }
 .projects_top {
   display: flex;
@@ -1099,6 +1100,7 @@ nav .nav_title {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  z-index: 20;
 }
 .technologies_title {
   display: flex;
@@ -1328,6 +1330,7 @@ nav .nav_title {
   align-items: center;
   column-gap: 50px;
   width: 100%;
+  z-index: 20;
   border-top: 1px solid rgba(255, 0, 38, 0.99);
   padding: 10px 0 0 0;
   background: #05050c;
@@ -1469,7 +1472,7 @@ nav .nav_title {
 }
 
 .constellation {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 16;
@@ -1599,14 +1602,73 @@ body {
   z-index: 100;
   min-width: 100%;
   min-height: 100%;
-  background: #05050c;
+  background: #030307;
   transform: translateY(100%);
   transition: all 1s ease-in-out;
+}
+.overlay .alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  width: 300px;
+  height: fit-content;
+  padding: 50px 20px;
+  background: #05050c;
+  border: 1px solid rgba(255, 0, 38, 0.99);
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.overlay .alert._active {
+  z-index: 60;
+  opacity: 1;
+}
+.overlay .alert svg {
+  width: 50px;
+  height: 50px;
+}
+.overlay .alert svg path, .overlay .alert svg g {
+  stroke: #ff042a;
+  stroke-opacity: 1;
+  stroke-dashoffset: 3474.6989746094;
+  stroke-dasharray: 3474.6989746094;
+  animation: draw 2s linear infinite forwards;
+}
+.overlay .alert span {
+  color: rgba(255, 0, 38, 0.55);
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+}
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.overlay .constellation {
+  animation: move_title 30s linear infinite;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  opacity: 1;
+}
+.overlay .constellation svg {
+  z-index: 30;
+}
+.overlay .constellation_aries, .overlay .constellation_ursa, .overlay .constellation_virgo {
+  opacity: 0;
 }
 .overlay._show {
   transform: translateY(0);
 }
 .overlay .close {
+  z-index: 50;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -1626,6 +1688,11 @@ body {
   row-gap: 40px;
   height: 100%;
   width: 50%;
+  z-index: 50;
+  background: #05050c;
+  padding: 40px;
+  border: 1px solid rgba(255, 0, 38, 0.99);
+  border-radius: 40px;
 }
 .overlay .form_section .title {
   display: flex;
@@ -1696,6 +1763,19 @@ body {
   display: flex;
   width: 100%;
   column-gap: 10px;
+}
+.overlay .form_section .form input:-webkit-autofill,
+.overlay .form_section .form input:-webkit-autofill:hover,
+.overlay .form_section .form textarea:-webkit-autofill,
+.overlay .form_section .form textarea:-webkit-autofill:hover {
+  -webkit-text-fill-color: rgba(255, 0, 38, 0.55);
+  -webkit-box-shadow: 0 0 0 1000px #070711 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.overlay .form_section .form input:-webkit-autofill:focus,
+.overlay .form_section .form textarea:-webkit-autofill:focus {
+  box-shadow: inset 1px 1px 10px rgba(255, 0, 38, 0.55);
+  -webkit-box-shadow: inset 1px 1px 10px rgba(255, 0, 38, 0.55), inset 0 0 0px 1000px #070711;
 }
 .overlay .form_section .form input, .overlay .form_section .form textarea {
   width: 100%;

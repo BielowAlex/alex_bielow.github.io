@@ -17,21 +17,88 @@
   z-index: 100;
   min-width: 100%;
   min-height: 100%;
-  background: #05050c;
+  background: #030307;
   transform: translateY(100%);
   transition: all 1s ease-in-out;
 
-  &._show{
+  .alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    width: 300px;
+    height: fit-content;
+    padding: 50px 20px;
+    background: $back_color;
+    border: 1px solid $line_color;
+    border-radius: 20px;
+    opacity: 0;
+    transition: all 0.3s linear;
+
+    &._active{
+      z-index: 60;
+      opacity: 1;
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+      path,g{
+        stroke: #ff042a;
+        stroke-opacity: 1;
+        stroke-dashoffset: 3474.698974609375;
+        stroke-dasharray: 3474.698974609375;
+        animation: draw 2s linear infinite forwards;
+      }
+    }
+
+    span {
+      color: $text_color;
+      font-size: 25px;
+      font-weight: 100;
+      text-align: center;
+    }
+    @keyframes draw {
+      100%{
+        stroke-dashoffset: 0;
+      }
+    }
+
+  }
+
+  .constellation {
+    animation: move_title 30s linear infinite;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    opacity: 1;
+
+    svg {
+      z-index: 30;
+    }
+
+    &_aries, &_ursa, &_virgo {
+      opacity: 0;
+    }
+  }
+
+  &._show {
     transform: translateY(0);
   }
 
   .close {
+    z-index: 50;
     position: absolute;
     top: 30px;
     right: 30px;
     font-size: 50px;
     color: $text-color;
-    cursor: url("/public/images/other/cursor-click.png"),auto;
+    cursor: url("/public/images/other/cursor-click.png"), auto;
     transition: all 0.5s linear;
 
     &:hover {
@@ -45,6 +112,11 @@
     row-gap: 40px;
     height: 100%;
     width: 50%;
+    z-index: 50;
+    background: #05050c;
+    padding: 40px;
+    border: 1px solid $line_color;
+    border-radius: 40px;
 
     .title {
       display: flex;
@@ -76,6 +148,19 @@
         column-gap: 10px;
       }
 
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover{
+        -webkit-text-fill-color: $text_color;
+        -webkit-box-shadow: 0 0 0 1000px #070711 inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill:focus{
+        box-shadow: inset 1px 1px 10px $text_color;
+        -webkit-box-shadow:inset 1px 1px 10px $text_color, inset 0 0 0px 1000px #070711, ;
+      }
       input, textarea {
         width: 100%;
         padding: 15px;
@@ -85,14 +170,14 @@
         font-size: 16px;
         line-height: 20px;
         transition: all 0.5s linear;
-        box-shadow:inset 1px 1px 1px rgba(5, 5, 12, 0);
+        box-shadow: inset 1px 1px 1px rgba(5, 5, 12, 0);
 
-        cursor: url("/public/images/other/cursor-click.png"),auto;
+        cursor: url("/public/images/other/cursor-click.png"), auto;
 
       }
 
       input:focus, textarea:focus {
-        box-shadow:inset 1px 1px 10px $text_color;
+        box-shadow: inset 1px 1px 10px $text_color;
       }
 
       textarea {
@@ -170,3 +255,5 @@
     }
   }
 }
+
+

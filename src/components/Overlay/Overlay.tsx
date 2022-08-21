@@ -1,12 +1,12 @@
 import React from 'react';
 import emailjs from 'emailjs-com'
+import {ReactSVG} from "react-svg";
 
 import {Constellation} from "../Constellation";
-import {ReactSVG} from "react-svg";
 
 interface IProps {
     isShow: boolean
-    setIsShow: React.Dispatch<React.SetStateAction<boolean>>
+    setIsShow: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
@@ -14,6 +14,7 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
 
     const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        e.currentTarget.reset()
 
         const {REACT_APP_TEMPLATE_ID, REACT_APP_SERVICE_ID, REACT_APP_USER_ID} = process.env;
 
@@ -21,8 +22,8 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
             .then((result) => {
                 setIsSuccess(true);
                 console.log(result.text)
-                e.currentTarget.reset()
-            },(error)=>{
+
+            }, (error) => {
                 console.error(error.text);
             })
     }

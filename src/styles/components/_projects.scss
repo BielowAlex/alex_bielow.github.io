@@ -4,6 +4,7 @@
   @include flex_dir_col;
   row-gap: 70px;
   padding: 10px;
+  z-index: 20;
 
   &_top {
     @include title;

@@ -3,7 +3,7 @@
 .black_hole {
   @include flex_dir_col;
   row-gap: 100px;
-  z-index: 15;
+  z-index: 20;
   justify-content: center;
   align-items: center;
   min-width: 100%;

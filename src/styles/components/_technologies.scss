@@ -3,6 +3,7 @@
 .technologies{
   @include flex_dir_col;
   padding: 10px;
+  z-index: 20;
   &_title{
     @include title;
     .underline{

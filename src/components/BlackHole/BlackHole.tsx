@@ -5,7 +5,7 @@ const BlackHole: React.FC = () => {
 
     const messages = [
         {id: 1, message: 'Hi my name is Alexander!'},
-        {id: 2, message: 'I\'m 20 years old'},
+        {id: 2, message: 'I\'m 21 years old'},
         {id: 3, message: 'And I\'m a web developer'},
     ];
 

@@ -29,11 +29,6 @@ const AboutMe: React.FC = () => {
                     <ReactSVG src="./images/other/sky.svg"/>
                     <img src="/images/other/astronaut.png" alt="astronaut" onClick={()=>{setIsKilled(!isKilled)}}/>
                 </div>
-                {/*<h3 className="_anim_item">*/}
-                {/*    Additionally studying at the "Okten web school" courses.*/}
-                {/*    I get great satisfaction from what I do.*/}
-                {/*</h3>*/}
-
             </div>
         </div>
     );

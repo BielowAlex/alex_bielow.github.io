@@ -1910,6 +1910,9 @@ body {
   z-index: 60;
   opacity: 1;
 }
+.overlay .alert._active svg path, .overlay .alert._active svg g {
+  animation: draw 2s linear forwards;
+}
 .overlay .alert svg {
   width: 50px;
   height: 50px;
@@ -1919,7 +1922,6 @@ body {
   stroke-opacity: 1;
   stroke-dashoffset: 3474.6989746094;
   stroke-dasharray: 3474.6989746094;
-  animation: draw 2s linear infinite forwards;
 }
 .overlay .alert span {
   color: rgba(255, 0, 38, 0.74);

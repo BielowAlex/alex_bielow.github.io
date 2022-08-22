@@ -219,6 +219,11 @@
     &._active{
       z-index: 60;
       opacity: 1;
+      svg{
+        path,g{
+          animation: draw 2s linear  forwards;
+        }
+      }
     }
 
     svg {
@@ -229,7 +234,6 @@
         stroke-opacity: 1;
         stroke-dashoffset: 3474.698974609375;
         stroke-dasharray: 3474.698974609375;
-        animation: draw 2s linear infinite forwards;
       }
     }
 

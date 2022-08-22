@@ -50,16 +50,16 @@ const App: React.FC = () => {
     }
 
     React.useEffect(() => {
-        if (wrapper.current !== null) {
-            wrapper.current.addEventListener('wheel', handleScrolling);
 
-            return () => {
-                if (wrapper.current!==null) {
-                    wrapper.current.removeEventListener('wheel', handleScrolling);
-                }
-            }
+
+        if (wrapper.current !== null) {
+            const wrapperDiv = wrapper.current;
+            wrapperDiv.addEventListener('wheel', handleScrolling);
+
+            return () => wrapperDiv.removeEventListener('wheel', handleScrolling);
+
         }
-    }, [isShow])
+    }, [handleScrolling, isShow])
 
 
     React.useEffect(() => {

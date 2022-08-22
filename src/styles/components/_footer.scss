@@ -44,6 +44,8 @@
       .bold {
         &:nth-child(4){
           text-decoration:line-through ;
+          font-family: sans-serif;
+          font-weight: bolder;
         }
       }
     }

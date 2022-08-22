@@ -1370,6 +1370,8 @@ nav .nav_title {
 }
 .footer_info .my_language .bold:nth-child(4) {
   text-decoration: line-through;
+  font-family: sans-serif;
+  font-weight: bolder;
 }
 .footer_img {
   height: 200px;

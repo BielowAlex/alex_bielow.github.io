@@ -176,6 +176,12 @@
 
       }
 
+      input._invalid,
+      textarea._invalid{
+        border-bottom: 1px solid $text_color;
+        padding-bottom:14px ;
+      }
+
       input:focus, textarea:focus {
         box-shadow: inset 1px 1px 10px $text_color;
       }

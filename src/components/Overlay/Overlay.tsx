@@ -1,8 +1,10 @@
 import React from 'react';
 import emailjs from 'emailjs-com'
 import {ReactSVG} from "react-svg";
+import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
 
-import {Constellation} from "../Constellation";
+import {formValidator} from "../../validators";
 
 interface IProps {
     isShow: boolean
@@ -12,20 +14,25 @@ interface IProps {
 const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
     const [isSuccess, setIsSuccess] = React.useState<boolean>(false);
 
-    const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        e.currentTarget.reset()
+    const formRef = React.useRef<HTMLFormElement>(null);
+
+    const {handleSubmit,reset,register,formState:{errors}} = useForm({resolver:joiResolver(formValidator),mode:"onTouched"})
+
+    const sendMessage = () => {
 
         const {REACT_APP_TEMPLATE_ID, REACT_APP_SERVICE_ID, REACT_APP_USER_ID} = process.env;
 
-        emailjs.sendForm(`${REACT_APP_SERVICE_ID}`, `${REACT_APP_TEMPLATE_ID}`, e.currentTarget, `${REACT_APP_USER_ID}`)
-            .then((result) => {
-                setIsSuccess(true);
-                console.log(result.text)
+        if(formRef.current!==null) {
+            emailjs.sendForm(`${REACT_APP_SERVICE_ID}`, `${REACT_APP_TEMPLATE_ID}`, formRef.current, `${REACT_APP_USER_ID}`)
+                .then((result) => {
+                    setIsSuccess(true);
+                    console.log(result.text)
+                    reset();
 
-            }, (error) => {
-                console.error(error.text);
-            })
+                }, (error) => {
+                    console.log(error.text);
+                })
+        }
     }
 
     React.useEffect(() => {
@@ -40,7 +47,6 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
 
     return (
         <div className={`overlay ${isShow ? '_show' : ''}`}>
-            {/*<Constellation/>*/}
             <div className="close" onClick={() => setIsShow(false)}>X</div>
             <div className={`alert ${isSuccess ? '_active' : ''}`}>
                 <div className="icon">
@@ -68,13 +74,13 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
                     However, if you have other request or question,
                     don’t hesitate to use the form.
                 </p>
-                <form className="form" onSubmit={(e) => sendMessage(e)}>
+                <form className="form" onSubmit={handleSubmit(sendMessage)} ref={formRef}>
                     <div className="form_top">
-                        <input type="text" placeholder="Name" name="name"/>
-                        <input type="email" placeholder="Email" name="email"/>
+                        <input type="text" placeholder="Name" {...register("name")} className={errors.name&&'_invalid'}/>
+                        <input type="email" placeholder="Email" {...register("email")} className={errors.email&&'_invalid'}/>
                     </div>
-                    <input type="text" placeholder="Subject" name="subject"/>
-                    <textarea name="message" placeholder="Message"/>
+                    <input type="text" placeholder="Subject" {...register("subject")} className={errors.subject&&'_invalid'}/>
+                    <textarea {...register("message")} placeholder="Message" className={errors.message&&'_invalid'}/>
                     <button className="neon_btn">
                         <span className="neon_line neon_line__top"/>
                         <span className="neon_line neon_line__bottom"/>

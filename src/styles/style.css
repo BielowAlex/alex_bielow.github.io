@@ -1774,6 +1774,11 @@ body {
   resize: none;
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
+.overlay .form_section .form input._invalid,
+.overlay .form_section .form textarea._invalid {
+  border-bottom: 1px solid rgba(255, 0, 38, 0.74);
+  padding-bottom: 14px;
+}
 .overlay .form_section .form input:focus, .overlay .form_section .form textarea:focus {
   box-shadow: inset 1px 1px 10px rgba(255, 0, 38, 0.74);
 }

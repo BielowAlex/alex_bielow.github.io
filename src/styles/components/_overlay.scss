@@ -21,71 +21,6 @@
   transform: translateY(100%);
   transition: all 1s ease-in-out;
 
-  .alert {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 50;
-    width: 300px;
-    height: fit-content;
-    padding: 50px 20px;
-    background: $back_color;
-    border: 1px solid $line_color;
-    border-radius: 20px;
-    opacity: 0;
-    transition: all 0.3s linear;
-
-    &._active{
-      z-index: 60;
-      opacity: 1;
-    }
-
-    svg {
-      width: 50px;
-      height: 50px;
-      path,g{
-        stroke: #ff042a;
-        stroke-opacity: 1;
-        stroke-dashoffset: 3474.698974609375;
-        stroke-dasharray: 3474.698974609375;
-        animation: draw 2s linear infinite forwards;
-      }
-    }
-
-    span {
-      color: $text_color;
-      font-size: 25px;
-      font-weight: 100;
-      text-align: center;
-    }
-    @keyframes draw {
-      100%{
-        stroke-dashoffset: 0;
-      }
-    }
-
-  }
-
-  .constellation {
-    animation: move_title 30s linear infinite;
-    width: 100%;
-    height: 100%;
-    z-index: 30;
-    opacity: 1;
-
-    svg {
-      z-index: 30;
-    }
-
-    &_aries, &_ursa, &_virgo {
-      opacity: 0;
-    }
-  }
 
   &._show {
     transform: translateY(0);
@@ -259,6 +194,55 @@
         transition: all 0.3s linear;
       }
     }
+  }
+  .alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+    width: 300px;
+    height: fit-content;
+    padding: 50px 20px;
+    background: $back_color;
+    border: 1px solid $line_color;
+    border-radius: 20px;
+    opacity: 1;
+    transition: all 0.3s linear;
+
+    &._active{
+      z-index: 60;
+      opacity: 1;
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+      path,g{
+        stroke: #ff042a;
+        stroke-opacity: 1;
+        stroke-dashoffset: 3474.698974609375;
+        stroke-dasharray: 3474.698974609375;
+        animation: draw 2s linear infinite forwards;
+      }
+    }
+
+    span {
+      color: $text_color;
+      font-size: 25px;
+      font-weight: 100;
+      text-align: center;
+    }
+    @keyframes draw {
+      100%{
+        stroke-dashoffset: 0;
+      }
+    }
+
   }
 }
 

@@ -7,7 +7,7 @@
     }
   }
 
-  nav{
+  nav {
     top: 40%;
   }
 
@@ -65,7 +65,26 @@
     }
   }
 
+  .overlay {
+    .form_section {
+      .title {
 
+        .anim_letter {
+          font-size: 50px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .form {
+        button {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 
 
   .project {
@@ -191,6 +210,29 @@
 
 @media screen and (max-width: 920px) {
 
+  .overlay {
+    .form_section {
+      .title {
+        .anim_letter {
+          font-size: 45px;
+        }
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .form {
+        button {
+          font-size: 15px;
+        }
+
+        input, textarea {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 
   .project {
     display: flex;
@@ -231,17 +273,20 @@
 
     &._active {
       column-gap: 50px;
+
       .project_cart {
         .poster {
           img {
             box-shadow: 3px 5px 5px red,
             3px 5px 15px red;
           }
-          .programing_languages{
+
+          .programing_languages {
             opacity: 1;
           }
         }
       }
+
       .project_info {
         opacity: 1;
       }
@@ -398,8 +443,9 @@
     .obj {
       height: 80px;
       width: 80px;
-      .light{
-        span{
+
+      .light {
+        span {
           line-height: 12px;
           font-size: 10px;
         }
@@ -525,6 +571,38 @@
 }
 
 @media screen and (max-width: 800px) {
+
+  .overlay {
+    .form_section {
+      row-gap: 20px;
+
+      .title {
+        .anim_letter {
+          font-size: 35px;
+        }
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      .form {
+        button {
+          font-size: 11px;
+        }
+
+        input, textarea {
+          font-size: 10px;
+          line-height: 12px;
+        }
+
+        textarea {
+          height: 100px;
+        }
+      }
+    }
+  }
+
   .oval {
     height: 150px;
     width: 300px;
@@ -663,8 +741,37 @@
     }
   }
 
+  .overlay {
+    .form_section {
+      row-gap: 15px;
 
+      .title {
+        .anim_letter {
+          font-size: 30px;
+        }
+      }
 
+      p {
+        font-size: 7px;
+      }
+
+      .form {
+        button {
+          font-size: 9px;
+          letter-spacing: 1px;
+        }
+
+        input, textarea {
+          font-size: 8px;
+          line-height: 9px;
+        }
+
+        textarea {
+          height: 80px;
+        }
+      }
+    }
+  }
 }
 
 
@@ -675,6 +782,49 @@
     }
   }
 
+
+  .overlay {
+
+    .close {
+      font-size: 30px;
+    }
+
+    .form_section {
+      border-radius: 20px;
+      padding: 10px;
+      row-gap: 10px;
+
+      .title {
+        .anim_letter {
+          font-size: 25px;
+        }
+      }
+
+      p {
+        font-size: 6px;
+      }
+
+      .form {
+        button {
+          font-size: 8px;
+          letter-spacing: 1px;
+        }
+
+        input, textarea {
+          font-size: 7px;
+          line-height: 8px;
+        }
+
+        input {
+          height: 20px;
+        }
+
+        textarea {
+          height: 70px;
+        }
+      }
+    }
+  }
 
   .project {
     &_cart {
@@ -817,13 +967,29 @@
     }
   }
 
-  .black_hole{
+  .black_hole {
     z-index: 20;
   }
 
 }
 
 @media screen and (max-width: 490px) {
+
+  .overlay {
+    .alert {
+      padding: 25px 10px;
+      width: 150px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      span {
+        font-size: 16px;
+      }
+    }
+  }
 
   .wrapper {
     row-gap: 30px;
@@ -1066,6 +1232,50 @@
   .wrapper {
     display: flex;
     row-gap: 20px;
+  }
+
+  .overlay {
+
+    .close {
+      font-size: 25px;
+    }
+
+    .form_section {
+      border-radius: 20px;
+      padding: 10px;
+      row-gap: 10px;
+
+      .title {
+        .anim_letter {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 5px;
+      }
+
+      .form {
+        button {
+          font-size: 8px;
+          padding: 5px;
+          letter-spacing: 0.5px;
+        }
+
+        input, textarea {
+          font-size: 5px;
+          line-height: 6px;
+        }
+
+        input {
+          height: 20px;
+        }
+
+        textarea {
+          height: 70px;
+        }
+      }
+    }
   }
 
   .constellation {

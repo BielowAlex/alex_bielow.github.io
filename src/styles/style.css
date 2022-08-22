@@ -1590,64 +1590,6 @@ body {
   transform: translateY(100%);
   transition: all 1s ease-in-out;
 }
-.overlay .alert {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 50;
-  width: 300px;
-  height: fit-content;
-  padding: 50px 20px;
-  background: #05050c;
-  border: 1px solid rgba(255, 0, 38, 0.99);
-  border-radius: 20px;
-  opacity: 0;
-  transition: all 0.3s linear;
-}
-.overlay .alert._active {
-  z-index: 60;
-  opacity: 1;
-}
-.overlay .alert svg {
-  width: 50px;
-  height: 50px;
-}
-.overlay .alert svg path, .overlay .alert svg g {
-  stroke: #ff042a;
-  stroke-opacity: 1;
-  stroke-dashoffset: 3474.6989746094;
-  stroke-dasharray: 3474.6989746094;
-  animation: draw 2s linear infinite forwards;
-}
-.overlay .alert span {
-  color: rgba(255, 0, 38, 0.74);
-  font-size: 25px;
-  font-weight: 100;
-  text-align: center;
-}
-@keyframes draw {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-.overlay .constellation {
-  animation: move_title 30s linear infinite;
-  width: 100%;
-  height: 100%;
-  z-index: 30;
-  opacity: 1;
-}
-.overlay .constellation svg {
-  z-index: 30;
-}
-.overlay .constellation_aries, .overlay .constellation_ursa, .overlay .constellation_virgo {
-  opacity: 0;
-}
 .overlay._show {
   transform: translateY(0);
 }
@@ -1942,6 +1884,51 @@ body {
   transform: translateX(20px);
   transition: all 0.3s linear;
 }
+.overlay .alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 60;
+  width: 300px;
+  height: fit-content;
+  padding: 50px 20px;
+  background: #05050c;
+  border: 1px solid rgba(255, 0, 38, 0.99);
+  border-radius: 20px;
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+.overlay .alert._active {
+  z-index: 60;
+  opacity: 1;
+}
+.overlay .alert svg {
+  width: 50px;
+  height: 50px;
+}
+.overlay .alert svg path, .overlay .alert svg g {
+  stroke: #ff042a;
+  stroke-opacity: 1;
+  stroke-dashoffset: 3474.6989746094;
+  stroke-dasharray: 3474.6989746094;
+  animation: draw 2s linear infinite forwards;
+}
+.overlay .alert span {
+  color: rgba(255, 0, 38, 0.74);
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+}
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
 @font-face {
   font-family: "WhyteInktrap";
@@ -2064,6 +2051,16 @@ body {
     width: 200px;
   }
 
+  .overlay .form_section .title .anim_letter {
+    font-size: 50px;
+  }
+  .overlay .form_section p {
+    font-size: 16px;
+  }
+  .overlay .form_section .form button {
+    font-size: 20px;
+  }
+
   .project_cart {
     width: 300px;
     height: 200px;
@@ -2166,6 +2163,19 @@ body {
   }
 }
 @media screen and (max-width: 920px) {
+  .overlay .form_section .title .anim_letter {
+    font-size: 45px;
+  }
+  .overlay .form_section p {
+    font-size: 13px;
+  }
+  .overlay .form_section .form button {
+    font-size: 15px;
+  }
+  .overlay .form_section .form input, .overlay .form_section .form textarea {
+    font-size: 12px;
+  }
+
   .project {
     display: flex;
     flex-direction: column;
@@ -2437,6 +2447,26 @@ body {
   }
 }
 @media screen and (max-width: 800px) {
+  .overlay .form_section {
+    row-gap: 20px;
+  }
+  .overlay .form_section .title .anim_letter {
+    font-size: 35px;
+  }
+  .overlay .form_section p {
+    font-size: 10px;
+  }
+  .overlay .form_section .form button {
+    font-size: 11px;
+  }
+  .overlay .form_section .form input, .overlay .form_section .form textarea {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .overlay .form_section .form textarea {
+    height: 100px;
+  }
+
   .oval {
     height: 150px;
     width: 300px;
@@ -2553,10 +2583,60 @@ body {
     width: 50px;
     height: 50px;
   }
+
+  .overlay .form_section {
+    row-gap: 15px;
+  }
+  .overlay .form_section .title .anim_letter {
+    font-size: 30px;
+  }
+  .overlay .form_section p {
+    font-size: 7px;
+  }
+  .overlay .form_section .form button {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .overlay .form_section .form input, .overlay .form_section .form textarea {
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .overlay .form_section .form textarea {
+    height: 80px;
+  }
 }
 @media screen and (max-width: 570px) {
   .constellation_aries, .constellation_virgo, .constellation_ursa {
     width: 120px;
+  }
+
+  .overlay .close {
+    font-size: 30px;
+  }
+  .overlay .form_section {
+    border-radius: 20px;
+    padding: 10px;
+    row-gap: 10px;
+  }
+  .overlay .form_section .title .anim_letter {
+    font-size: 25px;
+  }
+  .overlay .form_section p {
+    font-size: 6px;
+  }
+  .overlay .form_section .form button {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .overlay .form_section .form input, .overlay .form_section .form textarea {
+    font-size: 7px;
+    line-height: 8px;
+  }
+  .overlay .form_section .form input {
+    height: 20px;
+  }
+  .overlay .form_section .form textarea {
+    height: 70px;
   }
 
   .project_cart {
@@ -2683,6 +2763,18 @@ body {
   }
 }
 @media screen and (max-width: 490px) {
+  .overlay .alert {
+    padding: 25px 10px;
+    width: 150px;
+  }
+  .overlay .alert svg {
+    width: 30px;
+    height: 30px;
+  }
+  .overlay .alert span {
+    font-size: 16px;
+  }
+
   .wrapper {
     row-gap: 30px;
   }
@@ -2898,6 +2990,36 @@ body {
   .wrapper {
     display: flex;
     row-gap: 20px;
+  }
+
+  .overlay .close {
+    font-size: 25px;
+  }
+  .overlay .form_section {
+    border-radius: 20px;
+    padding: 10px;
+    row-gap: 10px;
+  }
+  .overlay .form_section .title .anim_letter {
+    font-size: 20px;
+  }
+  .overlay .form_section p {
+    font-size: 5px;
+  }
+  .overlay .form_section .form button {
+    font-size: 8px;
+    padding: 5px;
+    letter-spacing: 0.5px;
+  }
+  .overlay .form_section .form input, .overlay .form_section .form textarea {
+    font-size: 5px;
+    line-height: 6px;
+  }
+  .overlay .form_section .form input {
+    height: 20px;
+  }
+  .overlay .form_section .form textarea {
+    height: 70px;
   }
 
   .constellation {

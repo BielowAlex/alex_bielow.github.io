@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Project} from "../Project";
 
 interface IProps {
@@ -6,7 +7,6 @@ interface IProps {
 }
 
 const Projects: React.FC<IProps> = ({reference}) => {
-
     return (
         <div id="projects" className="projects section" ref={reference}>
             <div className="projects_top">

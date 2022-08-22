@@ -38,19 +38,15 @@ const App: React.FC = () => {
         }
     }
 
-
-
-    const handleScrolling = (event:WheelEvent) => {
-        if (!isShow && wrapper.current !== null) {
-            return
-        }
-
-        event.preventDefault()
-        event.stopPropagation();
-    }
-
     React.useEffect(() => {
+        const handleScrolling = (event:WheelEvent) => {
+            if (!isShow && wrapper.current !== null) {
+                return
+            }
 
+            event.preventDefault()
+            event.stopPropagation();
+        }
 
         if (wrapper.current !== null) {
             const wrapperDiv = wrapper.current;
@@ -59,8 +55,7 @@ const App: React.FC = () => {
             return () => wrapperDiv.removeEventListener('wheel', handleScrolling);
 
         }
-    }, [handleScrolling, isShow])
-
+    }, [ isShow])
 
     React.useEffect(() => {
         startAnimatedScroll();

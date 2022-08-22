@@ -17,7 +17,7 @@
   z-index: 100;
   min-width: 100%;
   min-height: 100%;
-  background: #030307;
+  background: rgba(3, 3, 7, 0.91);
   transform: translateY(100%);
   transition: all 1s ease-in-out;
 
@@ -171,7 +171,7 @@
         line-height: 20px;
         transition: all 0.5s linear;
         box-shadow: inset 1px 1px 1px rgba(5, 5, 12, 0);
-
+        resize: none;
         cursor: url("/public/images/other/cursor-click.png"), auto;
 
       }

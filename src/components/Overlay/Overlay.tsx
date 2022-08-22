@@ -40,7 +40,7 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
 
     return (
         <div className={`overlay ${isShow ? '_show' : ''}`}>
-            <Constellation/>
+            {/*<Constellation/>*/}
             <div className="close" onClick={() => setIsShow(false)}>X</div>
             <div className={`alert ${isSuccess ? '_active' : ''}`}>
                 <div className="icon">

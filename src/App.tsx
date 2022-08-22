@@ -67,7 +67,7 @@ const App: React.FC = () => {
     });
 
     return (
-        <div className={`wrapper ${isShow ? 'no_scroll' : ''}`} ref={wrapper} onMouseMove={(e) => parallax(e)}>
+        <div className={`wrapper ${isShow ? 'no_scroll' : ''}`} ref={wrapper} onMouseMove={(e)=>parallax(e)}>
             <Overlay isShow={isShow} setIsShow={setIsShow}/>
             <Header/>
             <Background/>

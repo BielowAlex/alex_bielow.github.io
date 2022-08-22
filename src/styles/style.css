@@ -1517,25 +1517,9 @@ nav .nav_title {
 }
 .stars svg circle {
   transition: all 0.4s linear;
-  fill: rgba(255, 0, 0, 0.07);
-  animation: stars 3s linear infinite;
-}
-.stars svg circle:hover {
-  animation-play-state: paused;
-  fill: rgba(255, 0, 38, 0.99);
+  fill: rgba(255, 0, 0, 0.56);
 }
 
-@keyframes stars {
-  0% {
-    fill: rgba(255, 0, 0, 0.07);
-  }
-  50% {
-    fill: rgba(255, 0, 0, 0.99);
-  }
-  100% {
-    fill: rgba(255, 0, 0, 0.07);
-  }
-}
 body {
   font-family: "WhyteInktrap", sans-serif;
   font-weight: 400;
@@ -1602,7 +1586,7 @@ body {
   z-index: 100;
   min-width: 100%;
   min-height: 100%;
-  background: #030307;
+  background: rgba(3, 3, 7, 0.91);
   transform: translateY(100%);
   transition: all 1s ease-in-out;
 }
@@ -1787,6 +1771,7 @@ body {
   line-height: 20px;
   transition: all 0.5s linear;
   box-shadow: inset 1px 1px 1px rgba(5, 5, 12, 0);
+  resize: none;
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
 .overlay .form_section .form input:focus, .overlay .form_section .form textarea:focus {

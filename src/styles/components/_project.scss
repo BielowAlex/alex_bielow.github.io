@@ -53,10 +53,10 @@
 
       .programing_languages{
         position: absolute;
-        bottom: -70px;
+        bottom: -50px;
         left: -20px;
         display: flex;
-        //column-gap: 10px;
+        column-gap: 20px;
         transition: all 0.8s linear;
         opacity: 0;
         z-index: 10;
@@ -64,8 +64,8 @@
 
 
         svg {
-          width: 100px;
-          height: 100px;
+          width: 80px;
+          height: 80px;
         }
       }
 

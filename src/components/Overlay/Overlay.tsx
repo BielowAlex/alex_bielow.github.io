@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
 import {formValidator} from "../../validators";
+import {NeonButton} from "../CustomButtons";
 
 interface IProps {
     isShow: boolean
@@ -16,13 +17,16 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
 
     const formRef = React.useRef<HTMLFormElement>(null);
 
-    const {handleSubmit,reset,register,formState:{errors}} = useForm({resolver:joiResolver(formValidator),mode:"onTouched"})
+    const {handleSubmit, reset, register, formState: {errors}} = useForm({
+        resolver: joiResolver(formValidator),
+        mode: "onTouched"
+    })
 
     const sendMessage = () => {
 
         const {REACT_APP_TEMPLATE_ID, REACT_APP_SERVICE_ID, REACT_APP_USER_ID} = process.env;
 
-        if(formRef.current!==null) {
+        if (formRef.current !== null) {
             emailjs.sendForm(`${REACT_APP_SERVICE_ID}`, `${REACT_APP_TEMPLATE_ID}`, formRef.current, `${REACT_APP_USER_ID}`)
                 .then((result) => {
                     setIsSuccess(true);
@@ -76,18 +80,17 @@ const Overlay: React.FC<IProps> = ({isShow, setIsShow}) => {
                 </p>
                 <form className="form" onSubmit={handleSubmit(sendMessage)} ref={formRef}>
                     <div className="form_top">
-                        <input type="text" placeholder="Name" {...register("name")} className={errors.name&&'_invalid'}/>
-                        <input type="email" placeholder="Email" {...register("email")} className={errors.email&&'_invalid'}/>
+                        <input type="text" placeholder="Name" {...register("name")}
+                               className={errors.name && '_invalid'}/>
+                        <input type="email" placeholder="Email" {...register("email")}
+                               className={errors.email && '_invalid'}/>
                     </div>
-                    <input type="text" placeholder="Subject" {...register("subject")} className={errors.subject&&'_invalid'}/>
-                    <textarea {...register("message")} placeholder="Message" className={errors.message&&'_invalid'}/>
-                    <button className="neon_btn">
-                        <span className="neon_line neon_line__top"/>
-                        <span className="neon_line neon_line__bottom"/>
-                        <span className="neon_line neon_line__left"/>
-                        <span className="neon_line neon_line__right"/>
-                        Send message!
-                    </button>
+                    <input type="text" placeholder="Subject" {...register("subject")}
+                           className={errors.subject && '_invalid'}/>
+                    <textarea {...register("message")} placeholder="Message" className={errors.message && '_invalid'}/>
+                    <NeonButton>
+                        Send message
+                    </NeonButton>
                 </form>
             </div>
         </div>

@@ -5,7 +5,7 @@ interface IProps {
     url:string
 }
 
-const NeonButton:React.FC<IProps> = ({children, url}) => {
+const NeonLinkButton:React.FC<IProps> = ({children, url}) => {
     return (
         <a href={url} target='_blank' rel="noreferrer" className="neon_btn">
             <span className="neon_line neon_line__top"/>
@@ -17,4 +17,4 @@ const NeonButton:React.FC<IProps> = ({children, url}) => {
     );
 };
 
-export {NeonButton};
+export {NeonLinkButton};

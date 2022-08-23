@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {NeonLinkButton} from "../CustomButtons";
+import {NeonLinkButton} from "../CustomButtons/NeonLinkButton";
 import {ReactSVG} from "react-svg";
 
 interface IProps {
@@ -11,13 +11,13 @@ interface IProps {
     gitUrl: string
 }
 
-const Project: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl}) => {
+const OtherProject: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl}) => {
     return (
-        <div className="project _anim_item _anim_no_hide">
+        <div className="project _anim_item _active">
             <div className="project_cart">
-                <div className="poster _anim_item _anim_no_hide">
+                <div className="poster _anim_item _active">
                     <div className="programing_languages">
-                        <ReactSVG src="./images/skills/react.svg"/>
+                        <ReactSVG src="./images/skills/javascript.svg"/>
                         <ReactSVG src="./images/skills/sass.svg"/>
                         <ReactSVG src="./images/skills/html.svg"/>
                     </div>
@@ -40,4 +40,4 @@ const Project: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl}) => 
     );
 };
 
-export {Project};
+export {OtherProject};

@@ -1112,6 +1112,7 @@
     transform: scale(0.3);
   }
 
+
   .projects_list {
     padding-bottom: 20px;
     row-gap: 10px;
@@ -1123,6 +1124,9 @@
 
   .projects {
     row-gap: 10px;
+    button{
+      font-size: 13px;
+    }
   }
 
   .project {

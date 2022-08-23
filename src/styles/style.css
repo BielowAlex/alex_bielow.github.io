@@ -715,6 +715,77 @@ nav .nav_title {
   padding: 10px;
   z-index: 20;
 }
+.projects button {
+  padding: 10px 10px;
+  color: #c01723;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  background: inherit;
+  letter-spacing: 3px;
+  border: 1px solid #6c0e1c;
+  overflow: hidden;
+  transition: all 1s ease 0s;
+  cursor: url("/public/images/other/cursor-click.png"), auto;
+  font-size: 20px;
+}
+.projects button .neon_line {
+  position: absolute;
+  display: block;
+  border-radius: 100px;
+}
+.projects button .neon_line__top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.projects button:hover .neon_line__top {
+  left: 100%;
+}
+.projects button .neon_line__bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 5px;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.projects button:hover .neon_line__bottom {
+  right: 100%;
+}
+.projects button .neon_line__left {
+  left: 0;
+  bottom: -100%;
+  width: 5px;
+  height: 100%;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.projects button:hover .neon_line__left {
+  bottom: 100%;
+}
+.projects button .neon_line__right {
+  right: 0;
+  top: -100%;
+  width: 5px;
+  height: 100%;
+  background: rgba(192, 23, 35, 0.73);
+  transition: all 1s ease;
+}
+.projects button:hover .neon_line__right {
+  top: 100%;
+}
+.projects button:hover {
+  transition: all 0.5s ease 0.2s;
+  box-shadow: #c01723 0 0 10px, #c01723 0 0 20px;
+  background: rgba(192, 23, 35, 0.73);
+  color: #000;
+}
 .projects_top {
   display: flex;
   flex-direction: column;
@@ -841,17 +912,18 @@ nav .nav_title {
 }
 .project_cart .poster .programing_languages {
   position: absolute;
-  bottom: -70px;
+  bottom: -50px;
   left: -20px;
   display: flex;
+  column-gap: 20px;
   transition: all 0.8s linear;
   opacity: 0;
   z-index: 10;
   animation: move_title 10s ease infinite;
 }
 .project_cart .poster .programing_languages svg {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 .project_cart .poster img {
   transition: all 0.8s linear;
@@ -2901,6 +2973,9 @@ body {
 
   .projects {
     row-gap: 10px;
+  }
+  .projects button {
+    font-size: 13px;
   }
 
   .project {

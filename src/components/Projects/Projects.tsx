@@ -10,24 +10,20 @@ interface IProps {
 
 const Projects: React.FC<IProps> = ({reference}) => {
     const [isOtherShow, setIsOtherShow] = React.useState<boolean>(false);
-    const [projectsListHeight, setProjectsListHeight] = React.useState<number|undefined>(0);
+    const [projectsListHeight, setProjectsListHeight] = React.useState<number | undefined>(0);
 
     const projectRef = React.useRef<HTMLDivElement>(null);
 
-    const calcHeight:()=>number|undefined = () => {
-        if (projectRef.current !== null) {
-            const projectNode = projectRef.current;
-
-            return isOtherShow ? 5 * (projectNode.offsetHeight + 80) : 3 * (projectNode.offsetHeight + 80);
-        }
-    }
 
     const toggle = () => {
         setIsOtherShow(!isOtherShow)
     }
 
     React.useEffect(() => {
-        setProjectsListHeight(calcHeight)
+        if (projectRef.current !== null) {
+            const projectNode = projectRef.current;
+            setProjectsListHeight(isOtherShow ? 5 * (projectNode.offsetHeight + 80) : 3 * (projectNode.offsetHeight + 80))
+        }
     }, [isOtherShow])
 
     return (

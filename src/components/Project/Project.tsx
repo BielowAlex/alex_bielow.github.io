@@ -9,13 +9,14 @@ interface IProps {
     desc: string,
     url: string,
     gitUrl: string
+    projRef?: React.RefObject<HTMLDivElement>
 }
 
-const Project: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl}) => {
+const Project: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl,projRef}) => {
     return (
-        <div className="project _anim_item _anim_no_hide">
+        <div className="project _anim_item " ref={projRef}>
             <div className="project_cart">
-                <div className="poster _anim_item _anim_no_hide">
+                <div className="poster _anim_item ">
                     <div className="programing_languages">
                         <ReactSVG src="./images/skills/react.svg"/>
                         <ReactSVG src="./images/skills/sass.svg"/>

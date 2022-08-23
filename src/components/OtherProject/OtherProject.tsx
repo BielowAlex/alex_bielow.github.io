@@ -13,9 +13,9 @@ interface IProps {
 
 const OtherProject: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl}) => {
     return (
-        <div className="project _anim_item _active">
+        <div className="project _anim_item ">
             <div className="project_cart">
-                <div className="poster _anim_item _active">
+                <div className="poster _anim_item ">
                     <div className="programing_languages">
                         <ReactSVG src="./images/skills/javascript.svg"/>
                         <ReactSVG src="./images/skills/sass.svg"/>

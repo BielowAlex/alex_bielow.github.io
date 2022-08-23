@@ -10,10 +10,25 @@ interface IProps {
 
 const Projects: React.FC<IProps> = ({reference}) => {
     const [isOtherShow, setIsOtherShow] = React.useState<boolean>(false);
+    const [projectsListHeight, setProjectsListHeight] = React.useState<number|undefined>(0);
+
+    const projectRef = React.useRef<HTMLDivElement>(null);
+
+    const calcHeight:()=>number|undefined = () => {
+        if (projectRef.current !== null) {
+            const projectNode = projectRef.current;
+
+            return isOtherShow ? 5 * (projectNode.offsetHeight + 80) : 3 * (projectNode.offsetHeight + 80);
+        }
+    }
 
     const toggle = () => {
         setIsOtherShow(!isOtherShow)
     }
+
+    React.useEffect(() => {
+        setProjectsListHeight(calcHeight)
+    }, [isOtherShow])
 
     return (
         <div id="projects" className="projects section" ref={reference}>
@@ -24,14 +39,16 @@ const Projects: React.FC<IProps> = ({reference}) => {
                     <div className="line"/>
                 </div>
             </div>
-            <div className="projects_list">
+            <div className="projects_list"
+                 style={{height: `${projectsListHeight}px`}}>
                 <Project projectName="Sneakers Shop"
                          poster="react_sneakers.png"
                          desc="The online sneakers-shop is written on the library react/Redux/Axios.
                                 Instead of the database, used json.
                                 Slider, sorting,filters, adaptive."
                          url="https://sneakers-shop-vert.vercel.app"
-                         gitUrl="https://github.com/BielowAlex/sneakers_shop"/>
+                         gitUrl="https://github.com/BielowAlex/sneakers_shop"
+                         projRef={projectRef}/>
                 <Project projectName="Online pizza shop"
                          poster="react_pizza.png"
                          desc="  The online pizzeria is written on the library react/Redux/Axios.
@@ -46,24 +63,20 @@ const Projects: React.FC<IProps> = ({reference}) => {
                                 Sort by genre, search, trailers, sliders."
                          url="https://alex-films-react.vercel.app"
                          gitUrl="https://github.com/BielowAlex/alex_films_react"/>
-                {isOtherShow
-                    ?
-                        <OtherProject projectName={'Portfolio DN'}
-                                      poster={'denis_novak.png'}
-                                      desc={'Landing page written in pure HTML/SCSS/js. Fully adaptive + mobile versions, animation, popup, multilingual.'}
-                                      url={'https://bielowalex.github.io/portfolio/denis_novak.html'}
-                                      gitUrl={'https://github.com/BielowAlex/Landing_page_Denis_Novak'}/>
-                    : null
-                }
-                {
-                    isOtherShow?
-                        <OtherProject projectName={'NFT marketplace'}
-                                      poster={'nft_marketplace.png'}
-                                      desc={'Landing page written in pure HTML/SCSS/js. Fully adaptive + mobile versions, animation, popup.'}
-                                      url={'https://bielowalex.github.io/nft_marketplace/'}
-                                      gitUrl={'https://github.com/BielowAlex/nft_marketplace'}/>
-                        :null
-                }
+
+                <OtherProject projectName={'Portfolio DN'}
+                              poster={'denis_novak.png'}
+                              desc={'Landing page written in pure HTML/SCSS/js. Fully adaptive + mobile versions, animation, popup, multilingual.'}
+                              url={'https://bielowalex.github.io/portfolio/denis_novak.html'}
+                              gitUrl={'https://github.com/BielowAlex/Landing_page_Denis_Novak'}/>
+
+
+                <OtherProject projectName={'NFT marketplace'}
+                              poster={'nft_marketplace.png'}
+                              desc={'Landing page written in pure HTML/SCSS/js. Fully adaptive + mobile versions, animation, popup.'}
+                              url={'https://bielowalex.github.io/nft_marketplace/'}
+                              gitUrl={'https://github.com/BielowAlex/nft_marketplace'}/>
+
             </div>
             <NeonButton onClickHandler={toggle}>
                 {isOtherShow ? 'Hide' : 'Other'}

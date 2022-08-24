@@ -6,9 +6,9 @@ nav {
   display: flex;
   flex-direction: column;
   transform: translateY(-50%);
-  top: 47%;
+  top: 50%;
   left: 20px;
-  z-index: 2;
+  z-index: 70;
 
   .nav_item {
     display: flex;
@@ -17,25 +17,26 @@ nav {
     flex-direction: column;
     height: 75px;
     position: relative;
-    cursor: url("/public/images/other/cursor-click.png"),auto;
+    cursor: url("/public/images/other/cursor-click.png"), auto;
 
 
     .line {
       height: 30px;
       width: 1px;
-      background: $nav_color;
+      background: $line_color;
+
       box-shadow: 1px 1px 10px red;
       animation: lighting 2s linear infinite;
-      cursor: url("/public/images/other/cursor-click.png"),auto;
+      cursor: url("/public/images/other/cursor-click.png"), auto;
 
     }
 
     .circle {
       height: 15px;
       width: 15px;
-      border: 1px solid $nav_color;
+      border: 1px solid $line_color;
       border-radius: 50%;
-      cursor: url("/public/images/other/cursor-click.png"),auto;
+      cursor: url("/public/images/other/cursor-click.png"), auto;
 
       transition: all 0.5s linear;
 
@@ -49,7 +50,7 @@ nav {
       right: -50px;
       opacity: 0;
       transition: all 0.3s linear;
-      cursor: url("/public/images/other/cursor-click.png"),auto;
+      cursor: url("/public/images/other/cursor-click.png"), auto;
 
     }
 
@@ -67,7 +68,7 @@ nav {
       }
     }
 
-    &._active{
+    &._active {
       .text {
         opacity: 1;
         right: -78px;
@@ -80,10 +81,13 @@ nav {
         background: $nav_color;
 
       }
+
+      .line {
+      }
     }
   }
 
-  .nav_title{
+  .nav_title {
     position: absolute;
     top: 50%;
     left: -55px;
@@ -94,29 +98,16 @@ nav {
 }
 
 @keyframes lighting {
-  0%{box-shadow: 1px 1px 10px red,1px 1px 15px red;}
-  50%{box-shadow: 1px 1px 10px red,1px 1px 20px red;}
-  100%{box-shadow: 1px 1px 10px red,1px 1px 15px red;}
+  0% {
+    box-shadow: 1px 1px 10px red, 1px 1px 15px red;
+  }
+  50% {
+    box-shadow: 1px 1px 10px red, 1px 1px 20px red;
+  }
+  100% {
+    box-shadow: 1px 1px 10px red, 1px 1px 15px red;
+  }
 }
 
-._first_item{
-  .line{
-    &:nth-child(1){
-      position: relative;
-      right: 14px;
-      top: 8px;
-      transform: rotate(-50deg);
-    }
-  }
-}
-._last_item{
-  .line{
-    &:nth-child(3){
-      position: relative;
-      right: 15px;
-      top: -7px;
-      transform: rotate(50deg);
-    }
-  }
-}
+
 

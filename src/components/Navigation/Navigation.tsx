@@ -56,9 +56,9 @@ const Navigation: React.FC<IProps> = ({projectsNode,experienceNode}) => {
                     <div className="line"/>
                     <span className="text">Contact</span>
             </a>
-            <div className="nav_title">
-                Navigation
-            </div>
+            {/*<div className="nav_title">*/}
+            {/*    Navigation*/}
+            {/*</div>*/}
         </nav>
     );
 };

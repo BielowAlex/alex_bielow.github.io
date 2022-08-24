@@ -2526,6 +2526,13 @@ body {
   }
 }
 @media screen and (max-width: 800px) {
+  .constellation svg {
+    min-height: 100vh;
+    max-height: 100vh;
+    transform: rotate(90deg) scale(1.2);
+    opacity: 0.9;
+  }
+
   .overlay .form_section {
     row-gap: 20px;
     width: 500px;
@@ -2653,10 +2660,6 @@ body {
   }
 }
 @media screen and (max-width: 700px) {
-  .constellation_aries, .constellation_virgo, .constellation_ursa {
-    width: 150px;
-  }
-
   .header_title .anim_letter {
     font-size: 35px;
   }
@@ -2880,11 +2883,10 @@ body {
     width: 100%;
   }
 
-  .constellation {
-    height: 420px;
-  }
-  .constellation_aries, .constellation_virgo, .constellation_ursa {
-    width: 100px;
+  .constellation svg {
+    min-height: 100vh;
+    transform: rotate(90deg) scale(1.3);
+    opacity: 1;
   }
 
   .oval {
@@ -2909,12 +2911,12 @@ body {
     height: 80px;
   }
   .back .light_top {
-    top: -120px;
-    left: -120px;
+    top: -80px;
+    left: -80px;
   }
   .back .light_bot {
-    bottom: -120px;
-    right: -120px;
+    bottom: -80px;
+    right: -80px;
   }
 
   .stars {
@@ -2945,6 +2947,10 @@ body {
   .greeting .obj {
     height: 60px;
     width: 60px;
+  }
+  .greeting .obj .light {
+    width: 1px;
+    height: 1px;
   }
   .greeting .obj .light span {
     width: 25px;
@@ -2982,17 +2988,15 @@ body {
     transform: scale(0.3);
   }
 
-  .projects_list {
-    padding-bottom: 20px;
-    row-gap: 10px;
-  }
-
   .projects_top h2, .experience_title h2, .technologies_title h2 {
     font-size: 20px;
   }
 
   .projects {
-    row-gap: 10px;
+    row-gap: 20px;
+  }
+  .projects-list {
+    row-gap: 40px;
   }
   .projects button {
     font-size: 13px;
@@ -3034,10 +3038,9 @@ body {
   .project_info p {
     font-size: 14px;
   }
-
-  .neon_btn {
-    letter-spacing: 0.5px;
-    font-size: 8px;
+  .project_info .buttons .neon_btn {
+    letter-spacing: 1px;
+    font-size: 10px;
   }
 
   .experience_list_item {

@@ -34,7 +34,8 @@
     &_info {
       min-width: 300px;
       max-width: 300px;
-      .buttons{
+
+      .buttons {
         .neon_btn {
           letter-spacing: 1px;
           font-size: 10px;
@@ -73,6 +74,7 @@
       width: 600px;
       padding: 30px;
       row-gap: 20px;
+
       .title {
 
         .anim_letter {
@@ -122,7 +124,7 @@
         font-size: 14px;
       }
 
-      .buttons{
+      .buttons {
         .neon_btn {
           letter-spacing: 0.5px;
           font-size: 10px;
@@ -226,6 +228,7 @@
       padding: 30px;
       width: 550px;
       row-gap: 20px;
+
       .title {
         .anim_letter {
           font-size: 50px;
@@ -234,7 +237,7 @@
 
       p {
         font-size: 14px;
-        text-align:justify;
+        text-align: justify;
       }
 
       .form {
@@ -283,7 +286,8 @@
       p {
         font-size: 20px;
       }
-      .buttons{
+
+      .buttons {
         .neon_btn {
           letter-spacing: 1.5px;
           font-size: 16px;
@@ -593,6 +597,15 @@
 
 @media screen and (max-width: 800px) {
 
+  .constellation {
+    svg {
+      min-height: 100vh;
+      max-height: 100vh;
+      transform: rotate(90deg) scale(1.2);
+      opacity: .9;
+    }
+  }
+
   .overlay {
     .form_section {
       row-gap: 20px;
@@ -748,11 +761,11 @@
 }
 
 @media screen and (max-width: 700px) {
-  .constellation {
-    &_aries, &_virgo, &_ursa {
-      width: 150px;
-    }
-  }
+  //.constellation {
+  //  &_aries, &_virgo, &_ursa {
+  //    width: 150px;
+  //  }
+  //}
 
   .header_title .anim_letter {
     font-size: 35px;
@@ -1005,20 +1018,23 @@
 
   .overlay {
 
-    .form_section{
+    .form_section {
       padding: 20px;
       width: 300px;
-      .title{
-        .anim_letter{
+
+      .title {
+        .anim_letter {
           font-size: 30px;
         }
       }
-      p{
+
+      p {
         font-size: 9px;
         text-align: justify;
       }
 
     }
+
     .alert {
       padding: 25px 10px;
       width: 150px;
@@ -1043,10 +1059,10 @@
   }
 
   .constellation {
-    height: 420px;
-
-    &_aries, &_virgo, &_ursa {
-      width: 100px;
+    svg{
+      min-height: 100vh;
+      transform:rotate(90deg) scale(1.3) ;
+      opacity: 1;
     }
   }
   .oval {
@@ -1075,13 +1091,13 @@
     }
 
     .light_top {
-      top: -120px;
-      left: -120px;
+      top: -80px;
+      left: -80px;
     }
 
     .light_bot {
-      bottom: -120px;
-      right: -120px;
+      bottom: -80px;
+      right: -80px;
     }
   }
 
@@ -1117,6 +1133,8 @@
       width: 60px;
 
       .light {
+        width: 1px;
+        height: 1px;
         span {
           width: 25px;
           font-weight: 600;
@@ -1155,19 +1173,18 @@
     transform: scale(0.3);
   }
 
-
-  .projects_list {
-    padding-bottom: 20px;
-    row-gap: 10px;
-  }
-
   .projects_top h2, .experience_title h2, .technologies_title h2 {
     font-size: 20px;
   }
 
   .projects {
-    row-gap: 10px;
-    button{
+    row-gap: 20px;
+
+    &-list {
+      row-gap: 40px;
+    }
+
+    button {
       font-size: 13px;
     }
   }
@@ -1215,12 +1232,16 @@
       p {
         font-size: 14px;
       }
+
+      .buttons {
+        .neon_btn {
+          letter-spacing: 1px;
+          font-size: 10px;
+        }
+      }
     }
   }
-  .neon_btn {
-    letter-spacing: 0.5px;
-    font-size: 8px;
-  }
+
   .experience_list_item {
     padding: 10px;
   }

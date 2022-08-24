@@ -34,6 +34,12 @@
     &_info {
       min-width: 300px;
       max-width: 300px;
+      .buttons{
+        .neon_btn {
+          letter-spacing: 1px;
+          font-size: 10px;
+        }
+      }
 
       h3 {
         font-size: 20px;
@@ -44,10 +50,7 @@
       }
     }
   }
-  .neon_btn {
-    letter-spacing: 1.5px;
-    font-size: 10px;
-  }
+
 
   .technologies_title {
     height: 70px;
@@ -67,15 +70,19 @@
 
   .overlay {
     .form_section {
+      width: 600px;
+      padding: 30px;
+      row-gap: 20px;
       .title {
 
         .anim_letter {
-          font-size: 50px;
+          font-size: 60px;
         }
       }
 
       p {
         font-size: 16px;
+        text-align: justify;
       }
 
       .form {
@@ -114,12 +121,16 @@
       p {
         font-size: 14px;
       }
+
+      .buttons{
+        .neon_btn {
+          letter-spacing: 0.5px;
+          font-size: 10px;
+        }
+      }
     }
   }
-  .neon_btn {
-    letter-spacing: 1px;
-    font-size: 8px;
-  }
+
 
   .technologies_title {
     height: 70px;
@@ -212,14 +223,18 @@
 
   .overlay {
     .form_section {
+      padding: 30px;
+      width: 550px;
+      row-gap: 20px;
       .title {
         .anim_letter {
-          font-size: 45px;
+          font-size: 50px;
         }
       }
 
       p {
-        font-size: 13px;
+        font-size: 14px;
+        text-align:justify;
       }
 
       .form {
@@ -267,6 +282,12 @@
 
       p {
         font-size: 20px;
+      }
+      .buttons{
+        .neon_btn {
+          letter-spacing: 1.5px;
+          font-size: 16px;
+        }
       }
     }
 
@@ -575,15 +596,18 @@
   .overlay {
     .form_section {
       row-gap: 20px;
+      width: 500px;
+      padding: 30px;
 
       .title {
         .anim_letter {
-          font-size: 35px;
+          font-size: 45px;
         }
       }
 
       p {
-        font-size: 10px;
+        font-size: 13px;
+        text-align: justify;
       }
 
       .form {
@@ -744,6 +768,8 @@
   .overlay {
     .form_section {
       row-gap: 15px;
+      padding: 20px;
+      width: 400px;
 
       .title {
         .anim_letter {
@@ -752,7 +778,7 @@
       }
 
       p {
-        font-size: 7px;
+        font-size: 10px;
       }
 
       .form {
@@ -793,15 +819,17 @@
       border-radius: 20px;
       padding: 10px;
       row-gap: 10px;
+      width: 300px;
 
       .title {
         .anim_letter {
-          font-size: 25px;
+          font-size: 30px;
         }
       }
 
       p {
-        font-size: 6px;
+        font-size: 9px;
+        text-align: justify;
       }
 
       .form {
@@ -811,8 +839,8 @@
         }
 
         input, textarea {
-          font-size: 7px;
-          line-height: 8px;
+          font-size: 8px;
+          line-height: 9px;
         }
 
         input {
@@ -976,6 +1004,21 @@
 @media screen and (max-width: 490px) {
 
   .overlay {
+
+    .form_section{
+      padding: 20px;
+      width: 300px;
+      .title{
+        .anim_letter{
+          font-size: 30px;
+        }
+      }
+      p{
+        font-size: 9px;
+        text-align: justify;
+      }
+
+    }
     .alert {
       padding: 25px 10px;
       width: 150px;
@@ -1248,15 +1291,16 @@
       border-radius: 20px;
       padding: 10px;
       row-gap: 10px;
+      width: 300px;
 
       .title {
         .anim_letter {
-          font-size: 20px;
+          font-size: 25px;
         }
       }
 
       p {
-        font-size: 5px;
+        font-size: 8px;
       }
 
       .form {
@@ -1267,8 +1311,8 @@
         }
 
         input, textarea {
-          font-size: 5px;
-          line-height: 6px;
+          font-size: 7px;
+          line-height: 8px;
         }
 
         input {

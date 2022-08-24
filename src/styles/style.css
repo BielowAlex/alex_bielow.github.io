@@ -1686,9 +1686,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 40px;
+  row-gap: 30px;
   height: 100%;
-  width: 50%;
+  width: 60%;
   z-index: 50;
   background: #05050c;
   padding: 40px;
@@ -1752,6 +1752,7 @@ body {
   font-size: 18px;
   font-weight: 100;
   color: #6c0e1c;
+  text-align: justify;
 }
 .overlay .form_section .form {
   display: flex;
@@ -2104,16 +2105,15 @@ body {
     min-width: 300px;
     max-width: 300px;
   }
+  .project_info .buttons .neon_btn {
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
   .project_info h3 {
     font-size: 20px;
   }
   .project_info p {
     font-size: 14px;
-  }
-
-  .neon_btn {
-    letter-spacing: 1.5px;
-    font-size: 10px;
   }
 
   .technologies_title {
@@ -2129,11 +2129,17 @@ body {
     width: 200px;
   }
 
+  .overlay .form_section {
+    width: 600px;
+    padding: 30px;
+    row-gap: 20px;
+  }
   .overlay .form_section .title .anim_letter {
-    font-size: 50px;
+    font-size: 60px;
   }
   .overlay .form_section p {
     font-size: 16px;
+    text-align: justify;
   }
   .overlay .form_section .form button {
     font-size: 20px;
@@ -2161,10 +2167,9 @@ body {
   .project_info p {
     font-size: 14px;
   }
-
-  .neon_btn {
-    letter-spacing: 1px;
-    font-size: 8px;
+  .project_info .buttons .neon_btn {
+    letter-spacing: 0.5px;
+    font-size: 10px;
   }
 
   .technologies_title {
@@ -2241,11 +2246,17 @@ body {
   }
 }
 @media screen and (max-width: 920px) {
+  .overlay .form_section {
+    padding: 30px;
+    width: 550px;
+    row-gap: 20px;
+  }
   .overlay .form_section .title .anim_letter {
-    font-size: 45px;
+    font-size: 50px;
   }
   .overlay .form_section p {
-    font-size: 13px;
+    font-size: 14px;
+    text-align: justify;
   }
   .overlay .form_section .form button {
     font-size: 15px;
@@ -2283,6 +2294,10 @@ body {
   }
   .project_info p {
     font-size: 20px;
+  }
+  .project_info .buttons .neon_btn {
+    letter-spacing: 1.5px;
+    font-size: 16px;
   }
   .project._active {
     column-gap: 50px;
@@ -2527,12 +2542,15 @@ body {
 @media screen and (max-width: 800px) {
   .overlay .form_section {
     row-gap: 20px;
+    width: 500px;
+    padding: 30px;
   }
   .overlay .form_section .title .anim_letter {
-    font-size: 35px;
+    font-size: 45px;
   }
   .overlay .form_section p {
-    font-size: 10px;
+    font-size: 13px;
+    text-align: justify;
   }
   .overlay .form_section .form button {
     font-size: 11px;
@@ -2664,12 +2682,14 @@ body {
 
   .overlay .form_section {
     row-gap: 15px;
+    padding: 20px;
+    width: 400px;
   }
   .overlay .form_section .title .anim_letter {
     font-size: 30px;
   }
   .overlay .form_section p {
-    font-size: 7px;
+    font-size: 10px;
   }
   .overlay .form_section .form button {
     font-size: 9px;
@@ -2695,20 +2715,22 @@ body {
     border-radius: 20px;
     padding: 10px;
     row-gap: 10px;
+    width: 300px;
   }
   .overlay .form_section .title .anim_letter {
-    font-size: 25px;
+    font-size: 30px;
   }
   .overlay .form_section p {
-    font-size: 6px;
+    font-size: 9px;
+    text-align: justify;
   }
   .overlay .form_section .form button {
     font-size: 8px;
     letter-spacing: 1px;
   }
   .overlay .form_section .form input, .overlay .form_section .form textarea {
-    font-size: 7px;
-    line-height: 8px;
+    font-size: 8px;
+    line-height: 9px;
   }
   .overlay .form_section .form input {
     height: 20px;
@@ -2841,6 +2863,17 @@ body {
   }
 }
 @media screen and (max-width: 490px) {
+  .overlay .form_section {
+    padding: 20px;
+    width: 300px;
+  }
+  .overlay .form_section .title .anim_letter {
+    font-size: 30px;
+  }
+  .overlay .form_section p {
+    font-size: 9px;
+    text-align: justify;
+  }
   .overlay .alert {
     padding: 25px 10px;
     width: 150px;
@@ -3080,12 +3113,13 @@ body {
     border-radius: 20px;
     padding: 10px;
     row-gap: 10px;
+    width: 300px;
   }
   .overlay .form_section .title .anim_letter {
-    font-size: 20px;
+    font-size: 25px;
   }
   .overlay .form_section p {
-    font-size: 5px;
+    font-size: 8px;
   }
   .overlay .form_section .form button {
     font-size: 8px;
@@ -3093,8 +3127,8 @@ body {
     letter-spacing: 0.5px;
   }
   .overlay .form_section .form input, .overlay .form_section .form textarea {
-    font-size: 5px;
-    line-height: 6px;
+    font-size: 7px;
+    line-height: 8px;
   }
   .overlay .form_section .form input {
     height: 20px;

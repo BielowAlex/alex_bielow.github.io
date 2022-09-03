@@ -57,8 +57,8 @@ const Projects: React.FC<IProps> = ({reference}) => {
                          desc="A multi-page movie search site written in the React/Redux/Axios library.
                                 Used the TMDB API.
                                 Sort by genre, search, trailers, sliders."
-                         url="https://alex-films-react.vercel.app"
-                         gitUrl="https://github.com/BielowAlex/alex_films_react"/>
+                         url="https://alex-films.vercel.app"
+                         gitUrl="https://github.com/BielowAlex/alex_films_public"/>
 
                 <OtherProject projectName={'Portfolio DN'}
                               poster={'denis_novak.png'}

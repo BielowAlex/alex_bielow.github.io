@@ -3,6 +3,7 @@ import React from 'react';
 import {NeonLinkButton} from "../CustomButtons";
 import {ReactSVG} from "react-svg";
 
+
 interface IProps {
     projectName: string,
     poster: string,
@@ -13,6 +14,8 @@ interface IProps {
 }
 
 const Project: React.FC<IProps> = ({projectName, poster, desc, url, gitUrl,projRef}) => {
+
+
     return (
         <div className="project _anim_item " ref={projRef}>
             <div className="project_cart">

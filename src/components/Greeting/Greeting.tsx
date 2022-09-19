@@ -1,19 +1,31 @@
 import React from 'react';
+import gsap from 'gsap';
+import {ScrollTrigger} from'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Greeting: React.FC = () => {
     const [rotateCount, setRotateCount] = React.useState<number>(0);
     const [isLightActive,setIsLightActive] = React.useState<boolean>(false);
+
+    const greetingRef = React.useRef<HTMLDivElement>(null);
+
 
     const rotateOnScroll = () => {
         setRotateCount(Math.floor(window.scrollY / 7))
     }
 
     React.useEffect(() => {
+        gsap.fromTo(greetingRef.current,{x:-400, opacity:0,rotate:0},{x:0, opacity:1,duration:3,rotate:360, scrollTrigger:{
+                trigger:greetingRef.current,
+                start:'top center'
+            }})
         window.addEventListener('scroll',rotateOnScroll)
     }, [])
 
     return (
-        <div className="greeting _anim_item _anim_no_hide" onClick={()=>setIsLightActive(!isLightActive)}>
+        <div className="greeting  " onClick={()=>setIsLightActive(!isLightActive)} ref={greetingRef}>
             <div className='obj _anim_item ' >
                 <div className={`light ${isLightActive?'_active':''}`}>
                     <span>Glad to see you at my website!</span>

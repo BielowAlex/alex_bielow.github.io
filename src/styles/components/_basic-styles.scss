@@ -16,9 +16,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  row-gap: 100px;
 }
 
 .section{
   width: 70%;
+  margin-bottom: 100px;
+  &:nth-child(1){
+    margin-bottom: 0;
+  }
 }

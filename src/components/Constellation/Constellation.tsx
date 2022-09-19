@@ -7,7 +7,7 @@ const Constellation: React.FC = () => {
             {/*<ReactSVG src="./images/constellation/ursa.svg" className="constellation_ursa"/>*/}
             {/*<ReactSVG src="./images/constellation/Virgo.svg" className="constellation_virgo"/>*/}
             {/*<ReactSVG src="./images/constellation/Aries.svg" className="constellation_aries"/>*/}
-            <ReactSVG src="./images/constellation/stars.svg" className="stars"/>
+            <ReactSVG src="./images/constellation/Space.svg" className="stars"/>
         </div>
     );
 };

@@ -1,32 +1,72 @@
+import gsap from 'gsap';
 import React from 'react';
+import {ReactSVG} from "react-svg";
 
 const BlackHole: React.FC = () => {
-    const [activeItem, setActiveItem] = React.useState<number>(0);
+    const [titleBlockWidth, setTitleBlockWidth] = React.useState<number>(0);
+    const [translateCount, setTranslateCount] = React.useState<number>(0)
+    const [slideId, setSlideId] = React.useState<number>(1)
 
-    const messages = [
-        {id: 1, message: 'Hi my name is Alexander!'},
-        {id: 2, message: 'I\'m 21 years old'},
-        {id: 3, message: 'And I\'m a web developer'},
-    ];
+    const slide1Ref = React.useRef<HTMLDivElement>(null);
+    const slide2Ref = React.useRef<HTMLDivElement>(null);
+    const titleRef = React.useRef(null);
+    const titleSelector = gsap.utils.selector(titleRef);
+
+    React.useLayoutEffect(() => {
+        const keepScrolling = setTimeout(() => {
+            if(slideId===1){
+                gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1});
+                gsap.to(slide2Ref.current,{x:'100%',opacity:0});
+                setSlideId(slideId+1);
+            }else{
+                gsap.fromTo(slide2Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1});
+                gsap.to(slide1Ref.current,{x:'100%',opacity:0});
+                setSlideId(1);
+            }
+        }, 5000);
+        return ()=>clearTimeout(keepScrolling)
+    }, [slideId])
 
     React.useEffect(() => {
-        const showMessage = setTimeout(() => {
-            setActiveItem(activeItem === 3 ? 1 : activeItem + 1);
-        }, 3000);
-        return () => clearTimeout(showMessage);
-    }, [activeItem])
+        gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1})
+        setSlideId(slideId+1)
+    }, [])
+
+
 
     return (
-        <div className="black_hole section">
-            <div className="oval _anim_item">
-                <div className="list">
-                    {messages.map(msg => <span
-                        key={msg.id}
-                        className={activeItem === msg.id ? '_active' : ''}>{msg.message}</span>)}
+        <div id="about_me" className="black_hole">
+            <div className="title" ref={titleRef} >
+                <div className="slider_window" style={{}}>
+                    <div className="slide" ref={slide1Ref}>
+                        <div className="title_text">
+                            <h2>Hi,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>My name is Alex,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>I'm web developer</h2>
+                        </div>
+                    </div>
+                    <div className="slide" ref={slide2Ref}>
+                        <div className="title_text">
+                            <h2>I love programing!</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>I like building websites,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>And solve business problem.</h2>
+                        </div>
+                    </div>
+
                 </div>
+
+
             </div>
-
-
+            <ReactSVG src='/images/constellation/Rocket.svg' className='rocket'/>
+            <ReactSVG src='/images/constellation/Moon.svg' className='moon'/>
         </div>
     );
 };

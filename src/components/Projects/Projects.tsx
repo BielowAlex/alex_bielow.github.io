@@ -3,6 +3,7 @@ import React from 'react';
 import {Project} from "../Project";
 import {OtherProject} from '../OtherProject';
 import {NeonButton} from "../CustomButtons";
+import gsap from "gsap";
 
 interface IProps {
     reference: React.RefObject<HTMLDivElement>,
@@ -13,6 +14,8 @@ const Projects: React.FC<IProps> = ({reference}) => {
     const [projectsListHeight, setProjectsListHeight] = React.useState<number | undefined>(0);
 
     const projectRef = React.useRef<HTMLDivElement>(null);
+    const projectsRef = React.useRef(null);
+    const projectsSelector = gsap.utils.selector(projectsRef);
 
 
     const toggle = () => {
@@ -24,7 +27,17 @@ const Projects: React.FC<IProps> = ({reference}) => {
             const projectNode = projectRef.current;
             setProjectsListHeight(isOtherShow ? 5 * (projectNode.offsetHeight + 80) : 3 * (projectNode.offsetHeight + 80))
         }
-    }, [isOtherShow])
+    }, [isOtherShow]);
+    
+    React.useEffect(()=>{
+        projectsSelector('.project').forEach((el)=>{
+            gsap.fromTo(el,{opacity:0},{opacity:1,scrollTrigger:{
+                    trigger:el,
+                    end:'top center',
+                    scrub:true
+                }});
+        })
+    },[projectsSelector])
 
     return (
         <div id="projects" className="projects section" ref={reference}>
@@ -35,7 +48,8 @@ const Projects: React.FC<IProps> = ({reference}) => {
                     <div className="line"/>
                 </div>
             </div>
-            <div className="projects_list"
+            <div ref={projectsRef}
+                 className="projects_list"
                  style={{height: `${projectsListHeight}px`}}>
                 <Project projectName="AlexFilms"
                          poster="alex_films.png"

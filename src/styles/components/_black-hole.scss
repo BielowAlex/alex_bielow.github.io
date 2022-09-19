@@ -35,7 +35,7 @@
   }
 }
 
-.title{
+.title_slider{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@
   svg{
     position: absolute;
     transform:scale(4);
-    animation: rocketFly 40s linear infinite;
+    animation: rocketFly 40s linear ;
 
     @keyframes rocketFly {
       0%{

@@ -3,16 +3,13 @@ import React from 'react';
 import {ReactSVG} from "react-svg";
 
 const BlackHole: React.FC = () => {
-    const [titleBlockWidth, setTitleBlockWidth] = React.useState<number>(0);
-    const [translateCount, setTranslateCount] = React.useState<number>(0)
     const [slideId, setSlideId] = React.useState<number>(1)
 
     const slide1Ref = React.useRef<HTMLDivElement>(null);
     const slide2Ref = React.useRef<HTMLDivElement>(null);
     const titleRef = React.useRef(null);
-    const titleSelector = gsap.utils.selector(titleRef);
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         const keepScrolling = setTimeout(() => {
             if(slideId===1){
                 gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1});
@@ -30,13 +27,13 @@ const BlackHole: React.FC = () => {
     React.useEffect(() => {
         gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1})
         setSlideId(slideId+1)
-    }, [])
+    },[])
 
 
 
     return (
         <div id="about_me" className="black_hole">
-            <div className="title" ref={titleRef} >
+            <div className="title_slider" ref={titleRef} >
                 <div className="slider_window" style={{}}>
                     <div className="slide" ref={slide1Ref}>
                         <div className="title_text">

@@ -25,18 +25,7 @@ const App: React.FC = () => {
     const projects = React.useRef<HTMLDivElement>(null);
     const exp = React.useRef<HTMLDivElement>(null);
 
-    const root = React.useMemo(() => document.querySelector(':root') as HTMLDivElement, []);
 
-
-    const parallax = (e: React.MouseEvent<HTMLDivElement>) => {
-        const x = (e.clientX - window.innerWidth / 2) / 50;
-        const y = (e.clientY - window.innerHeight / 2) / 50;
-
-        if (root !== null) {
-            root.style.setProperty('--posX', `${-x}`);
-            root.style.setProperty('--posY', `${-y}`);
-        }
-    }
 
     React.useEffect(() => {
         const handleScrolling = (event:WheelEvent) => {
@@ -62,7 +51,7 @@ const App: React.FC = () => {
     });
 
     return (
-        <div className={`wrapper ${isShow ? 'no_scroll' : ''}`} ref={wrapper} onMouseMove={(e)=>parallax(e)}>
+        <div className={`wrapper ${isShow ? 'no_scroll' : ''}`} ref={wrapper} >
             <Overlay isShow={isShow} setIsShow={setIsShow}/>
             <Header/>
             <Background/>

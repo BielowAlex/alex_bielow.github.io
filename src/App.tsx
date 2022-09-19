@@ -2,10 +2,10 @@ import React from 'react';
 
 import './styles/style.css'
 import {
-    BlackHole,
+    AboutMe,
     Background,
     Navigation,
-    AboutMe,
+    Animation,
     Projects,
     Experience,
     Technologies,
@@ -57,8 +57,8 @@ const App: React.FC = () => {
             <Background/>
             <Constellation/>
             <Navigation projectsNode={projects} experienceNode={exp}/>
-            <BlackHole/>
             <AboutMe/>
+            <Animation/>
             <Projects reference={projects}/>
             <Experience reference={exp}/>
             <Technologies/>

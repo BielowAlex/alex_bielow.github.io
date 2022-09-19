@@ -1,0 +1,154 @@
+@import "../variables";
+
+.animation {
+  @include flex_dir_col;
+  row-gap: 120px;
+  transition: all 3s linear;
+  transform: translateY(50px);
+  z-index: 20;
+
+  &_title {
+    text-transform: uppercase;
+    font-size: 40px;
+    color: rgba(255, 0, 38, 0.73);
+    line-height: 50px;
+    text-align: justify;
+    transition: all 1s ease;
+    transform: translateY(50px);
+    z-index: 20;
+
+    h2 {
+      font-weight: 200;
+      opacity: 1;
+      z-index: 20;
+
+      &._active {
+        opacity: 1;
+      }
+    }
+
+    &._active {
+      transform: translateY(0px);
+    }
+  }
+
+  .content {
+    @include flex_jus-sb_alc;
+    width: 100%;
+    padding: 20px;
+
+    .astronaut {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 50%;
+      transform: scale(1) rotate(0);
+      transition: all 5s ease-in-out;
+      animation: move_astronaut 15s linear infinite;
+
+
+      svg {
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        top: -40px;
+        left: 30px;
+        transition: all 1s linear;
+      }
+
+      img {
+        opacity: 0;
+        width: 300px;
+        height: 350px;
+        cursor: url("/public/images/other/cursor-click.png"),auto;
+      }
+
+      &._active {
+
+        img {
+          opacity: 0.3;
+          transition: all 1s linear;
+
+        }
+
+        &:hover {
+          svg {
+            opacity: 1;
+          }
+
+          img {
+            opacity: 1;
+          }
+        }
+
+      }
+
+      &._kill{
+        opacity: 0;
+
+        img{
+          opacity: 0;
+          transform: scale(0.1) rotate(360deg);
+          transition: all 5s linear;
+        }
+        svg{
+        display: none;
+        }
+      }
+    }
+
+    h3 {
+      width: 300px;
+      font-weight: 100;
+      font-size: 26px;
+      animation: move_text 15s linear infinite;
+      color: rgba(255, 0, 38, 0.55);
+      opacity: 0;
+      transition: all 3s linear;
+
+      &._active {
+        opacity: 1;
+      }
+
+    }
+  }
+}
+
+@keyframes move_text {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 5px) scale(0.9);
+
+  }
+  50% {
+    transform: translate(-10px, 10);
+  }
+  75% {
+    transform: translate(15px, -15px) scale(1);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move_astronaut {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(10px, 5px) scale(0.9) rotate(30deg);
+
+  }
+  50% {
+    transform: translate(-10px, 10) rotate(60deg);
+  }
+  75% {
+    transform: translate(15px, -15px) scale(1) rotate(30deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+

@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 0, 38, 0.99);
 }
 
-.black_hole {
+.about_me {
   display: flex;
   row-gap: 100px;
   z-index: 20;
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   padding-left: 150px;
 }
-.black_hole::before {
+.about_me::before {
   content: "<h1>";
   position: absolute;
   top: 150px;
@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: move_title 15s linear infinite;
   font-size: 30px;
 }
-.black_hole::after {
+.about_me::after {
   content: "</h1>";
   position: absolute;
   bottom: 150px;
@@ -251,10 +251,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 700px;
   transform: translateY(-50%);
   opacity: 0;
-}
-.title_slider_text {
-  height: 70px;
-  overflow: hidden;
 }
 .title_slider h2 {
   width: 850px;
@@ -536,7 +532,7 @@ nav .nav_title {
   color: rgba(255, 0, 38, 0.99);
 }
 
-.about_me {
+.animation {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -545,7 +541,7 @@ nav .nav_title {
   transform: translateY(50px);
   z-index: 20;
 }
-.about_me_title {
+.animation_title {
   text-transform: uppercase;
   font-size: 40px;
   color: rgba(255, 0, 38, 0.73);
@@ -555,25 +551,25 @@ nav .nav_title {
   transform: translateY(50px);
   z-index: 20;
 }
-.about_me_title h2 {
+.animation_title h2 {
   font-weight: 200;
   opacity: 1;
   z-index: 20;
 }
-.about_me_title h2._active {
+.animation_title h2._active {
   opacity: 1;
 }
-.about_me_title._active {
+.animation_title._active {
   transform: translateY(0px);
 }
-.about_me .content {
+.animation .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 20px;
 }
-.about_me .content .astronaut {
+.animation .content .astronaut {
   display: flex;
   justify-content: center;
   position: relative;
@@ -582,7 +578,7 @@ nav .nav_title {
   transition: all 5s ease-in-out;
   animation: move_astronaut 15s linear infinite;
 }
-.about_me .content .astronaut svg {
+.animation .content .astronaut svg {
   opacity: 0;
   z-index: 10;
   position: absolute;
@@ -590,34 +586,34 @@ nav .nav_title {
   left: 30px;
   transition: all 1s linear;
 }
-.about_me .content .astronaut img {
+.animation .content .astronaut img {
   opacity: 0;
   width: 300px;
   height: 350px;
   cursor: url("/public/images/other/cursor-click.png"), auto;
 }
-.about_me .content .astronaut._active img {
+.animation .content .astronaut._active img {
   opacity: 0.3;
   transition: all 1s linear;
 }
-.about_me .content .astronaut._active:hover svg {
+.animation .content .astronaut._active:hover svg {
   opacity: 1;
 }
-.about_me .content .astronaut._active:hover img {
+.animation .content .astronaut._active:hover img {
   opacity: 1;
 }
-.about_me .content .astronaut._kill {
+.animation .content .astronaut._kill {
   opacity: 0;
 }
-.about_me .content .astronaut._kill img {
+.animation .content .astronaut._kill img {
   opacity: 0;
   transform: scale(0.1) rotate(360deg);
   transition: all 5s linear;
 }
-.about_me .content .astronaut._kill svg {
+.animation .content .astronaut._kill svg {
   display: none;
 }
-.about_me .content h3 {
+.animation .content h3 {
   width: 300px;
   font-weight: 100;
   font-size: 26px;
@@ -626,7 +622,7 @@ nav .nav_title {
   opacity: 0;
   transition: all 3s linear;
 }
-.about_me .content h3._active {
+.animation .content h3._active {
   opacity: 1;
 }
 
@@ -2200,7 +2196,7 @@ body {
     height: 70px;
   }
 
-  .about_me {
+  .animation {
     margin-top: 100px;
   }
 }
@@ -2223,6 +2219,25 @@ body {
   }
   .overlay .form_section .form button {
     font-size: 20px;
+  }
+
+  .about_me {
+    padding-left: 130px;
+    height: 300px;
+  }
+  .about_me::before {
+    top: 210px;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 210px;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 40px;
+  }
+  .about_me .moon {
+    transform: scale(0.9);
   }
 
   .project_cart {
@@ -2261,10 +2276,10 @@ body {
     width: 500px;
   }
 
-  .about_me {
+  .animation {
     row-gap: 50px;
   }
-  .about_me_title {
+  .animation_title {
     font-size: 35px;
   }
 
@@ -2285,12 +2300,12 @@ body {
     margin: 0 auto;
   }
 
-  .about_me .content .astronaut img {
+  .animation .content .astronaut img {
     height: 250px;
     width: 200px;
   }
 
-  .about_me .content .astronaut._active img {
+  .animation .content .astronaut._active img {
     height: 250px;
     width: 200px;
   }
@@ -2321,7 +2336,7 @@ body {
   }
 }
 @media screen and (max-width: 1030px) {
-  .about_me_title {
+  .animation_title {
     font-size: 30px;
   }
 }
@@ -2343,6 +2358,25 @@ body {
   }
   .overlay .form_section .form input, .overlay .form_section .form textarea {
     font-size: 12px;
+  }
+
+  .about_me {
+    padding-left: 130px;
+    height: 300px;
+  }
+  .about_me::before {
+    top: 210px;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 210px;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 37px;
+  }
+  .about_me .moon {
+    transform: scale(0.8);
   }
 
   .project {
@@ -2410,10 +2444,10 @@ body {
     width: 500px;
   }
 
-  .about_me {
+  .animation {
     row-gap: 50px;
   }
-  .about_me_title {
+  .animation_title {
     font-size: 26px;
   }
 
@@ -2443,7 +2477,7 @@ body {
     margin: 0 auto;
   }
 
-  .about_me .content .astronaut._active img {
+  .animation .content .astronaut._active img {
     height: 250px;
     width: 200px;
   }
@@ -2497,45 +2531,76 @@ body {
   }
 
   .about_me {
-    height: fit-content;
-    width: 100%;
-    row-gap: 50px;
+    padding-left: 130px;
+    height: 300px;
   }
-  .about_me_title {
+  .about_me::before {
+    top: 230px;
     font-size: 20px;
-    line-height: 30px;
   }
-  .about_me .content {
-    justify-content: center;
+  .about_me::after {
+    bottom: 230px;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 35px;
+  }
+  .about_me .moon {
+    transform: scale(0.7);
+  }
+
+  .animation {
+    margin-top: 0;
   }
 
   .greeting {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .greeting .obj {
-    height: 80px;
-    width: 80px;
+    height: 150px;
+    width: 150px;
+  }
+  .greeting .obj .light {
+    padding: 2px;
   }
   .greeting .obj .light span {
-    line-height: 12px;
-    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20px;
+    width: 70%;
+    height: 100%;
+    font-size: 17px;
   }
   .greeting svg {
-    width: 130px;
-    height: 130px;
+    width: 235px;
+    height: 235px;
     margin: 0 auto;
   }
 
-  .about_me .content .astronaut img {
+  .animation {
+    height: fit-content;
+    width: 100%;
+    row-gap: 50px;
+  }
+  .animation_title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .animation .content {
+    justify-content: center;
+  }
+
+  .animation .content .astronaut img {
     height: 200px;
     width: 150px;
   }
 
-  .about_me .content .astronaut._active img {
+  .animation .content .astronaut._active img {
     height: 200px;
     width: 150px;
   }
@@ -2623,7 +2688,7 @@ body {
   .constellation svg {
     min-height: 100vh;
     max-height: 100vh;
-    transform: rotate(90deg) scale(1.2);
+    transform: scale(1.9);
     opacity: 0.9;
   }
 
@@ -2659,21 +2724,62 @@ body {
   }
 
   .about_me {
+    padding-left: 130px;
+    height: 300px;
+  }
+  .about_me::before {
+    top: 240px;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 240px;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 30px;
+  }
+  .about_me .moon {
+    transform: scale(0.6);
+  }
+
+  .animation {
     margin-top: 0;
   }
 
+  .greeting {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting .obj {
+    height: 120px;
+    width: 120px;
+  }
+  .greeting .obj .light {
+    padding: 2px;
+  }
   .greeting .obj .light span {
-    width: 50px;
-    font-weight: 600;
-    line-height: 10px;
-    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 15px;
+    width: 70%;
+    height: 100%;
+    font-size: 14px;
+  }
+  .greeting svg {
+    width: 185px;
+    height: 185px;
+    margin: 0 auto;
   }
 
-  .about_me .content .astronaut._active img {
+  .animation .content .astronaut._active img {
     opacity: 1;
   }
 
-  .about_me .content .astronaut._active svg {
+  .animation .content .astronaut._active svg {
     opacity: 1;
     top: -60px;
     left: 50px;
@@ -2784,6 +2890,25 @@ body {
   }
   .overlay .form_section .form textarea {
     height: 80px;
+  }
+
+  .about_me {
+    padding-left: 130px;
+    height: 300px;
+  }
+  .about_me::before {
+    top: 240px;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 240px;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 20px;
+  }
+  .about_me .moon {
+    transform: scale(0.5);
   }
 }
 @media screen and (max-width: 570px) {
@@ -3019,13 +3144,35 @@ body {
   }
 
   .about_me {
+    width: 100%;
+    padding-left: 10px;
+    height: 300px;
+  }
+  .about_me::before {
+    top: 240px;
+    left: 0;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 240px;
+    left: 0;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 20px;
+  }
+  .about_me .moon {
+    transform: scale(0.5);
+  }
+
+  .animation {
     margin-top: 0;
     row-gap: 10px;
     min-height: 300px;
     z-index: 10;
     overflow: hidden;
   }
-  .about_me_title {
+  .animation_title {
     transform: translateY(0);
     font-size: 18px;
     line-height: 20px;
@@ -3058,25 +3205,25 @@ body {
     margin: 0 auto;
   }
 
-  .about_me .content .astronaut img {
+  .animation .content .astronaut img {
     height: 100px;
     width: 70px;
   }
 
-  .about_me .content .astronaut._active img {
+  .animation .content .astronaut._active img {
     height: 120px;
     width: 90px;
     opacity: 1;
   }
 
-  .about_me .content .astronaut._active svg {
+  .animation .content .astronaut._active svg {
     opacity: 1;
     top: -60px;
     left: 0;
     transform: scale(0.4);
   }
 
-  .about_me .content .astronaut svg {
+  .animation .content .astronaut svg {
     top: -60px;
     left: 0;
     transform: scale(0.3);
@@ -3183,10 +3330,13 @@ body {
     font-size: 9px;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   .wrapper {
     display: flex;
-    row-gap: 20px;
+  }
+
+  .section {
+    margin-bottom: 20px;
   }
 
   .overlay .close {
@@ -3249,39 +3399,72 @@ body {
   }
 
   .about_me {
-    margin-top: 0;
-    row-gap: 10px;
+    width: 100%;
+    padding-left: 10px;
+    min-height: 300px;
   }
-  .about_me_title {
-    font-size: 11px;
-    line-height: 16px;
+  .about_me::before {
+    top: 240px;
+    left: 0;
+    font-size: 20px;
+  }
+  .about_me::after {
+    bottom: 240px;
+    left: 0;
+    font-size: 20px;
+  }
+  .about_me h2 {
+    font-size: 20px;
+  }
+  .about_me .moon {
+    transform: scale(0.4);
+  }
+
+  .animation {
+    margin-top: 0;
+    height: 200px;
+  }
+  .animation .content {
+    height: 100%;
   }
 
   .greeting {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .greeting .obj {
-    height: 45px;
-    width: 45px;
+    height: 90px;
+    width: 90px;
+  }
+  .greeting .obj .light {
+    padding: 2px;
+  }
+  .greeting .obj .light span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 15px;
+    width: 70%;
+    height: 100%;
+    font-size: 10px;
   }
   .greeting svg {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto;
   }
 
-  .about_me .content .astronaut img {
-    height: 100px;
-    width: 70px;
+  .animation .content .astronaut img {
+    height: 140px;
+    width: 110px;
   }
 
-  .about_me .content .astronaut._active img {
-    height: 100px;
-    width: 70px;
+  .animation .content .astronaut._active img {
+    height: 140px;
+    width: 115px;
   }
 
   .neon_btn {
@@ -3399,6 +3582,10 @@ body {
     display: none;
   }
 }
+body {
+  background: #05050C;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
   cursor: url("/public/images/other/cursor-click.png"), auto;

@@ -1,47 +1,69 @@
-import React from 'react';
 import gsap from 'gsap';
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-
-import {Greeting} from "../Greeting";
+import React from 'react';
 import {ReactSVG} from "react-svg";
 
-gsap.registerPlugin(ScrollTrigger);
 const AboutMe: React.FC = () => {
-    const [isKilled,setIsKilled] = React.useState<boolean>(false);
-    const listRef = React.useRef(null);
-    const listSelector = gsap.utils.selector(listRef);
+    const [slideId, setSlideId] = React.useState<number>(1)
 
-    React.useEffect(()=>{
-        listSelector('.item').forEach((el)=>{
-            gsap.fromTo(el,{opacity:0},{opacity:1,scrollTrigger:{
-                    trigger:el,
-                    scrub:true
-                }});
-        })
+    const slide1Ref = React.useRef<HTMLDivElement>(null);
+    const slide2Ref = React.useRef<HTMLDivElement>(null);
+    const titleRef = React.useRef(null);
 
-        const returnAstronaut = setTimeout(()=>{
-            setIsKilled(false);
-        },30000);
-        return ()=>clearTimeout(returnAstronaut);
-    },[isKilled, listSelector]);
+    React.useEffect(() => {
+        const keepScrolling = setTimeout(() => {
+            if(slideId===1){
+                gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1});
+                gsap.to(slide2Ref.current,{x:'100%',opacity:0});
+                setSlideId(slideId+1);
+            }else{
+                gsap.fromTo(slide2Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1});
+                gsap.to(slide1Ref.current,{x:'100%',opacity:0});
+                setSlideId(1);
+            }
+        }, 5000);
+        return ()=>clearTimeout(keepScrolling)
+    }, [slideId])
+
+    React.useLayoutEffect(() => {
+        gsap.fromTo(slide1Ref.current,{x:'-100%',opacity:0},{duration:1,x:0,opacity:1})
+        setSlideId(2)
+    },[])
+
+
 
     return (
-        <div  className="about_me section">
-            {/*<div className="about_me_title " ref={listRef}>*/}
-            {/*    <h2 className="item">I love programing!</h2>*/}
-            {/*    <h2 className="item">I like building websites, and solve</h2>*/}
-            {/*    <h2 className="item">business problem. Now I studying at</h2>*/}
-            {/*    <h2 className="item">"UMCS Lublin" in Poland on</h2>*/}
-            {/*    <h2 className="item"> specialization of computer science</h2>*/}
-            {/*    <h2 className="item"> for 2 years.</h2>*/}
-            {/*</div>*/}
-            <div className="content">
-                <Greeting/>
-                <div className={`astronaut _anim_item ${isKilled?'_kill':''}`}>
-                    <ReactSVG src="./images/other/sky.svg"/>
-                    <img src="/images/other/astronaut.png" alt="astronaut" onClick={()=>{setIsKilled(!isKilled)}}/>
+        <div id="about_me" className="about_me">
+            <div className="title_slider" ref={titleRef} >
+                <div className="slider_window">
+                    <div className="slide" ref={slide1Ref}>
+                        <div className="title_text">
+                            <h2>Hi,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>My name is Alex,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>I'm web developer</h2>
+                        </div>
+                    </div>
+                    <div className="slide" ref={slide2Ref}>
+                        <div className="title_text">
+                            <h2>I love programing!</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>I like building websites,</h2>
+                        </div>
+                        <div className="title_text">
+                            <h2>And solve business problem.</h2>
+                        </div>
+                    </div>
+
                 </div>
+
+
             </div>
+            <ReactSVG src='/images/constellation/Rocket.svg' className='rocket'/>
+            <ReactSVG src='/images/constellation/Moon.svg' className='moon'/>
         </div>
     );
 };

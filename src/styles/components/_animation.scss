@@ -123,7 +123,7 @@
 
   }
   50% {
-    transform: translate(-10px, 10);
+    transform: translate(-10px, 10px);
   }
   75% {
     transform: translate(15px, -15px) scale(1);
@@ -142,7 +142,7 @@
 
   }
   50% {
-    transform: translate(-10px, 10) rotate(60deg);
+    transform: translate(-10px, 10px) rotate(60deg);
   }
   75% {
     transform: translate(15px, -15px) scale(1) rotate(30deg);

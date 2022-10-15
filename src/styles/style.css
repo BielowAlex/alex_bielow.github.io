@@ -634,7 +634,7 @@ nav .nav_title {
     transform: translate(10px, 5px) scale(0.9);
   }
   50% {
-    transform: translate(-10px, 10);
+    transform: translate(-10px, 10px);
   }
   75% {
     transform: translate(15px, -15px) scale(1);
@@ -651,7 +651,7 @@ nav .nav_title {
     transform: translate(10px, 5px) scale(0.9) rotate(30deg);
   }
   50% {
-    transform: translate(-10px, 10) rotate(60deg);
+    transform: translate(-10px, 10px) rotate(60deg);
   }
   75% {
     transform: translate(15px, -15px) scale(1) rotate(30deg);
